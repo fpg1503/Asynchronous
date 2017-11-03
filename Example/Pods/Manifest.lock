@@ -1,6 +1,10 @@
 PODS:
   - Async (0.1.0):
+    - Async/Result (= 0.1.0)
     - PromiseKit
+  - Async/Result (0.1.0):
+    - PromiseKit
+    - Result
   - PromiseKit (4.4.3):
     - PromiseKit/Foundation (= 4.4.3)
     - PromiseKit/QuartzCore (= 4.4.3)
@@ -12,6 +16,7 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (4.4.3):
     - PromiseKit/CorePromise
+  - Result (3.2.4)
 
 DEPENDENCIES:
   - Async (from `../`)
@@ -21,8 +26,9 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  Async: cab162c3f9159a6049b3e0d097a1138abe9ada8f
+  Async: d0340787259b3e6c69392aee7afc5ab1e267af89
   PromiseKit: fbb52a0d154402c57eeb6eccd36dd7724fcf6117
+  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
 
 PODFILE CHECKSUM: 853eb229662a4271be85fb16c42b8ad741fb883a
 

@@ -18,10 +18,21 @@
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "Async/Classes/**/*",
+  "source_files": "Async/Classes/*",
   "dependencies": {
     "PromiseKit": [
 
     ]
-  }
+  },
+  "subspecs": [
+    {
+      "name": "Result",
+      "dependencies": {
+        "Result": [
+
+        ]
+      },
+      "source_files": "Async/Classes/Async+Result.swift"
+    }
+  ]
 }
