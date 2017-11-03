@@ -45,4 +45,9 @@ TODO: Add long description of the pod here.
     result.dependency 'Result'
     result.source_files = 'Async/Classes/Async+Result.swift'
   end
+
+  s.subspec 'BrightFutures' do |brightFutures|
+    brightFutures.dependency 'BrightFutures'
+    brightFutures.source_files = 'Async/Classes/Async+BrightFutures.swift'
+  end
 end

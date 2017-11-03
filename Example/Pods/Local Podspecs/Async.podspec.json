@@ -33,6 +33,15 @@
         ]
       },
       "source_files": "Async/Classes/Async+Result.swift"
+    },
+    {
+      "name": "BrightFutures",
+      "dependencies": {
+        "BrightFutures": [
+
+        ]
+      },
+      "source_files": "Async/Classes/Async+BrightFutures.swift"
     }
   ]
 }
