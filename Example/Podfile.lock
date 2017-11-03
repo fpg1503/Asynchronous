@@ -1,0 +1,29 @@
+PODS:
+  - Async (0.1.0):
+    - PromiseKit
+  - PromiseKit (4.4.3):
+    - PromiseKit/Foundation (= 4.4.3)
+    - PromiseKit/QuartzCore (= 4.4.3)
+    - PromiseKit/UIKit (= 4.4.3)
+  - PromiseKit/CorePromise (4.4.3)
+  - PromiseKit/Foundation (4.4.3):
+    - PromiseKit/CorePromise
+  - PromiseKit/QuartzCore (4.4.3):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (4.4.3):
+    - PromiseKit/CorePromise
+
+DEPENDENCIES:
+  - Async (from `../`)
+
+EXTERNAL SOURCES:
+  Async:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Async: cab162c3f9159a6049b3e0d097a1138abe9ada8f
+  PromiseKit: fbb52a0d154402c57eeb6eccd36dd7724fcf6117
+
+PODFILE CHECKSUM: 853eb229662a4271be85fb16c42b8ad741fb883a
+
+COCOAPODS: 1.3.1

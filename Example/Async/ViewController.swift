@@ -7,12 +7,24 @@
 //
 
 import UIKit
+import Async
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        test().async { (value, error) in
+            print(value as Any)
+            print(error as Any)
+        }
+    }
+    
+    func test() -> Async<Int> {
+        return Async { (resolve, reject) in
+            resolve(3)
+        }
     }
 
     override func didReceiveMemoryWarning() {

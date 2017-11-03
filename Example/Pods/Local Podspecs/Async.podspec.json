@@ -1,0 +1,27 @@
+{
+  "name": "Async",
+  "version": "0.1.0",
+  "summary": "A short description of Async.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/fpg1503/Async",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "fpg1503": "fpg1503@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/fpg1503/Async.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "Async/Classes/**/*",
+  "dependencies": {
+    "PromiseKit": [
+
+    ]
+  }
+}
