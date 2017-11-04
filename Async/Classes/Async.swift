@@ -7,9 +7,10 @@ public enum AsyncError<T: Error>: Error {
     case some(T)
 }
 
-public typealias Async<T> = AsyncWithError<T, AnyError>
+public typealias Async<T> = FailableAsync<T, AnyError>
+public typealias InfailableAsync<T> = FailableAsync<T, NoError>
 
-public struct AsyncWithError<T, Error: Swift.Error> {
+public struct FailableAsync<T, Error: Swift.Error> {
     
     public let future: Future<T, Error>
     
@@ -27,8 +28,8 @@ public struct AsyncWithError<T, Error: Swift.Error> {
         }
     }
     
-    public static func from<SomeError: Swift.Error>(_ resolver: @escaping (_ completion: (T?, SomeError?) -> Void) -> Void) -> AsyncWithError<T, AsyncError<SomeError>> {
-        return AsyncWithError<T, AsyncError<SomeError>> { resolve, reject in
+    public static func from<SomeError: Swift.Error>(_ resolver: @escaping (_ completion: (T?, SomeError?) -> Void) -> Void) -> FailableAsync<T, AsyncError<SomeError>> {
+        return FailableAsync<T, AsyncError<SomeError>> { resolve, reject in
             resolver { (value, error) in
                 if let value = value {
                     resolve(value)
