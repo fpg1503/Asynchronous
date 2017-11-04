@@ -1,41 +1,55 @@
 import Foundation
-import PromiseKit
+import BrightFutures
+import Result
 
-enum AsyncError: Error {
+public enum AsyncError<T: Error>: Error {
     case valueAndErrorNil
+    case some(T)
 }
 
-public struct Async<T> {
+public typealias Async<T> = AsyncWithError<T, AnyError>
+
+public struct AsyncWithError<T, Error: Swift.Error> {
     
-    public let promise: Promise<T>
+    public let future: Future<T, Error>
     
-    public init(promise: Promise<T>) {
-        self.promise = promise
+    public init(future: Future<T, Error>) {
+        self.future = future
     }
     
     public init(resolver: (_ fulfill: @escaping (T) -> Void, _ reject: @escaping (Error) -> Void) -> Void) {
-        self.promise = Promise(resolvers: resolver)
+        self.future = Future { resolve in
+            resolver({ value in
+                resolve(.success(value))
+            }, { error in
+                resolve(.failure(error))
+            })
+        }
     }
     
-    public init(resolver: @escaping (_ completion: (T?, Error?) -> Void) -> Void) {
-        self.promise = Promise<T> { (resolve, reject) in
+    public static func from<SomeError: Swift.Error>(_ resolver: @escaping (_ completion: (T?, SomeError?) -> Void) -> Void) -> AsyncWithError<T, AsyncError<SomeError>> {
+        return AsyncWithError<T, AsyncError<SomeError>> { resolve, reject in
             resolver { (value, error) in
                 if let value = value {
                     resolve(value)
                 } else if let error = error {
-                    reject(error)
+                    reject(.some(error))
                 } else {
-                    reject(AsyncError.valueAndErrorNil)
+                    reject(.valueAndErrorNil)
                 }
             }
         }
     }
     
     public func async(_ completion: @escaping (T?, Error?) -> Void) {
-        promise.then { value in
-            completion(value, nil)
-        }.catch { error in
-            completion(nil, error)
+        future.onComplete { (result) in
+            completion(result.value, result.error)
+        }
+    }
+    
+    public func async(_ completion: @escaping (Result<T, Error>) -> Void) {
+        future.onComplete { (result) in
+            completion(result)
         }
     }
 }

@@ -54,13 +54,12 @@
 		79BB44F57B753EA6D938FC82BE85E071 /* PromiseKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 31B3E5793E7F386F539ACD9A8460B6B9 /* PromiseKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7AF27951FD02C8C94216A77CA6D57B8A /* BrightFutures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE9E73A8AE20BBA4C196BDF38E892618 /* BrightFutures.framework */; };
 		7E80E5CC075B6C756C9A0F07CA8D369A /* UIView+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE727493B368D56B8A928FDAA487AB0 /* UIView+Promise.swift */; };
-		7F9699A3F8C759F138CC61D47D5FFB66 /* Async+Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD55088DA75E3B99A8F795954F695ED /* Async+Result.swift */; };
 		8016817874244210BD307E114DA6C2E7 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D95F4C6A8B2F70C9FBBDC66D5BF88E4 /* Promise.swift */; };
 		84371A15AD744213315176A84BB40271 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4225FD8939519865C2EA2ACE1EB904 /* State.swift */; };
 		8812D6CBBAF33DC33D2F05B322107E3E /* NSOperationQueue+BrightFutures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5033364EF6729FA9F210EDB5ADC8C0B7 /* NSOperationQueue+BrightFutures.swift */; };
 		8A054AF6DF296451A460459515791140 /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DD2690F14DB7FE4AB6649B0801A2CF /* Future.swift */; };
 		93D81BC24D8866E4FBA682530300902E /* NSURLSession+AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = 931063F995A4D391B468CC25ABD26444 /* NSURLSession+AnyPromise.m */; };
-		954286613CB604FC0ECD4C7CAB4A5C27 /* Async+BrightFutures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F00F3686146AE4E7CC7E30A52B97D8C /* Async+BrightFutures.swift */; };
+		954286613CB604FC0ECD4C7CAB4A5C27 /* Async+PromiseKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F00F3686146AE4E7CC7E30A52B97D8C /* Async+PromiseKit.swift */; };
 		96B42E61D2E2184CB2328C63688896FA /* AnyPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E079A6D82F68751CFF6F0B709E178B /* AnyPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9733A57A7779DCB133966A337942E7BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D92F6B58F9DDA1564E352370D234595 /* Foundation.framework */; };
 		985BABFE20A06D0C786761F1936D7703 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79FCDA356C465EDE64C0563A52F93602 /* QuartzCore.framework */; };
@@ -168,20 +167,20 @@
 		168FFE8616C3A41B490C750757C56E26 /* PMKAlertController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PMKAlertController.swift; path = Extensions/UIKit/Sources/PMKAlertController.swift; sourceTree = "<group>"; };
 		16B01B31C82CDDFD0E64F80F064420B1 /* MutableAsyncType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MutableAsyncType.swift; path = Sources/BrightFutures/MutableAsyncType.swift; sourceTree = "<group>"; };
 		17B574333F6E35D3247E5DB66BFEFACD /* AsyncType+Debug.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "AsyncType+Debug.swift"; path = "Sources/BrightFutures/AsyncType+Debug.swift"; sourceTree = "<group>"; };
-		17ED468581D25BFD857D43688AAA7467 /* BrightFutures.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = BrightFutures.modulemap; sourceTree = "<group>"; };
+		17ED468581D25BFD857D43688AAA7467 /* BrightFutures.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = BrightFutures.modulemap; sourceTree = "<group>"; };
 		182A5684DACAFAC5F41904354B7C7BDB /* Promise+AnyPromise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Promise+AnyPromise.swift"; path = "Sources/Promise+AnyPromise.swift"; sourceTree = "<group>"; };
 		19B9992E17610B2A48A0835524BC2588 /* PromiseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PromiseKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C99685BDD837CD18D04A285E9DA11B0 /* AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AnyPromise.m; path = Sources/AnyPromise.m; sourceTree = "<group>"; };
 		1CB138A596346DC25E8C530CE7F31F2F /* BrightFutures-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BrightFutures-umbrella.h"; sourceTree = "<group>"; };
 		1E7D959A54D806218E7CF3E4017355D4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		209A46C97865DDD13FEDAA981CFF89C3 /* Result.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Result.framework; path = Result.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		209A46C97865DDD13FEDAA981CFF89C3 /* Result.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Result.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		21747F8235982A307F18540FF4F3563E /* PMKFoundation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PMKFoundation.h; path = Extensions/Foundation/Sources/PMKFoundation.h; sourceTree = "<group>"; };
 		22DAF0C22B7C541412A3BFAD47BE4D2F /* Async-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Async-prefix.pch"; sourceTree = "<group>"; };
 		25B20BCCD165EF8826F30D2A3BB2E597 /* NSURLSession+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSURLSession+Promise.swift"; path = "Extensions/Foundation/Sources/NSURLSession+Promise.swift"; sourceTree = "<group>"; };
 		26F0316E2C92927BD66C315A1F5A9FA5 /* Pods-Async_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Async_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		29844DB3E7B23F5F77EBEF1AD4F939B3 /* Pods-Async_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Async_Tests-dummy.m"; sourceTree = "<group>"; };
 		2BB439D02814AD9428A411C13ED8B844 /* NSObject+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSObject+Promise.swift"; path = "Extensions/Foundation/Sources/NSObject+Promise.swift"; sourceTree = "<group>"; };
-		2C17F2A7ADD4DF4546376524283EF2A6 /* Pods_Async_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Async_Tests.framework; path = "Pods-Async_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C17F2A7ADD4DF4546376524283EF2A6 /* Pods_Async_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Async_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D5A2829B9A5277537890257BB6DF8D7 /* Pods-Async_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Async_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		301AD1A8EB0D99BC5E2851869BD9D1DD /* PromiseKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PromiseKit-prefix.pch"; sourceTree = "<group>"; };
 		31B3E5793E7F386F539ACD9A8460B6B9 /* PromiseKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PromiseKit.h; path = Sources/PromiseKit.h; sourceTree = "<group>"; };
@@ -197,7 +196,7 @@
 		424C70E35BD8290E3CCF2843B6FB9BB9 /* CALayer+AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "CALayer+AnyPromise.m"; path = "Extensions/QuartzCore/Sources/CALayer+AnyPromise.m"; sourceTree = "<group>"; };
 		43DD2690F14DB7FE4AB6649B0801A2CF /* Future.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Future.swift; path = Sources/BrightFutures/Future.swift; sourceTree = "<group>"; };
 		460A77268B06288D1909482BF2AD50F2 /* UIView+AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+AnyPromise.m"; path = "Extensions/UIKit/Sources/UIView+AnyPromise.m"; sourceTree = "<group>"; };
-		465ABDE44898E8C04659BB2CAD641BFC /* PromiseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PromiseKit.framework; path = PromiseKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		465ABDE44898E8C04659BB2CAD641BFC /* PromiseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PromiseKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		491985FED96E9B46A81052C17B43BD2F /* UIViewController+AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+AnyPromise.m"; path = "Extensions/UIKit/Sources/UIViewController+AnyPromise.m"; sourceTree = "<group>"; };
 		4941F8FD0AC5938F062AFA20CCCFA90D /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Result/Result.swift; sourceTree = "<group>"; };
 		4998DF1114DD151DC9BF68F66190EA66 /* URLDataPromise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLDataPromise.swift; path = Extensions/Foundation/Sources/URLDataPromise.swift; sourceTree = "<group>"; };
@@ -218,8 +217,7 @@
 		697CE4F5CD9F424B7D33E6A1E888F98C /* UIViewController+AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+AnyPromise.h"; path = "Extensions/UIKit/Sources/UIViewController+AnyPromise.h"; sourceTree = "<group>"; };
 		69DDDDE02708D3997147AC9B876C9E45 /* after.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = after.m; path = Sources/after.m; sourceTree = "<group>"; };
 		6A5723B786786FE0E8721749815D3BB5 /* PMKUIKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PMKUIKit.h; path = Extensions/UIKit/Sources/PMKUIKit.h; sourceTree = "<group>"; };
-		6BB2F70E767A1D0AD285F3591532DD76 /* Pods_Async_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Async_Example.framework; path = "Pods-Async_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6FD55088DA75E3B99A8F795954F695ED /* Async+Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Async+Result.swift"; path = "Async/Classes/Async+Result.swift"; sourceTree = "<group>"; };
+		6BB2F70E767A1D0AD285F3591532DD76 /* Pods_Async_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Async_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7868032E4C2276BFE7AEB3D65E9C10EA /* PromiseKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PromiseKit-dummy.m"; sourceTree = "<group>"; };
 		79FCDA356C465EDE64C0563A52F93602 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		7D570B08427043D2CE88A8666AA3F0A8 /* Pods-Async_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Async_Example-umbrella.h"; sourceTree = "<group>"; };
@@ -231,26 +229,26 @@
 		845977367BFB66043D4D5C7C752FEC42 /* Result-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Result-prefix.pch"; sourceTree = "<group>"; };
 		87B93F72FD5F45EDA38409AE80D6374A /* Process+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Process+Promise.swift"; path = "Extensions/Foundation/Sources/Process+Promise.swift"; sourceTree = "<group>"; };
 		882015CCE7A25A7A839C131482C0DB20 /* SequenceType+BrightFutures.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SequenceType+BrightFutures.swift"; path = "Sources/BrightFutures/SequenceType+BrightFutures.swift"; sourceTree = "<group>"; };
-		8F00F3686146AE4E7CC7E30A52B97D8C /* Async+BrightFutures.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Async+BrightFutures.swift"; path = "Async/Classes/Async+BrightFutures.swift"; sourceTree = "<group>"; };
+		8F00F3686146AE4E7CC7E30A52B97D8C /* Async+PromiseKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Async+PromiseKit.swift"; path = "Async/Classes/Async+PromiseKit.swift"; sourceTree = "<group>"; };
 		8F4225FD8939519865C2EA2ACE1EB904 /* State.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = State.swift; path = Sources/State.swift; sourceTree = "<group>"; };
 		91FC42E622235B1C3DB5658AB8167862 /* NSTask+AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSTask+AnyPromise.h"; path = "Extensions/Foundation/Sources/NSTask+AnyPromise.h"; sourceTree = "<group>"; };
 		927B5EA978AD52F502B718FCE31BE3E5 /* Async.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Async.xcconfig; sourceTree = "<group>"; };
-		929ED8B001DDF6CDBC79ED7FB61CD9CF /* Result.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Result.modulemap; sourceTree = "<group>"; };
+		929ED8B001DDF6CDBC79ED7FB61CD9CF /* Result.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Result.modulemap; sourceTree = "<group>"; };
 		931063F995A4D391B468CC25ABD26444 /* NSURLSession+AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSURLSession+AnyPromise.m"; path = "Extensions/Foundation/Sources/NSURLSession+AnyPromise.m"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		98D535B8E6C728A3CC1DDBF9EF2043A0 /* Errors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Errors.swift; path = Sources/BrightFutures/Errors.swift; sourceTree = "<group>"; };
 		9D69F95EB031578D46A27F4F32093DF5 /* Async-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Async-dummy.m"; sourceTree = "<group>"; };
-		9F3DE9AE6098049B32531FF42007A864 /* Async.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Async.modulemap; sourceTree = "<group>"; };
+		9F3DE9AE6098049B32531FF42007A864 /* Async.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Async.modulemap; sourceTree = "<group>"; };
 		9FE727493B368D56B8A928FDAA487AB0 /* UIView+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Promise.swift"; path = "Extensions/UIKit/Sources/UIView+Promise.swift"; sourceTree = "<group>"; };
 		A81FB049FCC236FC24620F799DE61DBF /* AnyPromise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnyPromise.swift; path = Sources/AnyPromise.swift; sourceTree = "<group>"; };
 		AA201C9F4A653EECEFD723AF4F02CF96 /* MutableAsyncType+ResultType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MutableAsyncType+ResultType.swift"; path = "Sources/BrightFutures/MutableAsyncType+ResultType.swift"; sourceTree = "<group>"; };
 		ADC666799C8A06CBAB064399AD0D41AB /* Pods-Async_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Async_Example.release.xcconfig"; sourceTree = "<group>"; };
 		B144F787730720DF99E21B4859FAA51A /* Number+BrightFutures.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Number+BrightFutures.swift"; path = "Sources/BrightFutures/Number+BrightFutures.swift"; sourceTree = "<group>"; };
-		B2582E6CB41DEE451B4F97A6486CD38E /* Pods-Async_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Async_Example.modulemap"; sourceTree = "<group>"; };
+		B2582E6CB41DEE451B4F97A6486CD38E /* Pods-Async_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Async_Example.modulemap"; sourceTree = "<group>"; };
 		B2DE543380203B3BC3B8872737D52E8B /* wrap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = wrap.swift; path = Sources/wrap.swift; sourceTree = "<group>"; };
 		B3FC8D1F419D2CC2894FAB41CDB95EAA /* Pods-Async_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Async_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		B857A9F5CB1B28FB9905B4DC999AAF38 /* join.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = join.m; path = Sources/join.m; sourceTree = "<group>"; };
-		B8E46F28A604A03EFBC35E00F59BA7D0 /* Async.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Async.framework; path = Async.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8E46F28A604A03EFBC35E00F59BA7D0 /* Async.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Async.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAFA0FC6ECD17DD6FA5CD8E94F7E3E8C /* after.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = after.swift; path = Sources/after.swift; sourceTree = "<group>"; };
 		BB74CFD27805DC4F306BEDB2F707531B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD4C69FD40DC1728229142B4CB684774 /* Error.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Error.swift; path = Sources/Error.swift; sourceTree = "<group>"; };
@@ -264,12 +262,12 @@
 		C4EA9493AC35186B5CBB9E7978DC8444 /* Pods-Async_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Async_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		CCFE559FCAF9C69A06FA02652AD314F5 /* NSNotificationCenter+AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSNotificationCenter+AnyPromise.h"; path = "Extensions/Foundation/Sources/NSNotificationCenter+AnyPromise.h"; sourceTree = "<group>"; };
 		D0C0E772183D5F845B907DDCBB4A5BF9 /* Pods-Async_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Async_Example-frameworks.sh"; sourceTree = "<group>"; };
-		D164A20232644B8C64ABA242B0EAD7E9 /* BrightFutures.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = BrightFutures.framework; path = BrightFutures.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D164A20232644B8C64ABA242B0EAD7E9 /* BrightFutures.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BrightFutures.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D43415BF863BEDBABC87570BF01ACCC2 /* Async.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Async.swift; path = Async/Classes/Async.swift; sourceTree = "<group>"; };
 		D4B4C77C54B6C5EF9669A86151729ED7 /* Pods-Async_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Async_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		D892EE7FFA8BCF4D4940DBE15A9DAA63 /* Async-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Async-umbrella.h"; sourceTree = "<group>"; };
 		D9AF92CC8CB32C0180C8E798C1109805 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DBE25AB937309CDC2D2544E9D17248CB /* Pods-Async_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Async_Tests.modulemap"; sourceTree = "<group>"; };
+		DBE25AB937309CDC2D2544E9D17248CB /* Pods-Async_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Async_Tests.modulemap"; sourceTree = "<group>"; };
 		DCCF66EE5702978AD6947AF35720F156 /* when.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = when.m; path = Sources/when.m; sourceTree = "<group>"; };
 		DD710F3D0CAB2DC316E285AFD195B1BD /* NSNotificationCenter+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSNotificationCenter+Promise.swift"; path = "Extensions/Foundation/Sources/NSNotificationCenter+Promise.swift"; sourceTree = "<group>"; };
 		E0C391D7583A08C0FD9BC6DDF4CB6E11 /* BrightFutures.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BrightFutures.xcconfig; sourceTree = "<group>"; };
@@ -282,7 +280,7 @@
 		F1E320F1BBD96DA2A45326EF704EAC76 /* DispatchQueue+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Promise.swift"; path = "Sources/DispatchQueue+Promise.swift"; sourceTree = "<group>"; };
 		F2277E7497AEE323BB7CF9CDA6E5FECB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5CB70BAA97BCFC449845F6438C4382D /* PromiseKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PromiseKit.xcconfig; sourceTree = "<group>"; };
-		FA42EC53013672140EC3BF211547A364 /* PromiseKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = PromiseKit.modulemap; sourceTree = "<group>"; };
+		FA42EC53013672140EC3BF211547A364 /* PromiseKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = PromiseKit.modulemap; sourceTree = "<group>"; };
 		FD1C2A9BA55338D92530BE3E43254C5A /* PMKQuartzCore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PMKQuartzCore.h; path = Extensions/QuartzCore/Sources/PMKQuartzCore.h; sourceTree = "<group>"; };
 		FDD30DB4FC74C21FD9B0B6250ED88F36 /* hang.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = hang.m; path = Sources/hang.m; sourceTree = "<group>"; };
 		FF8887C0135E6A6BFFFDE0F07CEC1BE3 /* Pods-Async_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Async_Example-dummy.m"; sourceTree = "<group>"; };
@@ -410,7 +408,6 @@
 				882015CCE7A25A7A839C131482C0DB20 /* SequenceType+BrightFutures.swift */,
 				E89005C2BF3636C83BED0188E3B2C2C8 /* Support Files */,
 			);
-			name = BrightFutures;
 			path = BrightFutures;
 			sourceTree = "<group>";
 		};
@@ -441,7 +438,6 @@
 				123B85CAD62F1DFD91F67F2FE56BA81C /* ResultProtocol.swift */,
 				F4BE0E0B8C445880CB45D8CFA7CCBC74 /* Support Files */,
 			);
-			name = Result;
 			path = Result;
 			sourceTree = "<group>";
 		};
@@ -574,7 +570,6 @@
 				364FCB3A788C8403180A6788F8B545EA /* Support Files */,
 				3AC35100B151B41B6888B02EBD44824C /* UIKit */,
 			);
-			name = PromiseKit;
 			path = PromiseKit;
 			sourceTree = "<group>";
 		};
@@ -625,8 +620,7 @@
 			isa = PBXGroup;
 			children = (
 				D43415BF863BEDBABC87570BF01ACCC2 /* Async.swift */,
-				8F00F3686146AE4E7CC7E30A52B97D8C /* Async+BrightFutures.swift */,
-				6FD55088DA75E3B99A8F795954F695ED /* Async+Result.swift */,
+				8F00F3686146AE4E7CC7E30A52B97D8C /* Async+PromiseKit.swift */,
 				C9B1A82F88FF27582B06883B307CE73D /* BrightFutures */,
 				1EB1FA550332DB5AE55F4B7667A7C66C /* Result */,
 				3C0667712FE616E22BDC69D5B6E2774B /* Support Files */,
@@ -925,8 +919,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				954286613CB604FC0ECD4C7CAB4A5C27 /* Async+BrightFutures.swift in Sources */,
-				7F9699A3F8C759F138CC61D47D5FFB66 /* Async+Result.swift in Sources */,
+				954286613CB604FC0ECD4C7CAB4A5C27 /* Async+PromiseKit.swift in Sources */,
 				E4C9196D8A3B42195D3074DD2508C9DE /* Async-dummy.m in Sources */,
 				022447BD749FAB81D8F34FA02B9726F6 /* Async.swift in Sources */,
 			);

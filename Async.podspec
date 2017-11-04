@@ -39,15 +39,10 @@ TODO: Add long description of the pod here.
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
-  s.dependency 'PromiseKit'
+  s.dependency 'BrightFutures'
 
-  s.subspec 'Result' do |result|
-    result.dependency 'Result'
-    result.source_files = 'Async/Classes/Async+Result.swift'
-  end
-
-  s.subspec 'BrightFutures' do |brightFutures|
-    brightFutures.dependency 'BrightFutures'
-    brightFutures.source_files = 'Async/Classes/Async+BrightFutures.swift'
+  s.subspec 'PromiseKit' do |promiseKit|
+    promiseKit.dependency 'PromiseKit'
+    promiseKit.source_files = 'Async/Classes/Async+PromiseKit.swift'
   end
 end
