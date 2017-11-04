@@ -16,32 +16,32 @@
     "tag": "0.1.0"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "9.0"
   },
   "source_files": "Async/Classes/*",
   "dependencies": {
-    "PromiseKit": [
+    "BrightFutures": [
 
     ]
   },
   "subspecs": [
     {
-      "name": "Result",
+      "name": "PromiseKit",
       "dependencies": {
-        "Result": [
+        "PromiseKit": [
 
         ]
       },
-      "source_files": "Async/Classes/Async+Result.swift"
+      "source_files": "Async/Classes/Async+PromiseKit.swift"
     },
     {
-      "name": "BrightFutures",
+      "name": "Promises",
       "dependencies": {
-        "BrightFutures": [
+        "Promises": [
 
         ]
       },
-      "source_files": "Async/Classes/Async+BrightFutures.swift"
+      "source_files": "Async/Classes/Async+Promises.swift"
     }
   ]
 }

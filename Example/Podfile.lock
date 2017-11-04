@@ -1,14 +1,14 @@
 PODS:
   - Async (0.1.0):
-    - Async/BrightFutures (= 0.1.0)
-    - Async/Result (= 0.1.0)
-    - PromiseKit
-  - Async/BrightFutures (0.1.0):
+    - Async/PromiseKit (= 0.1.0)
+    - Async/Promises (= 0.1.0)
+    - BrightFutures
+  - Async/PromiseKit (0.1.0):
     - BrightFutures
     - PromiseKit
-  - Async/Result (0.1.0):
-    - PromiseKit
-    - Result
+  - Async/Promises (0.1.0):
+    - BrightFutures
+    - Promises
   - BrightFutures (6.0.0):
     - Result (~> 3.2.4)
   - PromiseKit (4.4.3):
@@ -22,6 +22,7 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (4.4.3):
     - PromiseKit/CorePromise
+  - Promises (2.0)
   - Result (3.2.4)
 
 DEPENDENCIES:
@@ -32,9 +33,10 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  Async: 564b926095178891f877de3e28c09459148bb3a5
+  Async: 3dacef0486d3694d578410e025b1b203bb7a6c95
   BrightFutures: 9e7604f511aed9f0d6a49b04ac9b3fca6b117758
   PromiseKit: fbb52a0d154402c57eeb6eccd36dd7724fcf6117
+  Promises: fd16528f8332744de33db7e1067cd32b3d550466
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
 
 PODFILE CHECKSUM: 853eb229662a4271be85fb16c42b8ad741fb883a

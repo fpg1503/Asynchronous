@@ -28,7 +28,7 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/fpg1503/Async.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
 
   s.source_files = 'Async/Classes/*'
   
@@ -44,5 +44,10 @@ TODO: Add long description of the pod here.
   s.subspec 'PromiseKit' do |promiseKit|
     promiseKit.dependency 'PromiseKit'
     promiseKit.source_files = 'Async/Classes/Async+PromiseKit.swift'
+  end
+
+  s.subspec 'Promises' do |promises|
+    promises.dependency 'Promises'
+    promises.source_files = 'Async/Classes/Async+Promises.swift'
   end
 end
