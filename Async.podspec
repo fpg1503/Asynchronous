@@ -50,4 +50,9 @@ TODO: Add long description of the pod here.
     promises.dependency 'Promises'
     promises.source_files = 'Async/Classes/Async+Promises.swift'
   end
+
+  s.subspec 'HydraAsync' do |hydraAsync|
+    hydraAsync.dependency 'HydraAsync'
+    hydraAsync.source_files = 'Async/Classes/Async+HydraAsync.swift'
+  end
 end

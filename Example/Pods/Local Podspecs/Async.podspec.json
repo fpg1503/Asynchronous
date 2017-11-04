@@ -42,6 +42,15 @@
         ]
       },
       "source_files": "Async/Classes/Async+Promises.swift"
+    },
+    {
+      "name": "HydraAsync",
+      "dependencies": {
+        "HydraAsync": [
+
+        ]
+      },
+      "source_files": "Async/Classes/Async+HydraAsync.swift"
     }
   ]
 }

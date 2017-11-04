@@ -1,0 +1,6 @@
+framework module Hydra {
+  umbrella header "HydraAsync-umbrella.h"
+
+  export *
+  module * { export * }
+}
