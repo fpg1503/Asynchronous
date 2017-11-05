@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_Async_ExampleVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_Async_ExampleVersionString[];
+FOUNDATION_EXPORT double Pods_Asynchronous_TestsVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_Asynchronous_TestsVersionString[];
 

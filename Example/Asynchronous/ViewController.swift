@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Async
+import Asynchronous
 
 class ViewController: UIViewController {
 

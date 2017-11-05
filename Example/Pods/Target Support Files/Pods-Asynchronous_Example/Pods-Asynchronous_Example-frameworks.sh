@@ -102,12 +102,12 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/Async/Async.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Asynchronous/Asynchronous.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/BrightFutures/BrightFutures.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Result/Result.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/Async/Async.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Asynchronous/Asynchronous.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/BrightFutures/BrightFutures.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Result/Result.framework"
 fi

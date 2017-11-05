@@ -1,6 +1,6 @@
 import UIKit
 import XCTest
-import Async
+import Asynchronous
 
 class Tests: XCTestCase {
     

@@ -1,10 +1,10 @@
 {
-  "name": "Async",
+  "name": "Asynchronous",
   "version": "0.1.0",
   "summary": "Implementation agnostic asynchronous code",
   "default_subspecs": "BrightFutures",
   "description": "Async is a one-stop shop for your async needs, the user can use the subspecs\nto automatically run the Async code using Promises, PromiseKit, Then, BrightFutures,\nHydraAsync and much more!",
-  "homepage": "https://github.com/fpg1503/Async",
+  "homepage": "https://github.com/fpg1503/Asynchronous",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -13,7 +13,7 @@
     "fpg1503": "fpg1503@gmail.com"
   },
   "source": {
-    "git": "https://github.com/fpg1503/Async.git",
+    "git": "https://github.com/fpg1503/Asynchronous.git",
     "tag": "0.1.0"
   },
   "social_media_url": "https://twitter.com/fpg1503",
@@ -28,7 +28,7 @@
 
         ]
       },
-      "source_files": "Async/Classes/Async.swift"
+      "source_files": "Asynchronous/Classes/Async.swift"
     },
     {
       "name": "PromiseKit",
@@ -37,7 +37,7 @@
 
         ]
       },
-      "source_files": "Async/Classes/Async+PromiseKit.swift"
+      "source_files": "Asynchronous/Classes/Async+PromiseKit.swift"
     },
     {
       "name": "Promises",
@@ -46,7 +46,7 @@
 
         ]
       },
-      "source_files": "Async/Classes/Async+Promises.swift"
+      "source_files": "Asynchronous/Classes/Async+Promises.swift"
     },
     {
       "name": "HydraAsync",
@@ -55,7 +55,7 @@
 
         ]
       },
-      "source_files": "Async/Classes/Async+HydraAsync.swift"
+      "source_files": "Asynchronous/Classes/Async+HydraAsync.swift"
     },
     {
       "name": "Then",
@@ -64,7 +64,7 @@
 
         ]
       },
-      "source_files": "Async/Classes/Async+Then.swift"
+      "source_files": "Asynchronous/Classes/Async+Then.swift"
     },
     {
       "name": "Alamofire",
@@ -73,7 +73,7 @@
 
         ]
       },
-      "source_files": "Async/Classes/Alamofire+Async.swift"
+      "source_files": "Asynchronous/Classes/Alamofire+Async.swift"
     }
   ]
 }

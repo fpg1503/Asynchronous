@@ -1,9 +1,9 @@
 use_frameworks!
 
-target 'Async_Example' do
-  pod 'Async', :path => '../'
+target 'Asynchronous_Example' do
+  pod 'Asynchronous', :path => '../'
 
-  target 'Async_Tests' do
+  target 'Asynchronous_Tests' do
     inherit! :search_paths
 
     

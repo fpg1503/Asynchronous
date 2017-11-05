@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/fpg1503/Workspace/Personal/Async/Async/Example/Asynchronous.xcodeproj">
+      location = "group:Asynchronous.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
