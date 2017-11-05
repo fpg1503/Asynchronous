@@ -38,6 +38,10 @@ Feel free to create a PR/Issue.
 ### Roadmap
 - [ ] ReactiveSwift support
 - [ ] RxSwift support
+- [ ] Tests
+- [ ] Better documentation
+- [ ] Improved README
+- [ ] Remove BrightFutures dependency
 - [ ] Carthage support
 - [ ] SwiftPM support
 

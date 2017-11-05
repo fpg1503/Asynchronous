@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     }
     
     func test() -> Async<Int> {
-        return Async { (resolve, reject) in
+        return Async { resolve, reject in
             resolve(3)
         }
     }
