@@ -1,9 +1,14 @@
 PODS:
+  - Alamofire (4.5.1)
   - Async (0.1.0):
+    - Async/Alamofire (= 0.1.0)
     - Async/HydraAsync (= 0.1.0)
     - Async/PromiseKit (= 0.1.0)
     - Async/Promises (= 0.1.0)
     - Async/Then (= 0.1.0)
+    - BrightFutures
+  - Async/Alamofire (0.1.0):
+    - Alamofire
     - BrightFutures
   - Async/HydraAsync (0.1.0):
     - BrightFutures
@@ -43,7 +48,8 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  Async: aead84a7523536ed52364a2793219f67700b3da0
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  Async: 6c5d3ca699dcda405242d421da823b13cabe1051
   BrightFutures: 9e7604f511aed9f0d6a49b04ac9b3fca6b117758
   HydraAsync: b3d6495b55f845e98ec5b07714da2a6750f6c363
   PromiseKit: fbb52a0d154402c57eeb6eccd36dd7724fcf6117

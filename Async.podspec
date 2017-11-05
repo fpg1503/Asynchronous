@@ -60,4 +60,9 @@ TODO: Add long description of the pod here.
     thenPromise.dependency 'thenPromise'
     thenPromise.source_files = 'Async/Classes/Async+Then.swift'
   end
+
+  s.subspec 'Alamofire' do |alamofire|
+    alamofire.dependency 'Alamofire'
+    alamofire.source_files = 'Async/Classes/Alamofire+Async.swift'
+  end
 end

@@ -60,6 +60,15 @@
         ]
       },
       "source_files": "Async/Classes/Async+Then.swift"
+    },
+    {
+      "name": "Alamofire",
+      "dependencies": {
+        "Alamofire": [
+
+        ]
+      },
+      "source_files": "Async/Classes/Alamofire+Async.swift"
     }
   ]
 }
