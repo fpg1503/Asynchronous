@@ -3,6 +3,7 @@ PODS:
     - Async/HydraAsync (= 0.1.0)
     - Async/PromiseKit (= 0.1.0)
     - Async/Promises (= 0.1.0)
+    - Async/Then (= 0.1.0)
     - BrightFutures
   - Async/HydraAsync (0.1.0):
     - BrightFutures
@@ -13,6 +14,9 @@ PODS:
   - Async/Promises (0.1.0):
     - BrightFutures
     - Promises
+  - Async/Then (0.1.0):
+    - BrightFutures
+    - thenPromise
   - BrightFutures (6.0.0):
     - Result (~> 3.2.4)
   - HydraAsync (1.1.0)
@@ -29,6 +33,7 @@ PODS:
     - PromiseKit/CorePromise
   - Promises (2.0)
   - Result (3.2.4)
+  - thenPromise (3.0.0)
 
 DEPENDENCIES:
   - Async (from `../`)
@@ -38,12 +43,13 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  Async: b56f68fdbd4b302d219ad3656cc1fd6e441ad1cb
+  Async: aead84a7523536ed52364a2793219f67700b3da0
   BrightFutures: 9e7604f511aed9f0d6a49b04ac9b3fca6b117758
   HydraAsync: b3d6495b55f845e98ec5b07714da2a6750f6c363
   PromiseKit: fbb52a0d154402c57eeb6eccd36dd7724fcf6117
   Promises: fd16528f8332744de33db7e1067cd32b3d550466
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
+  thenPromise: 7aab1d73fd53dbe4c413602bd9f335208e89d60c
 
 PODFILE CHECKSUM: 853eb229662a4271be85fb16c42b8ad741fb883a
 

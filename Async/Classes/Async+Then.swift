@@ -1,14 +1,13 @@
-import Promise
+import then
 
 extension Async {
-    func promise() -> Promise<T> {
-        return Promise { (resolve, reject) in
+    func then() -> Promise<T> {
+        return Promise { resolve, reject in
             self.future.onSuccess { value in
                 resolve(value)
             }.onFailure { error in
-                reject(error)
+                    reject(error)
             }
         }
     }
 }
-

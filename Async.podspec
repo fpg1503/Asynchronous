@@ -55,4 +55,9 @@ TODO: Add long description of the pod here.
     hydraAsync.dependency 'HydraAsync'
     hydraAsync.source_files = 'Async/Classes/Async+HydraAsync.swift'
   end
+
+  s.subspec 'Then' do |thenPromise|
+    thenPromise.dependency 'thenPromise'
+    thenPromise.source_files = 'Async/Classes/Async+Then.swift'
+  end
 end

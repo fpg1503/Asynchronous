@@ -51,6 +51,15 @@
         ]
       },
       "source_files": "Async/Classes/Async+HydraAsync.swift"
+    },
+    {
+      "name": "Then",
+      "dependencies": {
+        "thenPromise": [
+
+        ]
+      },
+      "source_files": "Async/Classes/Async+Then.swift"
     }
   ]
 }
