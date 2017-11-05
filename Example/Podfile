@@ -2,6 +2,11 @@ use_frameworks!
 
 target 'Asynchronous_Example' do
   pod 'Asynchronous', :path => '../'
+  pod 'Asynchronous/Alamofire', :path => '../'
+  pod 'Asynchronous/HydraAsync', :path => '../'
+  pod 'Asynchronous/PromiseKit', :path => '../'
+  pod 'Asynchronous/Promises', :path => '../'
+  pod 'Asynchronous/Then', :path => '../'
 
   target 'Asynchronous_Tests' do
     inherit! :search_paths

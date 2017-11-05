@@ -1,24 +1,59 @@
 PODS:
+  - Alamofire (4.5.1)
   - Asynchronous (0.1.0):
     - Asynchronous/BrightFutures (= 0.1.0)
+  - Asynchronous/Alamofire (0.1.0):
+    - Alamofire
   - Asynchronous/BrightFutures (0.1.0):
     - BrightFutures
+  - Asynchronous/HydraAsync (0.1.0):
+    - HydraAsync
+  - Asynchronous/PromiseKit (0.1.0):
+    - PromiseKit
+  - Asynchronous/Promises (0.1.0):
+    - Promises
+  - Asynchronous/Then (0.1.0):
+    - thenPromise
   - BrightFutures (6.0.0):
     - Result (~> 3.2.4)
+  - HydraAsync (1.1.0)
+  - PromiseKit (4.4.3):
+    - PromiseKit/Foundation (= 4.4.3)
+    - PromiseKit/QuartzCore (= 4.4.3)
+    - PromiseKit/UIKit (= 4.4.3)
+  - PromiseKit/CorePromise (4.4.3)
+  - PromiseKit/Foundation (4.4.3):
+    - PromiseKit/CorePromise
+  - PromiseKit/QuartzCore (4.4.3):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (4.4.3):
+    - PromiseKit/CorePromise
+  - Promises (2.0)
   - Result (3.2.4)
+  - thenPromise (3.0.0)
 
 DEPENDENCIES:
   - Asynchronous (from `../`)
+  - Asynchronous/Alamofire (from `../`)
+  - Asynchronous/HydraAsync (from `../`)
+  - Asynchronous/PromiseKit (from `../`)
+  - Asynchronous/Promises (from `../`)
+  - Asynchronous/Then (from `../`)
 
 EXTERNAL SOURCES:
   Asynchronous:
     :path: ../
 
 SPEC CHECKSUMS:
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   Asynchronous: b3a8620348db8760892c327ef5ecb40689334d1f
   BrightFutures: 9e7604f511aed9f0d6a49b04ac9b3fca6b117758
+  HydraAsync: b3d6495b55f845e98ec5b07714da2a6750f6c363
+  PromiseKit: fbb52a0d154402c57eeb6eccd36dd7724fcf6117
+  Promises: fd16528f8332744de33db7e1067cd32b3d550466
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
+  thenPromise: 7aab1d73fd53dbe4c413602bd9f335208e89d60c
 
-PODFILE CHECKSUM: a45674941c38c3acb3fb2fde871be68b4642b03f
+PODFILE CHECKSUM: 66a009e99674ee07de69c757ee1e8af21a7c762e
 
 COCOAPODS: 1.3.1
