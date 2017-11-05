@@ -1,5 +1,5 @@
 #
-# Be sure to run `pod lib lint Async.podspec' to ensure this is a
+# Be sure to run `pod lib lint Asynchronous.podspec' to ensure this is a
 # valid spec before submitting.
 #
 # Any lines starting with a # are optional, but their use is encouraged
@@ -24,11 +24,11 @@ to automatically run the Async code using Promises, PromiseKit, Then, BrightFutu
 HydraAsync and much more!
                        DESC
 
-  s.homepage         = 'https://github.com/fpg1503/Async'
+  s.homepage         = 'https://github.com/fpg1503/Asynchronous'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'fpg1503' => 'fpg1503@gmail.com' }
-  s.source           = { :git => 'https://github.com/fpg1503/Async.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/fpg1503/Asynchronous.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/fpg1503'
 
   s.ios.deployment_target = '9.0'
@@ -36,31 +36,31 @@ HydraAsync and much more!
 
   s.subspec 'BrightFutures' do |brightFutures|
     brightFutures.dependency 'BrightFutures'
-    brightFutures.source_files = 'Async/Classes/Async.swift'
+    brightFutures.source_files = 'Asynchronous/Classes/Async.swift'
   end
 
   s.subspec 'PromiseKit' do |promiseKit|
     promiseKit.dependency 'PromiseKit'
-    promiseKit.source_files = 'Async/Classes/Async+PromiseKit.swift'
+    promiseKit.source_files = 'Asynchronous/Classes/Async+PromiseKit.swift'
   end
 
   s.subspec 'Promises' do |promises|
     promises.dependency 'Promises'
-    promises.source_files = 'Async/Classes/Async+Promises.swift'
+    promises.source_files = 'Asynchronous/Classes/Async+Promises.swift'
   end
 
   s.subspec 'HydraAsync' do |hydraAsync|
     hydraAsync.dependency 'HydraAsync'
-    hydraAsync.source_files = 'Async/Classes/Async+HydraAsync.swift'
+    hydraAsync.source_files = 'Asynchronous/Classes/Async+HydraAsync.swift'
   end
 
   s.subspec 'Then' do |thenPromise|
     thenPromise.dependency 'thenPromise'
-    thenPromise.source_files = 'Async/Classes/Async+Then.swift'
+    thenPromise.source_files = 'Asynchronous/Classes/Async+Then.swift'
   end
 
   s.subspec 'Alamofire' do |alamofire|
     alamofire.dependency 'Alamofire'
-    alamofire.source_files = 'Async/Classes/Alamofire+Async.swift'
+    alamofire.source_files = 'Asynchronous/Classes/Alamofire+Async.swift'
   end
 end

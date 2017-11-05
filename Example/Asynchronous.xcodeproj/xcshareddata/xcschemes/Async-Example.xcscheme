@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-               BuildableName = "Async_Example.app"
-               BlueprintName = "Async_Example"
-               ReferencedContainer = "container:Async.xcodeproj">
+               BuildableName = "Asynchronous_Example.app"
+               BlueprintName = "Asynchronous_Example"
+               ReferencedContainer = "container:Asynchronous.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "Async_Tests.xctest"
-               BlueprintName = "Async_Tests"
-               ReferencedContainer = "container:Async.xcodeproj">
+               BuildableName = "Asynchronous_Tests.xctest"
+               BlueprintName = "Asynchronous_Tests"
+               ReferencedContainer = "container:Asynchronous.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -48,9 +48,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "Async_Tests.xctest"
-               BlueprintName = "Async_Tests"
-               ReferencedContainer = "container:Async.xcodeproj">
+               BuildableName = "Asynchronous_Tests.xctest"
+               BlueprintName = "Asynchronous_Tests"
+               ReferencedContainer = "container:Asynchronous.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -58,9 +58,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "Async_Example.app"
-            BlueprintName = "Async_Example"
-            ReferencedContainer = "container:Async.xcodeproj">
+            BuildableName = "Asynchronous_Example.app"
+            BlueprintName = "Asynchronous_Example"
+            ReferencedContainer = "container:Asynchronous.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -82,9 +82,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "Async_Example.app"
-            BlueprintName = "Async_Example"
-            ReferencedContainer = "container:Async.xcodeproj">
+            BuildableName = "Asynchronous_Example.app"
+            BlueprintName = "Asynchronous_Example"
+            ReferencedContainer = "container:Asynchronous.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -101,9 +101,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "Async_Example.app"
-            BlueprintName = "Async_Example"
-            ReferencedContainer = "container:Async.xcodeproj">
+            BuildableName = "Asynchronous_Example.app"
+            BlueprintName = "Asynchronous_Example"
+            ReferencedContainer = "container:Asynchronous.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

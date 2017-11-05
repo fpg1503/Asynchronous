@@ -1,11 +1,11 @@
-# Async
+# Asynchronous
 
 [![CI Status](http://img.shields.io/travis/fpg1503/Async.svg?style=flat)](https://travis-ci.org/fpg1503/Asynchronous)
 [![Version](https://img.shields.io/cocoapods/v/Async.svg?style=flat)](http://cocoapods.org/pods/Asynchronous)
 [![License](https://img.shields.io/cocoapods/l/Async.svg?style=flat)](http://cocoapods.org/pods/Asynchronous)
 [![Platform](https://img.shields.io/cocoapods/p/Async.svg?style=flat)](http://cocoapods.org/pods/Asynchronous)
 
-Async is a one-stop shop for your async needs, the user can use the subspecs to automatically run the Async code using [Promises](https://github.com/khanlou/Promise), [PromiseKit](https://github.com/mxcl/PromiseKit), [then](https://github.com/freshOS/then), [BrightFutures](https://github.com/Thomvis/BrightFutures), [HydraAsync](https://github.com/malcommac/Hydra) and much more!
+Asynchronous is a one-stop shop for your async needs, the user can use the subspecs to automatically run the Async code using [Promises](https://github.com/khanlou/Promise), [PromiseKit](https://github.com/mxcl/PromiseKit), [then](https://github.com/freshOS/then), [BrightFutures](https://github.com/Thomvis/BrightFutures), [HydraAsync](https://github.com/malcommac/Hydra) and much more!
 
 ## Example
 

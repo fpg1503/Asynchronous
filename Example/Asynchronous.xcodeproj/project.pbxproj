@@ -29,19 +29,19 @@
 
 /* Begin PBXFileReference section */
 		02118B45540B3DFAB68FC576 /* Pods-Async_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Async_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Async_Example/Pods-Async_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		43BD5142D878E60E2E62C277 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		607FACD01AFB9204008FA782 /* Async_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Async_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		43BD5142D878E60E2E62C277 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		607FACD01AFB9204008FA782 /* Asynchronous_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Asynchronous_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		607FACE51AFB9204008FA782 /* Async_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Async_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		607FACE51AFB9204008FA782 /* Asynchronous_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Asynchronous_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		65F50C4985BD6D5FEE73526D /* Async.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = Async.podspec; path = ../Async.podspec; sourceTree = "<group>"; };
-		AD17E9492F50CB7238256308 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		65F50C4985BD6D5FEE73526D /* Asynchronous.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Asynchronous.podspec; path = ../Asynchronous.podspec; sourceTree = "<group>"; };
+		AD17E9492F50CB7238256308 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		B95E500BD6A03657BB79FB17 /* Pods-Async_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Async_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Async_Example/Pods-Async_Example.release.xcconfig"; sourceTree = "<group>"; };
 		BB2693E2074861F461BC611D /* Pods-Async_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Async_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Async_Tests/Pods-Async_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		D801C37F682721D83AC56AA1 /* Pods_Async_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Async_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,7 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
-				607FACD21AFB9204008FA782 /* Example for Async */,
+				607FACD21AFB9204008FA782 /* Example for Asynchronous */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
 				67FAFE8A622570634881859F /* Pods */,
@@ -84,13 +84,13 @@
 		607FACD11AFB9204008FA782 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				607FACD01AFB9204008FA782 /* Async_Example.app */,
-				607FACE51AFB9204008FA782 /* Async_Tests.xctest */,
+				607FACD01AFB9204008FA782 /* Asynchronous_Example.app */,
+				607FACE51AFB9204008FA782 /* Asynchronous_Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		607FACD21AFB9204008FA782 /* Example for Async */ = {
+		607FACD21AFB9204008FA782 /* Example for Asynchronous */ = {
 			isa = PBXGroup;
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
@@ -100,7 +100,7 @@
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
-			name = "Example for Async";
+			name = "Example for Asynchronous";
 			path = Async;
 			sourceTree = "<group>";
 		};
@@ -132,7 +132,7 @@
 		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
-				65F50C4985BD6D5FEE73526D /* Async.podspec */,
+				65F50C4985BD6D5FEE73526D /* Asynchronous.podspec */,
 				AD17E9492F50CB7238256308 /* README.md */,
 				43BD5142D878E60E2E62C277 /* LICENSE */,
 			);
@@ -162,9 +162,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		607FACCF1AFB9204008FA782 /* Async_Example */ = {
+		607FACCF1AFB9204008FA782 /* Asynchronous_Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "Async_Example" */;
+			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "Asynchronous_Example" */;
 			buildPhases = (
 				3F2DB641B5D616A9264E438E /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
@@ -177,14 +177,14 @@
 			);
 			dependencies = (
 			);
-			name = Async_Example;
+			name = Asynchronous_Example;
 			productName = Async;
-			productReference = 607FACD01AFB9204008FA782 /* Async_Example.app */;
+			productReference = 607FACD01AFB9204008FA782 /* Asynchronous_Example.app */;
 			productType = "com.apple.product-type.application";
 		};
-		607FACE41AFB9204008FA782 /* Async_Tests */ = {
+		607FACE41AFB9204008FA782 /* Asynchronous_Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "Async_Tests" */;
+			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "Asynchronous_Tests" */;
 			buildPhases = (
 				6A3FED94CDF855ACF7F15EAE /* [CP] Check Pods Manifest.lock */,
 				607FACE11AFB9204008FA782 /* Sources */,
@@ -198,9 +198,9 @@
 			dependencies = (
 				607FACE71AFB9204008FA782 /* PBXTargetDependency */,
 			);
-			name = Async_Tests;
+			name = Asynchronous_Tests;
 			productName = Tests;
-			productReference = 607FACE51AFB9204008FA782 /* Async_Tests.xctest */;
+			productReference = 607FACE51AFB9204008FA782 /* Asynchronous_Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -224,7 +224,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "Async" */;
+			buildConfigurationList = 607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "Asynchronous" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -237,8 +237,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				607FACCF1AFB9204008FA782 /* Async_Example */,
-				607FACE41AFB9204008FA782 /* Async_Tests */,
+				607FACCF1AFB9204008FA782 /* Asynchronous_Example */,
+				607FACE41AFB9204008FA782 /* Asynchronous_Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -392,7 +392,7 @@
 /* Begin PBXTargetDependency section */
 		607FACE71AFB9204008FA782 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 607FACCF1AFB9204008FA782 /* Async_Example */;
+			target = 607FACCF1AFB9204008FA782 /* Asynchronous_Example */;
 			targetProxy = 607FACE61AFB9204008FA782 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -587,7 +587,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "Async" */ = {
+		607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "Asynchronous" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				607FACED1AFB9204008FA782 /* Debug */,
@@ -596,7 +596,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "Async_Example" */ = {
+		607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "Asynchronous_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				607FACF01AFB9204008FA782 /* Debug */,
@@ -605,7 +605,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "Async_Tests" */ = {
+		607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "Asynchronous_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				607FACF31AFB9204008FA782 /* Debug */,
