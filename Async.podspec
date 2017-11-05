@@ -7,10 +7,10 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'Async'
+  s.name             = 'Asynchronous'
   s.version          = '0.1.0'
   s.summary          = 'Implementation agnostic asynchronous code'
-  s.default_subspecs = []
+  s.default_subspecs = 'BrightFutures'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -29,20 +29,15 @@ HydraAsync and much more!
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'fpg1503' => 'fpg1503@gmail.com' }
   s.source           = { :git => 'https://github.com/fpg1503/Async.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/fpg1503'
+  s.social_media_url = 'https://twitter.com/fpg1503'
 
   s.ios.deployment_target = '9.0'
 
-  s.source_files = 'Async/Classes/*'
-  
-  # s.resource_bundles = {
-  #   'Async' => ['Async/Assets/*.png']
-  # }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
-  s.dependency 'BrightFutures'
+  s.subspec 'BrightFutures' do |brightFutures|
+    brightFutures.dependency 'BrightFutures'
+    brightFutures.source_files = 'Async/Classes/Async.swift'
+  end
 
   s.subspec 'PromiseKit' do |promiseKit|
     promiseKit.dependency 'PromiseKit'

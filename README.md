@@ -26,6 +26,7 @@ pod 'Async'
 | Name | Description |
 ------------------------
 | `Async/Alamofire` | [Alamofire](https://github.com/Alamofire/Alamofire) support |
+| `Async/BrightFutures` |  [BrightFutures](https://github.com/Thomvis/BrightFutures) support (**included by default**) |
 | `Async/HydraAsync` |  [HydraAsync](https://github.com/malcommac/Hydra) support |
 | `Async/PromiseKit` | [PromiseKit](https://github.com/mxcl/PromiseKit) support |
 | `Async/Promises` |  [Promises](https://github.com/khanlou/Promise) support |
