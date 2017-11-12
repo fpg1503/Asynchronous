@@ -15,6 +15,7 @@ target 'Asynchronous_Example' do
     pod 'Asynchronous/BrightFutures', :path => '../'
     pod 'Asynchronous/HydraAsync', :path => '../'
     pod 'Asynchronous/PromiseKit', :path => '../'
-    pod 'Asynchronous/Promises', :path => '../'    
+    pod 'Asynchronous/Promises', :path => '../'
+    pod 'Asynchronous/Then', :path => '../'
   end
 end
