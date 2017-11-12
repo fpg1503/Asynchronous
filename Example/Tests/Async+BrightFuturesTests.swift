@@ -83,7 +83,7 @@ class AsyncBrightFuturesTests: XCTestCase {
     }
     //MARK: - BrightFutures -> Async
 
-    func testBrightFutureConversion_AsyncSucceeds() {
+    func testBrightFuturesConversion_AsyncSucceeds() {
         let expected = 3
         let result = Result<Int, TestError>(value: expected)
         let future = Future(result: result, delay: .seconds(Int(TestHelper.delayTime)))
@@ -103,7 +103,7 @@ class AsyncBrightFuturesTests: XCTestCase {
         }
     }
 
-    func testBrightFutureConversion_AsyncFails() {
+    func testBrightFuturesConversion_AsyncFails() {
         let expected = TestError.somethingReallyHorribleHappened
         let result = Result<Int, TestError>(error: expected)
         let future = Future(result: result, delay: .seconds(Int(TestHelper.delayTime)))
