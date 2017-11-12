@@ -9,7 +9,7 @@ env:
 # - gem install cocoapods # Since Travis is not always on latest version
 # - pod install --project-directory=Example
 script:
-- set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/Asynchronous.xcworkspace -scheme Async-Example -sdk iphonesimulator11.0 -destination 'OS=11.0,name=iPhone 8 Plus' ONLY_ACTIVE_ARCH=NO
+- xcodebuild test -enableCodeCoverage YES -workspace Example/Asynchronous.xcworkspace -scheme Async-Example -sdk iphonesimulator11.0 -destination 'OS=11.0,name=iPhone 8 Plus' ONLY_ACTIVE_ARCH=YES
 # - pod lib lint
 after_success:
-  - bash <(curl -s https://codecov.io/bash) -J 'Asynchronous'
+  - bash <(curl -s https://codecov.io/bash) -J 'Asynchronous' -cF ios
