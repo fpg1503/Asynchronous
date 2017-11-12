@@ -35,36 +35,36 @@ HydraAsync and much more!
 
   s.subspec 'Core' do |core|
     core.dependency 'Result'
-    core.source_files = 'Asynchronous/Classes/Async.swift'
+    core.source_files = 'Asynchronous/Core/*.swift'
   end
 
   s.subspec 'BrightFutures' do |brightFutures|
     brightFutures.dependency 'BrightFutures'
-    brightFutures.source_files = 'Asynchronous/Classes/Async+BrightFutures.swift'
+    brightFutures.source_files = 'Asynchronous/Extensions/Async+BrightFutures.swift'
   end
 
   s.subspec 'PromiseKit' do |promiseKit|
     promiseKit.dependency 'PromiseKit'
-    promiseKit.source_files = 'Asynchronous/Classes/Async+PromiseKit.swift'
+    promiseKit.source_files = 'Asynchronous/Extensions/Async+PromiseKit.swift'
   end
 
   s.subspec 'Promises' do |promises|
     promises.dependency 'Promises'
-    promises.source_files = 'Asynchronous/Classes/Async+Promises.swift'
+    promises.source_files = 'Asynchronous/Extensions/Async+Promises.swift'
   end
 
   s.subspec 'HydraAsync' do |hydraAsync|
     hydraAsync.dependency 'HydraAsync'
-    hydraAsync.source_files = 'Asynchronous/Classes/Async+HydraAsync.swift'
+    hydraAsync.source_files = 'Asynchronous/Extensions/Async+HydraAsync.swift'
   end
 
   s.subspec 'Then' do |thenPromise|
     thenPromise.dependency 'thenPromise'
-    thenPromise.source_files = 'Asynchronous/Classes/Async+Then.swift'
+    thenPromise.source_files = 'Asynchronous/Extensions/Async+Then.swift'
   end
 
   s.subspec 'Alamofire' do |alamofire|
     alamofire.dependency 'Alamofire'
-    alamofire.source_files = 'Asynchronous/Classes/Alamofire+Async.swift'
+    alamofire.source_files = 'Asynchronous/Extensions/Alamofire+Async.swift'
   end
 end

@@ -28,7 +28,7 @@
 
         ]
       },
-      "source_files": "Asynchronous/Classes/Async.swift"
+      "source_files": "Asynchronous/Core/*.swift"
     },
     {
       "name": "BrightFutures",
@@ -37,7 +37,7 @@
 
         ]
       },
-      "source_files": "Asynchronous/Classes/Async+BrightFutures.swift"
+      "source_files": "Asynchronous/Extensions/Async+BrightFutures.swift"
     },
     {
       "name": "PromiseKit",
@@ -46,7 +46,7 @@
 
         ]
       },
-      "source_files": "Asynchronous/Classes/Async+PromiseKit.swift"
+      "source_files": "Asynchronous/Extensions/Async+PromiseKit.swift"
     },
     {
       "name": "Promises",
@@ -55,7 +55,7 @@
 
         ]
       },
-      "source_files": "Asynchronous/Classes/Async+Promises.swift"
+      "source_files": "Asynchronous/Extensions/Async+Promises.swift"
     },
     {
       "name": "HydraAsync",
@@ -64,7 +64,7 @@
 
         ]
       },
-      "source_files": "Asynchronous/Classes/Async+HydraAsync.swift"
+      "source_files": "Asynchronous/Extensions/Async+HydraAsync.swift"
     },
     {
       "name": "Then",
@@ -73,7 +73,7 @@
 
         ]
       },
-      "source_files": "Asynchronous/Classes/Async+Then.swift"
+      "source_files": "Asynchronous/Extensions/Async+Then.swift"
     },
     {
       "name": "Alamofire",
@@ -82,7 +82,7 @@
 
         ]
       },
-      "source_files": "Asynchronous/Classes/Alamofire+Async.swift"
+      "source_files": "Asynchronous/Extensions/Alamofire+Async.swift"
     }
   ]
 }

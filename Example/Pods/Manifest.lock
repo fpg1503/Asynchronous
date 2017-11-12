@@ -49,7 +49,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
-  Asynchronous: a7979673520e386bef3f6e8c13699ddc3fdd5cfa
+  Asynchronous: 932acd1d697cebdc18682b981f633599732bc9cb
   BrightFutures: 9e7604f511aed9f0d6a49b04ac9b3fca6b117758
   HydraAsync: b3d6495b55f845e98ec5b07714da2a6750f6c363
   PromiseKit: fbb52a0d154402c57eeb6eccd36dd7724fcf6117
