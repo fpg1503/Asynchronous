@@ -20,6 +20,7 @@
 		A3E2EE631FB8191E00ECC2B5 /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E2EE611FB818FF00ECC2B5 /* TestHelper.swift */; };
 		A3E2EE661FB82F2700ECC2B5 /* Async+BrightFuturesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E2EE641FB82EFC00ECC2B5 /* Async+BrightFuturesTests.swift */; };
 		A3EB36A01FB8351F003791CF /* Async+HydraAsyncTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EB369E1FB83516003791CF /* Async+HydraAsyncTests.swift */; };
+		A3EB36A31FB838FB003791CF /* Async+PromiseKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EB36A11FB838A1003791CF /* Async+PromiseKitTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		A3E2EE611FB818FF00ECC2B5 /* TestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelper.swift; sourceTree = "<group>"; };
 		A3E2EE641FB82EFC00ECC2B5 /* Async+BrightFuturesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Async+BrightFuturesTests.swift"; sourceTree = "<group>"; };
 		A3EB369E1FB83516003791CF /* Async+HydraAsyncTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Async+HydraAsyncTests.swift"; sourceTree = "<group>"; };
+		A3EB36A11FB838A1003791CF /* Async+PromiseKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Async+PromiseKitTests.swift"; sourceTree = "<group>"; };
 		AD17E9492F50CB7238256308 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		BDEDC91A595BA73727F790E8 /* Pods_Asynchronous_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Asynchronous_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF5B49D4BECB73AB99DFD170 /* Pods_Asynchronous_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Asynchronous_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,6 +139,7 @@
 				607FACEB1AFB9204008FA782 /* AsyncTests.swift */,
 				A3E2EE641FB82EFC00ECC2B5 /* Async+BrightFuturesTests.swift */,
 				A3EB369E1FB83516003791CF /* Async+HydraAsyncTests.swift */,
+				A3EB36A11FB838A1003791CF /* Async+PromiseKitTests.swift */,
 				A316DFFB1FB7D7E40047298D /* LightweightFutureTests.swift */,
 				A3E2EE5E1FB8175F00ECC2B5 /* TestError.swift */,
 				A3E2EE611FB818FF00ECC2B5 /* TestHelper.swift */,
@@ -287,7 +290,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Asynchronous_Example/Pods-Asynchronous_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Asynchronous.common-Alamofire-PromiseKit-Promises-Then/Asynchronous.framework",
+				"${BUILT_PRODUCTS_DIR}/Asynchronous.common-Alamofire-Promises-Then/Asynchronous.framework",
 				"${BUILT_PRODUCTS_DIR}/BrightFutures/BrightFutures.framework",
 				"${BUILT_PRODUCTS_DIR}/HydraAsync/Hydra.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
@@ -357,6 +360,7 @@
 				"${BUILT_PRODUCTS_DIR}/Asynchronous.common/Asynchronous.framework",
 				"${BUILT_PRODUCTS_DIR}/BrightFutures/BrightFutures.framework",
 				"${BUILT_PRODUCTS_DIR}/HydraAsync/Hydra.framework",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -364,6 +368,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Asynchronous.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BrightFutures.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hydra.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -421,6 +426,7 @@
 				A3E2EE661FB82F2700ECC2B5 /* Async+BrightFuturesTests.swift in Sources */,
 				A3EB36A01FB8351F003791CF /* Async+HydraAsyncTests.swift in Sources */,
 				607FACEC1AFB9204008FA782 /* AsyncTests.swift in Sources */,
+				A3EB36A31FB838FB003791CF /* Async+PromiseKitTests.swift in Sources */,
 				A316DFFD1FB7D80E0047298D /* LightweightFutureTests.swift in Sources */,
 				A3E2EE631FB8191E00ECC2B5 /* TestHelper.swift in Sources */,
 			);
