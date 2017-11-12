@@ -12,6 +12,7 @@ target 'Asynchronous_Example' do
   target 'Asynchronous_Tests' do
     inherit! :search_paths
     pod 'Asynchronous', :path => '../'
-    pod 'Asynchronous/BrightFutures', :path => '../'    
+    pod 'Asynchronous/BrightFutures', :path => '../'
+    pod 'Asynchronous/HydraAsync', :path => '../'
   end
 end
