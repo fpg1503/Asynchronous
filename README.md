@@ -38,7 +38,7 @@ Feel free to create a PR/Issue.
 ### Roadmap
 - [ ] ReactiveSwift support
 - [ ] RxSwift support
-- [ ] Tests
+- [x] Tests
 - [ ] Better documentation
 - [ ] Improved README
 - [x] Remove BrightFutures dependency
