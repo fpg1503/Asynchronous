@@ -8,6 +8,7 @@
 
 import UIKit
 import Asynchronous
+import Result
 
 class ViewController: UIViewController {
 
@@ -15,7 +16,17 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        testAfterDelay().async { (value, error) in
+            print(value as Any)
+            print(error as Any)
+        }
+        
         test().async { (value, error) in
+            print(value as Any)
+            print(error as Any)
+        }
+        
+        testResolveThenReject().async { (value, error) in
             print(value as Any)
             print(error as Any)
         }
@@ -24,6 +35,22 @@ class ViewController: UIViewController {
     func test() -> Async<Int> {
         return Async { resolve, reject in
             resolve(3)
+        }
+    }
+    
+    func testAfterDelay(delay: TimeInterval = 5) -> Async<Int> {
+        return Async { resolve, reject in
+            DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+                resolve(42)
+            }
+        }
+    }
+    
+    func testResolveThenReject() -> Async<Int> {
+        return Async { resolve, reject in
+            resolve(1234)
+            //TODO: Find out a way to avoid type errasing errors (and importing result)
+            reject(AnyError(NSError(domain: "com.fpg1503.Asynchronous", code: 1234, userInfo: nil)))
         }
     }
 

@@ -41,7 +41,8 @@ public final class LightweightFuture<T, Error: Swift.Error> {
         didSet {
             guard oldValue.isPending,
                 !state.isPending else {
-                    print("Invalid transition from \(oldValue) to \(state)")
+                    print("Invalid transition from \(oldValue) to \(state), reverting")
+                    state = oldValue
                     return
             }
             
@@ -123,4 +124,3 @@ public struct FailableAsync<T, Error: Swift.Error> {
         }
     }
 }
-
