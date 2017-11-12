@@ -26,7 +26,7 @@ pod 'Asynchronous'
 | Name | Description |
 |-------|------------|
 | `Asynchronous/Alamofire` | [Alamofire](https://github.com/Alamofire/Alamofire) support |
-| `Asynchronous/BrightFutures` |  [BrightFutures](https://github.com/Thomvis/BrightFutures) support (**included by default**) |
+| `Asynchronous/BrightFutures` |  [BrightFutures](https://github.com/Thomvis/BrightFutures) support |
 | `Asynchronous/HydraAsync` |  [HydraAsync](https://github.com/malcommac/Hydra) support |
 | `Asynchronous/PromiseKit` | [PromiseKit](https://github.com/mxcl/PromiseKit) support |
 | `Asynchronous/Promises` |  [Promises](https://github.com/khanlou/Promise) support |
@@ -41,7 +41,7 @@ Feel free to create a PR/Issue.
 - [ ] Tests
 - [ ] Better documentation
 - [ ] Improved README
-- [ ] Remove BrightFutures dependency
+- [x] Remove BrightFutures dependency
 - [ ] Carthage support
 - [ ] SwiftPM support
 
