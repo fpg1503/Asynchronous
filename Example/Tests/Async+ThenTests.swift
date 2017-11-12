@@ -14,7 +14,7 @@ class AsyncthenTests: XCTestCase {
         }
 
         wait { expectation in
-            async.then().then { actual in
+            async.promise().then { actual in
                 XCTAssertEqual(expected, actual)
             }.onError { error in
                 XCTFail("Unexpected error \(error)")
@@ -31,7 +31,7 @@ class AsyncthenTests: XCTestCase {
         }
 
         wait { expectation in
-            async.then().then { value in
+            async.promise().then { value in
                 XCTFail("Unexpected value \(value)")
             }.onError { actual in
                 XCTAssertEqual(expected, actual as? TestError)
@@ -50,7 +50,7 @@ class AsyncthenTests: XCTestCase {
         }
 
         wait { expectation in
-            async.then().then { actual in
+            async.promise().then { actual in
                 XCTAssertEqual(expected, actual)
             }.onError { error in
                 XCTFail("Unexpected error \(error)")
@@ -69,7 +69,7 @@ class AsyncthenTests: XCTestCase {
         }
 
         wait { expectation in
-            async.then().then { value in
+            async.promise().then { value in
                 XCTFail("Unexpected value \(value)")
             }.onError { actual in
                 XCTAssertEqual(expected, actual as? TestError)

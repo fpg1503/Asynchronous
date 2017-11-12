@@ -3,7 +3,8 @@ import Promise
 import Result
 import XCTest
 
-//Otherwise Swift compiler gets confused and uses PromiseKit even though we didn't import it
+//Otherwise Swift compiler gets confused, won't happen if the
+//the user doesn't have several promises with the same interface
 typealias PromisesPromise = Promise
 
 class AsyncPromisesTests: XCTestCase {

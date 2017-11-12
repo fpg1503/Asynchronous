@@ -3,6 +3,10 @@ import PromiseKit
 import Result
 import XCTest
 
+//Otherwise Swift compiler gets confused, won't happen if the
+//the user doesn't have several promises with the same interface
+typealias PromiseKitPromise = Promise
+
 class AsyncPromiseKitTests: XCTestCase {
     //MARK: - Async -> PromiseKit
     func testSynchronousResolve() {
@@ -12,7 +16,7 @@ class AsyncPromiseKitTests: XCTestCase {
         }
 
         wait { expectation in
-            async.promise().then { actual in
+            (async.promise() as PromiseKitPromise).then { actual in
                 XCTAssertEqual(expected, actual)
             }.catch { error in
                 XCTFail("Unexpected error \(error)")
@@ -29,7 +33,7 @@ class AsyncPromiseKitTests: XCTestCase {
         }
 
         wait { expectation in
-            async.promise().then { value in
+            (async.promise() as PromiseKitPromise).then { value in
                 XCTFail("Unexpected value \(value)")
             }.catch { actual in
                 XCTAssertEqual(expected, actual as? TestError)
@@ -48,7 +52,7 @@ class AsyncPromiseKitTests: XCTestCase {
         }
 
         wait { expectation in
-            async.promise().then { actual in
+            (async.promise() as PromiseKitPromise).then { actual in
                 XCTAssertEqual(expected, actual)
             }.catch { error in
                 XCTFail("Unexpected error \(error)")
@@ -67,7 +71,7 @@ class AsyncPromiseKitTests: XCTestCase {
         }
 
         wait { expectation in
-            async.promise().then { value in
+            (async.promise() as PromiseKitPromise).then { value in
                 XCTFail("Unexpected value \(value)")
             }.catch { actual in
                 XCTAssertEqual(expected, actual as? TestError)

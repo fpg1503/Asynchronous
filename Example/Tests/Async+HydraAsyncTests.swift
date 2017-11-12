@@ -12,7 +12,7 @@ class AsyncHydraAsyncTests: XCTestCase {
         }
 
         wait { expectation in
-            async.hydra().then { actual in
+            async.promise().then { actual in
                 XCTAssertEqual(expected, actual)
             }.catch { error in
                 XCTFail("Unexpected error \(error)")
@@ -29,7 +29,7 @@ class AsyncHydraAsyncTests: XCTestCase {
         }
 
         wait { expectation in
-            async.hydra().then { value in
+            async.promise().then { value in
                 XCTFail("Unexpected value \(value)")
             }.catch { actual in
                 XCTAssertEqual(expected, actual as? TestError)
@@ -48,7 +48,7 @@ class AsyncHydraAsyncTests: XCTestCase {
         }
 
         wait { expectation in
-            async.hydra().then { actual in
+            async.promise().then { actual in
                 XCTAssertEqual(expected, actual)
             }.catch { error in
                 XCTFail("Unexpected error \(error)")
@@ -67,7 +67,7 @@ class AsyncHydraAsyncTests: XCTestCase {
         }
 
         wait { expectation in
-            async.hydra().then { value in
+            async.promise().then { value in
                 XCTFail("Unexpected value \(value)")
             }.catch { actual in
                 XCTAssertEqual(expected, actual as? TestError)

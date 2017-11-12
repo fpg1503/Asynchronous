@@ -3,6 +3,10 @@ import Result
 
 extension FailableAsync {
     public func future() -> Future<T, Error> {
+        return brightFutures()
+    }
+
+    public func brightFutures() -> Future<T, Error> {
         return Future { resolver in
             self.backingFuture.onComplete(resolver: resolver)
         }

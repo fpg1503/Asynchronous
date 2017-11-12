@@ -3,6 +3,10 @@ import Result
 
 extension Async {
     public func promise() -> Promise<T> {
+        return promiseKit()
+    }
+
+    public func promiseKit() -> Promise<T> {
         return Promise { (resolve, reject) in
             backingFuture.onComplete { result in
                 switch result {

@@ -2,6 +2,10 @@ import then
 import Result
 
 extension Async {
+    public func promise() -> Promise<T> {
+        return then()
+    }
+
     public func then() -> Promise<T> {
         return Promise { resolve, reject in
             self.backingFuture.onComplete { result in
