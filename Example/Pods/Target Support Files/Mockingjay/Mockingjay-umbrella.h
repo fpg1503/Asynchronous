@@ -10,7 +10,8 @@
 #endif
 #endif
 
+#import "Mockingjay.h"
 
-FOUNDATION_EXPORT double AsynchronousVersionNumber;
-FOUNDATION_EXPORT const unsigned char AsynchronousVersionString[];
+FOUNDATION_EXPORT double MockingjayVersionNumber;
+FOUNDATION_EXPORT const unsigned char MockingjayVersionString[];
 
