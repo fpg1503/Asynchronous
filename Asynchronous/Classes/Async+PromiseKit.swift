@@ -4,10 +4,13 @@ import Result
 extension Async {
     public func promise() -> Promise<T> {
         return Promise { (resolve, reject) in
-            future.onSuccess { value in
-                resolve(value)
-            }.onFailure { error in
-                reject(error)
+            future.onComplete { result in
+                switch result {
+                case .success(let value):
+                    resolve(value)
+                case .failure(let error):
+                    reject(error)
+                }
             }
         }
     }
