@@ -4,6 +4,7 @@
 [![Version](https://img.shields.io/cocoapods/v/Asynchronous.svg?style=flat)](http://cocoapods.org/pods/Asynchronous)
 [![License](https://img.shields.io/cocoapods/l/Asynchronous.svg?style=flat)](http://cocoapods.org/pods/Asynchronous)
 [![Platform](https://img.shields.io/cocoapods/p/Asynchronous.svg?style=flat)](http://cocoapods.org/pods/Asynchronous)
+[![Documentation](https://img.shields.io/cocoapods/metrics/doc-percent/Asynchronous.svg)](http://cocoadocs.org/docsets/Asynchronous/)
 [![codecov](https://codecov.io/gh/fpg1503/Asynchronous/branch/master/graph/badge.svg?token=tYItlSv7iF)](https://codecov.io/gh/fpg1503/Asynchronous)
 
 
