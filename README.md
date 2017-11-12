@@ -4,6 +4,8 @@
 [![Version](https://img.shields.io/cocoapods/v/Asynchronous.svg?style=flat)](http://cocoapods.org/pods/Asynchronous)
 [![License](https://img.shields.io/cocoapods/l/Asynchronous.svg?style=flat)](http://cocoapods.org/pods/Asynchronous)
 [![Platform](https://img.shields.io/cocoapods/p/Asynchronous.svg?style=flat)](http://cocoapods.org/pods/Asynchronous)
+[![codecov](https://codecov.io/gh/fpg1503/Asynchronous/branch/master/graph/badge.svg?token=tYItlSv7iF)](https://codecov.io/gh/fpg1503/Asynchronous)
+
 
 Asynchronous is a one-stop shop for your async needs, the user can use the subspecs to automatically run the Async code using completion handlers, [BrightFutures](https://github.com/Thomvis/BrightFutures), [HydraAsync](https://github.com/malcommac/Hydra), [PromiseKit](https://github.com/mxcl/PromiseKit), [Promises](https://github.com/khanlou/Promise), [then](https://github.com/freshOS/then) and much more!
 
