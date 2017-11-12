@@ -1,0 +1,6 @@
+framework module Asynchronous {
+  umbrella header "Asynchronous-e2168d40-umbrella.h"
+
+  export *
+  module * { export * }
+}

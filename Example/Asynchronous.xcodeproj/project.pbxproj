@@ -15,6 +15,7 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		98A90D7BC892A49E34505CA8 /* Pods_Asynchronous_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF5B49D4BECB73AB99DFD170 /* Pods_Asynchronous_Example.framework */; };
+		A316DFFD1FB7D80E0047298D /* LightweightFutureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A316DFFB1FB7D7E40047298D /* LightweightFutureTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		65F50C4985BD6D5FEE73526D /* Asynchronous.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Asynchronous.podspec; path = ../Asynchronous.podspec; sourceTree = "<group>"; };
 		6904D1B61C7C962DC742FB48 /* Pods-Asynchronous_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Asynchronous_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Asynchronous_Example/Pods-Asynchronous_Example.release.xcconfig"; sourceTree = "<group>"; };
 		902ADFC487A59C6E2104212A /* Pods-Asynchronous_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Asynchronous_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Asynchronous_Tests/Pods-Asynchronous_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		A316DFFB1FB7D7E40047298D /* LightweightFutureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightweightFutureTests.swift; sourceTree = "<group>"; };
 		AD17E9492F50CB7238256308 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		BDEDC91A595BA73727F790E8 /* Pods_Asynchronous_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Asynchronous_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF5B49D4BECB73AB99DFD170 /* Pods_Asynchronous_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Asynchronous_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				607FACEB1AFB9204008FA782 /* Tests.swift */,
+				A316DFFB1FB7D7E40047298D /* LightweightFutureTests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -272,7 +275,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Asynchronous_Example/Pods-Asynchronous_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Asynchronous/Asynchronous.framework",
+				"${BUILT_PRODUCTS_DIR}/Asynchronous-e2168d40/Asynchronous.framework",
 				"${BUILT_PRODUCTS_DIR}/BrightFutures/BrightFutures.framework",
 				"${BUILT_PRODUCTS_DIR}/HydraAsync/Hydra.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
@@ -338,9 +341,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Asynchronous_Tests/Pods-Asynchronous_Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Asynchronous/Asynchronous.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Asynchronous.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -394,6 +402,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+				A316DFFD1FB7D80E0047298D /* LightweightFutureTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
