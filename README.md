@@ -1,11 +1,11 @@
 # Asynchronous
 
-[![CI Status](http://img.shields.io/travis/fpg1503/Async.svg?style=flat)](https://travis-ci.org/fpg1503/Asynchronous)
-[![Version](https://img.shields.io/cocoapods/v/Async.svg?style=flat)](http://cocoapods.org/pods/Asynchronous)
-[![License](https://img.shields.io/cocoapods/l/Async.svg?style=flat)](http://cocoapods.org/pods/Asynchronous)
-[![Platform](https://img.shields.io/cocoapods/p/Async.svg?style=flat)](http://cocoapods.org/pods/Asynchronous)
+[![CI Status](http://img.shields.io/travis/fpg1503/Asynchronous.svg?style=flat)](https://travis-ci.org/fpg1503/Asynchronous)
+[![Version](https://img.shields.io/cocoapods/v/Asynchronous.svg?style=flat)](http://cocoapods.org/pods/Asynchronous)
+[![License](https://img.shields.io/cocoapods/l/Asynchronous.svg?style=flat)](http://cocoapods.org/pods/Asynchronous)
+[![Platform](https://img.shields.io/cocoapods/p/Asynchronous.svg?style=flat)](http://cocoapods.org/pods/Asynchronous)
 
-Asynchronous is a one-stop shop for your async needs, the user can use the subspecs to automatically run the Async code using [Promises](https://github.com/khanlou/Promise), [PromiseKit](https://github.com/mxcl/PromiseKit), [then](https://github.com/freshOS/then), [BrightFutures](https://github.com/Thomvis/BrightFutures), [HydraAsync](https://github.com/malcommac/Hydra) and much more!
+Asynchronous is a one-stop shop for your async needs, the user can use the subspecs to automatically run the Async code using completion handlers, [BrightFutures](https://github.com/Thomvis/BrightFutures), [HydraAsync](https://github.com/malcommac/Hydra), [PromiseKit](https://github.com/mxcl/PromiseKit), [Promises](https://github.com/khanlou/Promise), [then](https://github.com/freshOS/then) and much more!
 
 ## Example
 
