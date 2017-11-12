@@ -103,7 +103,7 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Asynchronous.common-Alamofire-Promises-Then/Asynchronous.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Asynchronous.common-Alamofire-Then/Asynchronous.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/BrightFutures/BrightFutures.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/HydraAsync/Hydra.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework"
@@ -113,7 +113,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Asynchronous.common-Alamofire-Promises-Then/Asynchronous.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Asynchronous.common-Alamofire-Then/Asynchronous.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/BrightFutures/BrightFutures.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/HydraAsync/Hydra.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework"

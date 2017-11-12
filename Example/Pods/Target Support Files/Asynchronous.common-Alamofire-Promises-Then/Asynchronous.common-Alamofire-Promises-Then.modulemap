@@ -1,6 +1,0 @@
-framework module Asynchronous {
-  umbrella header "Asynchronous.common-Alamofire-Promises-Then-umbrella.h"
-
-  export *
-  module * { export * }
-}
