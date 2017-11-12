@@ -20,8 +20,8 @@ Pod::Spec.new do |s|
 
   s.description      = <<-DESC
 Async is a one-stop shop for your async needs, the user can use the subspecs
-to automatically run the Async code using Promises, PromiseKit, Then, BrightFutures,
-HydraAsync and much more!
+to automatically run the Async code using completion handlers, BrightFutures, 
+HydraAsync, PromiseKit, Promises, then and much more!
                        DESC
 
   s.homepage         = 'https://github.com/fpg1503/Asynchronous'
