@@ -7,7 +7,7 @@ public enum AsyncError<T: Error>: Error {
 }
 
 public final class LightweightFuture<T, Error: Swift.Error> {
-    enum State<T, Error: Swift.Error> {
+    indirect enum State<T, Error: Swift.Error> {
         case pending
         case fulfilled(T)
         case rejected(Error)
