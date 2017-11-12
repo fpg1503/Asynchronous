@@ -2,7 +2,7 @@
   "name": "Asynchronous",
   "version": "0.1.0",
   "summary": "Implementation agnostic asynchronous code",
-  "default_subspecs": "BrightFutures",
+  "default_subspecs": "Core",
   "description": "Async is a one-stop shop for your async needs, the user can use the subspecs\nto automatically run the Async code using Promises, PromiseKit, Then, BrightFutures,\nHydraAsync and much more!",
   "homepage": "https://github.com/fpg1503/Asynchronous",
   "license": {
@@ -22,13 +22,22 @@
   },
   "subspecs": [
     {
+      "name": "Core",
+      "dependencies": {
+        "Result": [
+
+        ]
+      },
+      "source_files": "Asynchronous/Classes/Async.swift"
+    },
+    {
       "name": "BrightFutures",
       "dependencies": {
         "BrightFutures": [
 
         ]
       },
-      "source_files": "Asynchronous/Classes/Async.swift"
+      "source_files": "Asynchronous/Classes/Async+BrightFutures.swift"
     },
     {
       "name": "PromiseKit",

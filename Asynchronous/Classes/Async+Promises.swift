@@ -4,7 +4,7 @@ import Result
 extension Async {
     public func promise() -> Promise<T> {
         return Promise { (resolve, reject) in
-            self.future.onComplete { result in
+            self.backingFuture.onComplete { result in
                 switch result {
                 case .success(let value):
                     resolve(value)

@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.name             = 'Asynchronous'
   s.version          = '0.1.0'
   s.summary          = 'Implementation agnostic asynchronous code'
-  s.default_subspecs = 'BrightFutures'
+  s.default_subspecs = 'Core'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -33,10 +33,14 @@ HydraAsync and much more!
 
   s.ios.deployment_target = '9.0'
 
+  s.subspec 'Core' do |core|
+    core.dependency 'Result'
+    core.source_files = 'Asynchronous/Classes/Async.swift'
+  end
 
   s.subspec 'BrightFutures' do |brightFutures|
     brightFutures.dependency 'BrightFutures'
-    brightFutures.source_files = 'Asynchronous/Classes/Async.swift'
+    brightFutures.source_files = 'Asynchronous/Classes/Async+BrightFutures.swift'
   end
 
   s.subspec 'PromiseKit' do |promiseKit|

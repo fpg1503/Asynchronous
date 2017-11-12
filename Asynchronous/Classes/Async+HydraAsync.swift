@@ -4,7 +4,7 @@ import Result
 extension Async {
     public func hydra(in context: Context? = nil, token: InvalidationToken? = nil) -> Promise<T> {
         return Promise(in: context, token: token) { resolve, reject, _ in
-            self.future.onComplete { result in
+            self.backingFuture.onComplete { result in
                 switch result {
                 case .success(let value):
                     resolve(value)

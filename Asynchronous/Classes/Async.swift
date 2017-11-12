@@ -6,7 +6,7 @@ public enum AsyncError<T: Error>: Error {
     case some(T)
 }
 
-public final class Future<T, Error: Swift.Error> {
+public final class LightweightFuture<T, Error: Swift.Error> {
     enum State<T, Error: Swift.Error> {
         case pending
         case fulfilled(T)
@@ -64,12 +64,12 @@ public final class Future<T, Error: Swift.Error> {
         self.state = .rejected(error)
     }
     
-    func onComplete(result: @escaping Consumer) {
+    func onComplete(resolver: @escaping Consumer) {
         switch state {
         case .pending:
-            pendencies.append(result)
+            pendencies.append(resolver)
         case .fulfilled, .rejected:
-            process(consumer: result)
+            process(consumer: resolver)
         }
     }
     
@@ -80,20 +80,20 @@ public typealias InfailableAsync<T> = FailableAsync<T, NoError>
 
 public struct FailableAsync<T, Error: Swift.Error> {
 
-    public let future: Future<T, Error>
+    public let backingFuture: LightweightFuture<T, Error>
 
-    public init(future: Future<T, Error>) {
-        self.future = future
+    public init(future: LightweightFuture<T, Error>) {
+        self.backingFuture = future
     }
 
     public init(resolver: (_ fulfill: @escaping (T) -> Void, _ reject: @escaping (Error) -> Void) -> Void) {
         
-        self.future = Future { (resolve, reject) in
+        self.backingFuture = LightweightFuture { (resolve, reject) in
             resolver(resolve, reject)
         }
     }
 
-    public static func from(future: Future<T, Error>) -> FailableAsync<T, Error> {
+    public static func from(future: LightweightFuture<T, Error>) -> FailableAsync<T, Error> {
         return FailableAsync(future: future)
     }
 
@@ -112,13 +112,13 @@ public struct FailableAsync<T, Error: Swift.Error> {
     }
 
     public func async(_ completion: @escaping (T?, Error?) -> Void) {
-        future.onComplete { (result) in
+        backingFuture.onComplete { (result) in
             completion(result.value, result.error)
         }
     }
 
     public func async(_ completion: @escaping (Result<T, Error>) -> Void) {
-        future.onComplete { (result) in
+        backingFuture.onComplete { (result) in
             completion(result)
         }
     }
