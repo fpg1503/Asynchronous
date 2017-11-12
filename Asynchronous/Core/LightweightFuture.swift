@@ -20,11 +20,10 @@ public final class LightweightFuture<T, Error: Swift.Error> {
     public typealias FutureResult = Result<T, Error>
     public typealias Consumer = (FutureResult) -> Void
     private var pendencies: [Consumer] = []
-    private func process(consumer: Consumer) {
+    private func process(consumer: @escaping Consumer) {
         switch state {
         case .pending:
-            //Figure what to do!
-            print("Attempted to process pending future")
+            pendencies.append(consumer)
         case .fulfilled(let value):
             consumer(.success(value))
         case .rejected(let error):
@@ -61,11 +60,6 @@ public final class LightweightFuture<T, Error: Swift.Error> {
     }
 
     public func onComplete(resolver: @escaping Consumer) {
-        switch state {
-        case .pending:
-            pendencies.append(resolver)
-        case .fulfilled, .rejected:
-            process(consumer: resolver)
-        }
+        process(consumer: resolver)
     }
 }
