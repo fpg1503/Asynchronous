@@ -3,8 +3,7 @@ import Result
 import then
 import XCTest
 
-
-class AsyncthenTests: XCTestCase {
+final class AsyncthenTests: XCTestCase {
 
     //MARK: - Async -> then
     func testSynchronousResolve() {

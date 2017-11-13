@@ -7,7 +7,7 @@ import XCTest
 //the user doesn't have several promises with the same interface
 typealias PromiseKitPromise = Promise
 
-class AsyncPromiseKitTests: XCTestCase {
+final class AsyncPromiseKitTests: XCTestCase {
     //MARK: - Async -> PromiseKit
     func testSynchronousResolve() {
         let expected = 3

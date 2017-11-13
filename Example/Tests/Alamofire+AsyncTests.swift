@@ -3,7 +3,7 @@ import Asynchronous
 import Mockingjay
 import XCTest
 
-class AlamofireAsyncTests: XCTestCase {
+final class AlamofireAsyncTests: XCTestCase {
     let fakeURL = "http://httpbin.org/get"
 
     override func setUp() {

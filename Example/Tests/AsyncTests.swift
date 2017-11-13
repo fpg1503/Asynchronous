@@ -1,7 +1,7 @@
 import Asynchronous
 import XCTest
 
-class AsyncTests: XCTestCase {
+final class AsyncTests: XCTestCase {
     // MARK: - Creation
     func testCreationFromFuture_FutureSucceeds() {
         let expected = 3

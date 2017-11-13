@@ -3,7 +3,7 @@ import BrightFutures
 import Result
 import XCTest
 
-class AsyncBrightFuturesTests: XCTestCase {
+final class AsyncBrightFuturesTests: XCTestCase {
     //MARK: - Async -> BrightFutures
     func testSynchronousResolve() {
         let expected = 3

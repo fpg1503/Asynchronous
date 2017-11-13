@@ -1,7 +1,7 @@
 import Asynchronous
 import XCTest
 
-class LightweightFutureTests: XCTestCase {
+final class LightweightFutureTests: XCTestCase {
     
     func testSynchronousResolve() {
         let expected = 3

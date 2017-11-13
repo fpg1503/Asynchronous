@@ -3,7 +3,7 @@ import Hydra
 import Result
 import XCTest
 
-class AsyncHydraAsyncTests: XCTestCase {
+final class AsyncHydraAsyncTests: XCTestCase {
     //MARK: - Async -> Hydra
     func testSynchronousResolve() {
         let expected = 3
