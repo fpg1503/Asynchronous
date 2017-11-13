@@ -2,7 +2,7 @@ import Foundation
 import Result
 
 /// A lightweight future used to abstract asynchronous actions
-/// that may fail
+/// that may fail.
 public final class LightweightFuture<T, Error: Swift.Error> {
     indirect enum State<T, Error: Swift.Error> {
         case pending
@@ -19,10 +19,10 @@ public final class LightweightFuture<T, Error: Swift.Error> {
         }
     }
 
-    /// The result type of this future
+    /// The result type of this future.
     public typealias FutureResult = Result<T, Error>
 
-    /// A closure that consumes a `FutureResult`
+    /// A closure that consumes a `FutureResult`.
     public typealias Consumer = (FutureResult) -> Void
     private var pendencies: [Consumer] = []
     private func process(consumer: @escaping Consumer) {
@@ -53,10 +53,10 @@ public final class LightweightFuture<T, Error: Swift.Error> {
     }
 
     /// Creates a Lightweight Future that can be fulfilled
-    /// or rejected
+    /// or rejected.
     ///
     /// - Parameters:
-    ///     - resolver: a closure that is passed two arguments:
+    ///     - resolver: A closure that is passed two arguments:
     /// `fulfill` and `reject`. The `resolver` closure is executed
     /// immediately by the `LightweightFuture` implementation, passing
     /// `fulfill` and `reject` closures (the `resolver` is called before
@@ -65,10 +65,10 @@ public final class LightweightFuture<T, Error: Swift.Error> {
     /// work, and then, once that completes, either calls the `fulfill`
     /// function to resolve the future or else `reject`s it if an error
     /// occurred.
-    ///     - fulfill: completion to be called if the future
-    /// is fulfilled
-    ///     - reject: completion to be called if the future
-    /// is rejected
+    ///     - fulfill: Completion to be called if the future
+    /// is fulfilled.
+    ///     - reject: Completion to be called if the future
+    /// is rejected.
     public init(resolver: (_ fulfill: @escaping (T) -> Void, _ reject: @escaping (Error) -> Void) -> Void) {
         resolver(fulfill, reject)
     }
@@ -84,7 +84,7 @@ public final class LightweightFuture<T, Error: Swift.Error> {
     /// Adds the given closure as a callback for when the
     /// Future completes.
     ///
-    /// - parameter resolver: a consumer of the future result
+    /// - parameter resolver: A consumer of the future result.
     public func onComplete(resolver: @escaping Consumer) {
         process(consumer: resolver)
     }

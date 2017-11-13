@@ -1,33 +1,34 @@
 import Hydra
 import Result
 
-/// Add suport to *Hydra*'s `Promise`s
+/// Add suport to *Hydra*'s `Promise`s.
+///
 /// `Hydra.Promise` <--> `Async`
 extension Async {
     /// Returns a *Hydra* `Promise` in a given context that can be
-    /// invalidated
+    /// invalidated.
     ///
     /// - Parameters:
     ///     - context: Context (GCD queue) in which the body of
-    /// the promise is executed
+    /// the promise is executed.
     /// By default background queue is used.
-    ///     - token: optional invalidation token
+    ///     - token: Optional invalidation token.
     /// - Returns: A *Hydra* `Promise` in a given context that
-    /// can be invalidated
+    /// can be invalidated.
     public func promise(in context: Context? = nil, token: InvalidationToken? = nil) -> Promise<T> {
         return hydra(in: context, token: token)
     }
 
     /// Returns a *Hydra* `Promise` in a given context that can be
-    /// invalidated
+    /// invalidated.
     ///
     /// - Parameters:
     ///     - context: Context (GCD queue) in which the body of
-    /// the promise is executed
+    /// the promise is executed.
     /// By default background queue is used.
-    ///     - token: optional invalidation token
+    ///     - token: Optional invalidation token
     /// - Returns: A *Hydra* `Promise` in a given context that
-    /// can be invalidated
+    /// can be invalidated.
     public func hydra(in context: Context? = nil, token: InvalidationToken? = nil) -> Promise<T> {
         //TODO: Figure out if we have to do something to support invalidation
         return Promise(in: context, token: token) { resolve, reject, _ in
@@ -43,12 +44,12 @@ extension Async {
     }
 
     /// Creates a new `Async` from a *Hydra* `Promise`
-    /// that can be fulfilled or rejected
+    /// that can be fulfilled or rejected.
     ///
     /// - Parameters:
-    ///     - promise: a *Hydra* `Promise`
+    ///     - promise: A *Hydra* `Promise`.
     /// - Returns: A new `Async` from a given *Hydra*
-    /// `Promise` that can be fulfilled or rejected
+    /// `Promise` that can be fulfilled or rejected.
     public static func from(promise: Promise<T>) -> Async<T> {
         return Async { resolve, reject in
             promise.then { value in

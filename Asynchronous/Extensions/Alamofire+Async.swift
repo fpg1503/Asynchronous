@@ -2,13 +2,13 @@ import Alamofire
 import Foundation
 import Result
 
-/// Add async generation to *Alamofire*'s `DataRequest`
+/// Add `Async` generation to *Alamofire*'s `DataRequest`.
 extension DataRequest {
     /// Returns an `Async` that encapsulates a response of the
-    /// underlying `URLSessionDataTask`
+    /// underlying `URLSessionDataTask`.
     ///
     /// - Returns: An `Async` that encapsulates a response of the
-    /// underlying `URLSessionDataTask`
+    /// underlying `URLSessionDataTask`.
     public func response() -> Async<(URLRequest, HTTPURLResponse, Data)> {
         return Async { resolve, reject in
             response { response in
@@ -26,10 +26,10 @@ extension DataRequest {
     }
 
     /// Returns an `Async` that encapsulates a data response of the
-    /// underlying `URLSessionDataTask`
+    /// underlying `URLSessionDataTask`.
     ///
     /// - Returns: An `Async` that encapsulates a data response of the
-    /// underlying `URLSessionDataTask`
+    /// underlying `URLSessionDataTask`.
     public func responseData() -> Async<Data> {
         return Async { resolve, reject in
             responseData { response in
@@ -44,10 +44,10 @@ extension DataRequest {
     }
 
     /// Returns an `Async` that encapsulates a string response of the
-    /// underlying `URLSessionDataTask`
+    /// underlying `URLSessionDataTask`.
     ///
     /// - Returns: An `Async` that encapsulates a string response of the
-    /// underlying `URLSessionDataTask`
+    /// underlying `URLSessionDataTask`.
     public func responseString() -> Async<String> {
         return Async { resolve, reject in
             responseString { response in
@@ -62,13 +62,13 @@ extension DataRequest {
     }
 
     /// Returns an `Async` that encapsulates a JSON response of the
-    /// underlying `URLSessionDataTask`
+    /// underlying `URLSessionDataTask`.
     ///
     /// - Parameters:
     ///     - options: The JSON serialization reading options.
-    /// Defaults to `.allowFragments`
+    /// Defaults to `.allowFragments`.
     /// - Returns: An `Async` that encapsulates a JSON response of the
-    /// underlying `URLSessionDataTask`
+    /// underlying `URLSessionDataTask`.
     public func responseJSON(options: JSONSerialization.ReadingOptions = .allowFragments) -> Async<Any> {
         return Async { resolve, reject in
             responseJSON(options: options) { response in
@@ -83,13 +83,13 @@ extension DataRequest {
     }
 }
 
-/// Add async generation to *Alamofire*'s `DownloadRequest`
+/// Add `Async` generation to *Alamofire*'s `DownloadRequest`.
 extension DownloadRequest {
     /// Returns an `Async` that encapsulates a data response of the
-    /// underlying `URLSessionDownloadTask`
+    /// underlying `URLSessionDownloadTask`.
     ///
     /// - Returns: An `Async` that encapsulates a data response of the
-    /// underlying `URLSessionDownloadTask`
+    /// underlying `URLSessionDownloadTask`.
     public func responseData() -> Async<DownloadResponse<Data>> {
         return Async { resolve, reject in
             responseData { response in

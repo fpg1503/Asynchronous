@@ -1,17 +1,18 @@
 import PromiseKit
 import Result
 
-/// Add suport to *PromiseKit*'s `Promise`s
+/// Add suport to *PromiseKit*'s `Promise`s.
+///
 /// `PromiseKit.Promise` <--> `Async`
 extension Async {
-    /// Returns a *PromiseKit* `Promise`
-    /// - Returns: A *PromiseKit* `Promise`
+    /// Returns a *PromiseKit* `Promise`.
+    /// - Returns: A *PromiseKit* `Promise`.
     public func promise() -> Promise<T> {
         return promiseKit()
     }
 
-    /// Returns a *PromiseKit* `Promise`
-    /// - Returns: A *PromiseKit* `Promise`
+    /// Returns a *PromiseKit* `Promise`.
+    /// - Returns: A *PromiseKit* `Promise`.
     public func promiseKit() -> Promise<T> {
         return Promise { (resolve, reject) in
             backingFuture.onComplete { result in
@@ -26,12 +27,12 @@ extension Async {
     }
 
     /// Creates a new `Async` from a *PromiseKit* `Promise`
-    /// that can be fulfilled or rejected
+    /// that can be fulfilled or rejected.
     ///
     /// - Parameters:
-    ///     - promise: a *PromiseKit* `Promise`
+    ///     - promise: A *PromiseKit* `Promise`.
     /// - Returns: A new `Async` from a given *PromiseKit*
-    /// `Promise` that can be fulfilled or rejected
+    /// `Promise` that can be fulfilled or rejected.
     public static func from(promise: Promise<T>) -> Async<T> {
         return Async { resolve, reject in
             promise.then { value in
