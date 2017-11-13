@@ -42,7 +42,7 @@ Feel free to create a PR/Issue.
 - [ ] ReactiveSwift support
 - [ ] RxSwift support
 - [x] Tests
-- [ ] Better documentation
+- [x] Better documentation
 - [ ] Improved README
 - [x] Remove BrightFutures dependency
 - [ ] Carthage support
