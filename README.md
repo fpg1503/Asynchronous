@@ -10,11 +10,65 @@
 
 Asynchronous is a one-stop shop for your async needs, the user can use the subspecs to automatically run the Async code using completion handlers, [BrightFutures](https://github.com/Thomvis/BrightFutures), [HydraAsync](https://github.com/malcommac/Hydra), [PromiseKit](https://github.com/mxcl/PromiseKit), [Promises](https://github.com/khanlou/Promise), [then](https://github.com/freshOS/then) and much more!
 
+The ultimate answer to **which asynchronous abstraction should I use in my API?**, just use `Asynchronous` and give your users freedom without the headache of adding several dependencies and different abstractions to your code!
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-## Requirements
+## Sample use case
+
+Let's say you're writing a mobile SDK that does asynchronous tasks (such as HTTP requests), just like the following:
+```swift
+func getUser(by id: String) -> Async<User> {
+    return Async { resolve, reject in
+        let url = APIRouter.route(for: .users, id: id)
+        let request = URLRequest(url: url)
+
+        let session = URLSession.shared
+        let task = session.dataTask(with: request) { data, response, error in
+            if let error = error {
+                reject(AnyError(error))
+            } else if let data = data {
+                do {
+                    let user = try JSONDecoder().decode(User.self, from: data)
+                    resolve(user)
+                } catch (let error) {
+                    reject(AnyError(error))
+                }
+            } else {
+                reject(AnyError(NSError(domain: "my.domain", code: 123)))
+            }
+        }
+        task.resume()
+    }
+}
+```
+
+That's it! You simply create an `Async` and call `resolve` or `reject` once your task is finished.
+
+The user can either add a completion block or use their favorite asynchronous abstraction:
+
+### Completion
+```swift
+apiClient.getUser(by: id).async { user, error in
+    if let user = value {
+        userName.text = user.name
+    } else {
+        display(error: error)
+    }
+}
+```
+
+### Promise
+```swift
+apiClient.getUser(by: id).promise()
+.then { user in
+    userName.text = user.name
+}.catch { error in
+    display(error: error)
+}
+``` 
 
 ## Installation
 
@@ -36,7 +90,8 @@ pod 'Asynchronous'
 | `Asynchronous/Then` |  [then](https://github.com/freshOS/then) support |
 
 ## Contributing
-Feel free to create a PR/Issue.
+Contributions are encourajed and appreciated!
+For more information take a look at [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ### Roadmap
 - [ ] ReactiveSwift support
@@ -47,6 +102,8 @@ Feel free to create a PR/Issue.
 - [x] Remove BrightFutures dependency
 - [ ] Carthage support
 - [ ] SwiftPM support
+- [ ] Fix unnecessary error type erasures
+- [ ] Improve Example project
 
 ## Author
 

@@ -10,6 +10,20 @@ import UIKit
 import Asynchronous
 import Result
 
+struct User: Decodable {
+    let id: String
+}
+
+enum Endpoint: String {
+    case users
+}
+
+struct APIRouter {
+    static func route(for endpoint: Endpoint, id: String) -> URL {
+        return URL(string: "https://myapi.com/\(endpoint.rawValue)/\(id)")!
+    }
+}
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -51,6 +65,30 @@ class ViewController: UIViewController {
             resolve(1234)
             //TODO: Find out a way to avoid type errasing errors (and importing result)
             reject(AnyError(NSError(domain: "com.fpg1503.Asynchronous", code: 1234, userInfo: nil)))
+        }
+    }
+
+    func getUser(by id: String) -> Async<User> {
+        return Async { resolve, reject in
+            let url = APIRouter.route(for: .users, id: id)
+            let request = URLRequest(url: url)
+
+            let session = URLSession.shared
+            let task = session.dataTask(with: request) { data, response, error in
+                if let error = error {
+                    reject(AnyError(error))
+                } else if let data = data {
+                    do {
+                        let user = try JSONDecoder().decode(User.self, from: data)
+                        resolve(user)
+                    } catch (let error) {
+                        reject(AnyError(error))
+                    }
+                } else {
+                    reject(AnyError(NSError(domain: "my.domain", code: 123)))
+                }
+            }
+            task.resume()
         }
     }
 
