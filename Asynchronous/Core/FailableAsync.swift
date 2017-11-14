@@ -1,10 +1,6 @@
 import Foundation
 import Result
 
-/// Describes an asynchronous operation that may fail
-/// with a type erased error (`Result.AnyError`).
-public typealias Async<T> = FailableAsync<T, AnyError>
-
 /// Describes an asynchronous operation that will always succeed
 /// with an error that can never be instantiated (`Result.NoError`).
 public typealias InfailableAsync<T> = FailableAsync<T, NoError>
