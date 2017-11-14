@@ -1,4 +1,7 @@
 public struct Asynchronous {
+    //MARK: - Infailable
+
+    //TODO: Docs!
     public static func asyncify<I, O, R>(function: @escaping (I, _ completionHandler: (O) -> ()) -> R) -> (I) -> InfailableAsync<O> {
         return { input in
             return InfailableAsync { resolve, _ in
@@ -64,4 +67,38 @@ public struct Asynchronous {
         })
         return asyncified
     }
+
+    //MARK: - Failable, separate handler, generic error
+    public static func asyncify<I, O, R>(function: @escaping (I, _ completionHandler: (O) -> Void, _ errorHandler: (Swift.Error) -> Void) -> R) -> (I) -> Async<O> {
+        return { input in
+            return Async { resolve, reject in
+                let _ = function(input, { output in
+                    resolve(output)
+                }, { error in
+                    reject(error)
+                })
+            }
+        }
+    }
+
+    //TODO: More!
+
+    //MARK: - Failable, separate handler, specific error
+    public static func asyncify<I, O, R, E: Swift.Error>(function: @escaping (I, _ completionHandler: (O) -> Void, _ errorHandler: (E) -> Void) -> R) -> (I) -> FailableAsync<O, E> {
+        return { input in
+            return FailableAsync { resolve, reject in
+                let _ = function(input, { output in
+                    resolve(output)
+                }, { error in
+                    reject(error)
+                })
+            }
+        }
+    }
+
+    //TODO: More!
+
+    //MARK: - Failable, shared handler
+    //TODO!
+
 }
