@@ -27,6 +27,16 @@ public struct FailableAsync<T, Error: Swift.Error> {
     /// or rejected.
     ///
     /// - Parameters:
+    ///     - valueType: Hint to the Swift compiler that you want a
+    /// typed error, if we remove this in the current version of Swift
+    /// the compiler gets confused inferring types when dealing with
+    /// untyped errors. Should be inferred automatically in most cases
+    /// when it's used.
+    ///     - errorType: Hint to the Swift compiler that you want a
+    /// typed error, if we remove this in the current version of Swift
+    /// the compiler gets confused inferring types when dealing with
+    /// untyped errors. Should be inferred automatically in most cases
+    /// when it's used.
     ///     - resolver: A closure that is passed two arguments:
     /// `fulfill` and `reject`. The `resolver` closure is executed
     /// immediately by the `FailableAsync` implementation, passing
@@ -40,7 +50,7 @@ public struct FailableAsync<T, Error: Swift.Error> {
     /// is fulfilled.
     ///     - reject: Completion to be called if the async
     /// is rejected.
-    public init(resolver: (_ fulfill: @escaping (T) -> Void, _ reject: @escaping (Error) -> Void) -> Void) {
+    public init(valueType: T.Type = T.self, errorType: Error.Type = Error.self, resolver: (_ fulfill: @escaping (T) -> Void, _ reject: @escaping (Error) -> Void) -> Void) {
         
         self.backingFuture = LightweightFuture { (resolve, reject) in
             resolver(resolve, reject)

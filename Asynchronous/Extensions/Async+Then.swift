@@ -38,7 +38,7 @@ extension Async {
             promise.then { value in
                 resolve(value)
             }.onError { error in
-                reject(AnyError(error))
+                reject(error)
             }
         }
     }

@@ -4,6 +4,7 @@ import Result
 /// with a type erased error (`Result.AnyError`).
 public typealias Async<T> = FailableAsync<T, AnyError>
 
+
 extension Async where Error == AnyError {
     /// Creates an `Async` that can be fulfilled
     /// or rejected.
@@ -17,28 +18,27 @@ extension Async where Error == AnyError {
     /// Async). The `resolver` normally initiates some asynchronous
     /// work, and then, once that completes, either calls the `fulfill`
     /// function to resolve the future or else `reject`s it if an error
-    /// occurred.
+    /// occurred. You can also `throw` your errors!
     ///     - fulfill: Completion to be called if the async
     /// is fulfilled.
     ///     - reject: Completion to be called if the async
-    /// is rejected.
-    public init(resolver: @escaping (_ fulfill: @escaping (T) -> Void, _ reject: @escaping (Swift.Error) -> Void) -> Void) {
+    /// is rejected. You can also `throw` your errors!
+    public init(resolver: @escaping (_ fulfill: @escaping (T) -> Void, _ reject: @escaping (Swift.Error) -> Void) throws -> Void) {
 
-        func typeErasingReject(reject: @escaping (AnyError) -> Void) -> (Swift.Error) -> Void {
+        func typeErase(reject: @escaping (AnyError) -> Void) -> (Swift.Error) -> Void {
             return { error in
-                let anyError = { error -> AnyError in
-                    if let anyError = error as? AnyError {
-                        return anyError
-                    } else {
-                        return AnyError(error)
-                    }
-                }(error)
-                reject(anyError)
+                // AnyError automatically avoids recursive AnyErrors
+                reject(AnyError(error))
             }
         }
 
-        self.backingFuture = LightweightFuture { resolve, reject in
-            resolver(resolve, typeErasingReject(reject: reject))
+        self.backingFuture = LightweightFuture { (resolve, reject) in
+            let typeErasingReject = typeErase(reject: reject)
+            do {
+                try resolver(resolve, typeErasingReject)
+            } catch let error {
+                typeErasingReject(error)
+            }
         }
     }
 }

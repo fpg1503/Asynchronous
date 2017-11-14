@@ -11,15 +11,15 @@ extension DataRequest {
     /// underlying `URLSessionDataTask`.
     public func response() -> Async<(URLRequest, HTTPURLResponse, Data)> {
         return Async { resolve, reject in
-            response { response in
+            self.response { response in
                 if let error = response.error {
-                    reject(AnyError(error))
+                    reject(error)
                 } else if let request = response.request,
                     let httpResponse = response.response,
                     let data = response.data {
                     resolve((request, httpResponse, data))
                 } else {
-                    reject(AnyError(AsyncError<AnyError>.valueAndErrorNil))
+                    reject(AsyncError<AnyError>.valueAndErrorNil)
                 }
             }
         }
@@ -32,12 +32,12 @@ extension DataRequest {
     /// underlying `URLSessionDataTask`.
     public func responseData() -> Async<Data> {
         return Async { resolve, reject in
-            responseData { response in
+            self.responseData { response in
                 switch response.result {
                 case .success(let value):
                     resolve(value)
                 case .failure(let error):
-                    reject(AnyError(error))
+                    reject(error)
                 }
             }
         }
@@ -50,12 +50,12 @@ extension DataRequest {
     /// underlying `URLSessionDataTask`.
     public func responseString() -> Async<String> {
         return Async { resolve, reject in
-            responseString { response in
+            self.responseString { response in
                 switch response.result {
                 case .success(let value):
                     resolve(value)
                 case .failure(let error):
-                    reject(AnyError(error))
+                    reject(error)
                 }
             }
         }
@@ -71,12 +71,12 @@ extension DataRequest {
     /// underlying `URLSessionDataTask`.
     public func responseJSON(options: JSONSerialization.ReadingOptions = .allowFragments) -> Async<Any> {
         return Async { resolve, reject in
-            responseJSON(options: options) { response in
+            self.responseJSON(options: options) { response in
                 switch response.result {
                 case .success(let value):
                     resolve(value)
                 case .failure(let error):
-                    reject(AnyError(error))
+                    reject(error)
                 }
             }
         }
@@ -92,12 +92,12 @@ extension DownloadRequest {
     /// underlying `URLSessionDownloadTask`.
     public func responseData() -> Async<DownloadResponse<Data>> {
         return Async { resolve, reject in
-            responseData { response in
+            self.responseData { response in
                 switch response.result {
                 case .success:
                     resolve(response)
                 case .failure(let error):
-                    reject(AnyError(error))
+                    reject(error)
                 }
             }
         }

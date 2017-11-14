@@ -8,7 +8,6 @@
 
 import UIKit
 import Asynchronous
-import Result
 
 struct User: Decodable {
     let id: String
@@ -64,7 +63,7 @@ class ViewController: UIViewController {
         return Async { resolve, reject in
             resolve(1234)
             //TODO: Find out a way to avoid type errasing errors (and importing result)
-            reject(AnyError(NSError(domain: "com.fpg1503.Asynchronous", code: 1234, userInfo: nil)))
+            reject(NSError(domain: "com.fpg1503.Asynchronous", code: 1234, userInfo: nil))
         }
     }
 
@@ -76,16 +75,16 @@ class ViewController: UIViewController {
             let session = URLSession.shared
             let task = session.dataTask(with: request) { data, response, error in
                 if let error = error {
-                    reject(AnyError(error))
+                    reject(error)
                 } else if let data = data {
                     do {
                         let user = try JSONDecoder().decode(User.self, from: data)
                         resolve(user)
                     } catch (let error) {
-                        reject(AnyError(error))
+                        reject(error)
                     }
                 } else {
-                    reject(AnyError(NSError(domain: "my.domain", code: 123)))
+                    reject(NSError(domain: "my.domain", code: 123))
                 }
             }
             task.resume()
