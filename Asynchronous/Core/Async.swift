@@ -4,8 +4,11 @@ import Result
 /// with a type erased error (`Result.AnyError`).
 public typealias Async<T> = FailableAsync<T, AnyError>
 
-
+/// Automatic error type erasure and throw support
 extension Async where Error == AnyError {
+    // The `where` clause is redundant but the compiler has serious troubles
+    // if we remove it :/
+
     /// Creates an `Async` that can be fulfilled
     /// or rejected.
     ///

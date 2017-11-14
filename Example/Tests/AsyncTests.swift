@@ -183,4 +183,22 @@ final class AsyncTests: XCTestCase {
             }
         }
     }
+
+    //MARK: - Error throwing
+    func testCreationFromClosureThrowingError() {
+        //In order to throw we need to use an untyped Async!
+
+        let expected = TestError.somethingReallyHorribleHappened
+        let async = Async<Int> { resolve, reject in
+            throw expected
+        }
+
+        wait { expectation in
+            async.async { value, actual in
+                XCTAssertNil(value)
+                XCTAssertEqual(expected, actual?.error as? TestError)
+                expectation.fulfill()
+            }
+        }
+    }
 }
