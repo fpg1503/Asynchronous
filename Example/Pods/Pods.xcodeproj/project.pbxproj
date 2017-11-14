@@ -125,6 +125,7 @@
 		A2A6F71B727312BD45CC7A4AAD7B0AB7 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EEBE5B8C89D83C291283B28FF23BF8 /* NetworkReachabilityManager.swift */; };
 		A317715A1FBAD33D00C504C6 /* AsyncError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31771581FBAD31400C504C6 /* AsyncError.swift */; };
 		A317715D1FBAD3EA00C504C6 /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = A317715B1FBAD3D700C504C6 /* Async.swift */; };
+		A38C70CD1FBAF22500E70950 /* Asynchronous.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38C70CA1FBAF1E300E70950 /* Asynchronous.swift */; };
 		A489ED2ACB8584A8154E3A6A65D05CFF /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95367DA7F35FFC3E2B36544B3332C24A /* State.swift */; };
 		A5568D031D563F46ABC1F7C9BA8AAE01 /* Pods-Asynchronous_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B4E8FF4723366FD31AEA97A5B6617C71 /* Pods-Asynchronous_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A772772A87F6C0A6F0784A6288A80339 /* Mockingjay-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6259B8C7106F590BB0F06712AE863FA2 /* Mockingjay-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -558,6 +559,7 @@
 		9F7785635B2B6F9BE339B87F7D166F42 /* SequenceType+BrightFutures.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SequenceType+BrightFutures.swift"; path = "Sources/BrightFutures/SequenceType+BrightFutures.swift"; sourceTree = "<group>"; };
 		A31771581FBAD31400C504C6 /* AsyncError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AsyncError.swift; path = Asynchronous/Core/AsyncError.swift; sourceTree = "<group>"; };
 		A317715B1FBAD3D700C504C6 /* Async.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Async.swift; path = Asynchronous/Core/Async.swift; sourceTree = "<group>"; };
+		A38C70CA1FBAF1E300E70950 /* Asynchronous.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Asynchronous.swift; path = Asynchronous/Core/Asynchronous.swift; sourceTree = "<group>"; };
 		A4D774701DC5A083E983725638FB1B6B /* NSNotificationCenter+AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSNotificationCenter+AnyPromise.h"; path = "Extensions/Foundation/Sources/NSNotificationCenter+AnyPromise.h"; sourceTree = "<group>"; };
 		A50385043FDB8EF0D497B36E6EE28226 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5FD51845C892FFA861E7F1DAA34E3CD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
@@ -1110,6 +1112,7 @@
 			children = (
 				A317715B1FBAD3D700C504C6 /* Async.swift */,
 				A31771581FBAD31400C504C6 /* AsyncError.swift */,
+				A38C70CA1FBAF1E300E70950 /* Asynchronous.swift */,
 				317DA77F4B8845026614C284643814BA /* FailableAsync.swift */,
 				6F8271DD01CD2CD5567E3FE296127B6F /* LightweightFuture.swift */,
 			);
@@ -1880,6 +1883,7 @@
 				9EBAD25E14BA9DA65CA9A0B0F667F676 /* Async+Promises.swift in Sources */,
 				D1BC461C1826DBE7ABFD710FBA8A13D9 /* Async+Then.swift in Sources */,
 				DF8E7F6C27102F9435A7FC6ECF9E6E9D /* FailableAsync.swift in Sources */,
+				A38C70CD1FBAF22500E70950 /* Asynchronous.swift in Sources */,
 				A317715A1FBAD33D00C504C6 /* AsyncError.swift in Sources */,
 				AA483B6FB7F5D6EFB8DD83B595E738ED /* Asynchronous-dummy.m in Sources */,
 				057347412AF85704F3DF840715169298 /* LightweightFuture.swift in Sources */,
