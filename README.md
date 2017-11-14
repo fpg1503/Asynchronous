@@ -28,16 +28,16 @@ func getUser(by id: String) -> Async<User> {
         let session = URLSession.shared
         let task = session.dataTask(with: request) { data, response, error in
             if let error = error {
-                reject(AnyError(error))
+                reject(error) // You can also `throw error`!
             } else if let data = data {
                 do {
                     let user = try JSONDecoder().decode(User.self, from: data)
                     resolve(user)
                 } catch (let error) {
-                    reject(AnyError(error))
+                    reject(error)
                 }
             } else {
-                reject(AnyError(NSError(domain: "my.domain", code: 123)))
+                reject(NSError(domain: "my.domain", code: 123))
             }
         }
         task.resume()
@@ -102,7 +102,7 @@ For more information take a look at [CONTRIBUTING.md](CONTRIBUTING.md).
 - [x] Remove BrightFutures dependency
 - [ ] Carthage support
 - [ ] SwiftPM support
-- [ ] Fix unnecessary error type erasures
+- [x] Fix unnecessary error type erasures
 - [ ] Improve Example project
 
 ## Author
