@@ -176,7 +176,7 @@
 		DDF5ADCE281E192184D598A6472922DB /* Mockingjay-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DFCFC90256A0CCE5DE56D3CEF19A775C /* Mockingjay-dummy.m */; };
 		DF23F420A9C8855F8B508F81BBA9625F /* Promise+Zip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2880954A224B1EC078922FF3AD72C7E3 /* Promise+Zip.swift */; };
 		DF3464F61CB7F86A3A4CCCAB7F64AF82 /* Async+PromiseKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD384F67396777C3F12D91BBBFE9E97 /* Async+PromiseKit.swift */; };
-		DF8E7F6C27102F9435A7FC6ECF9E6E9D /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317DA77F4B8845026614C284643814BA /* Async.swift */; };
+		DF8E7F6C27102F9435A7FC6ECF9E6E9D /* FailableAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317DA77F4B8845026614C284643814BA /* FailableAsync.swift */; };
 		DFFD1C1B3EE7175EA8F04D0CF967B59B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68795B107CE51320ABF7603D197698D9 /* Foundation.framework */; };
 		E13763E9C044576F774C5A7EDD9C275F /* Promise+Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E27D9768C794B6B372DB63E3CCF793B /* Promise+Extras.swift */; };
 		E4C93A9D439088C56EB6C459B60E0F88 /* NSNotificationCenter+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054B4F22BF4279B974171A3C48F92E97 /* NSNotificationCenter+Promise.swift */; };
@@ -451,7 +451,7 @@
 		301D073B1CD568DAB4026D176A137C4F /* Promise+Await.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Promise+Await.swift"; path = "Sources/Hydra/Promise+Await.swift"; sourceTree = "<group>"; };
 		3075AB16AF734F85C733EE7F999AA76E /* thenPromise-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "thenPromise-prefix.pch"; sourceTree = "<group>"; };
 		311B23A87ABD295B9565C2002C0BBB7B /* Promises-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Promises-dummy.m"; sourceTree = "<group>"; };
-		317DA77F4B8845026614C284643814BA /* Async.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Async.swift; path = Asynchronous/Core/Async.swift; sourceTree = "<group>"; };
+		317DA77F4B8845026614C284643814BA /* FailableAsync.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FailableAsync.swift; path = Asynchronous/Core/FailableAsync.swift; sourceTree = "<group>"; };
 		32DF627783A3F9F41C96E237E062A8FF /* PMKUIKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PMKUIKit.h; path = Extensions/UIKit/Sources/PMKUIKit.h; sourceTree = "<group>"; };
 		359BAF970455AB55DB8004635FC48E5F /* Promise+Finally.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Promise+Finally.swift"; path = "Source/Promise+Finally.swift"; sourceTree = "<group>"; };
 		36D5880ACB9A1EF249CB0369653005F4 /* Asynchronous-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Asynchronous-prefix.pch"; sourceTree = "<group>"; };
@@ -1106,8 +1106,8 @@
 		8F7DDE6A248045F60758FF404253AB03 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				317DA77F4B8845026614C284643814BA /* Async.swift */,
 				A31771581FBAD31400C504C6 /* AsyncError.swift */,
+				317DA77F4B8845026614C284643814BA /* FailableAsync.swift */,
 				6F8271DD01CD2CD5567E3FE296127B6F /* LightweightFuture.swift */,
 			);
 			name = Core;
@@ -1875,7 +1875,7 @@
 				DF3464F61CB7F86A3A4CCCAB7F64AF82 /* Async+PromiseKit.swift in Sources */,
 				9EBAD25E14BA9DA65CA9A0B0F667F676 /* Async+Promises.swift in Sources */,
 				D1BC461C1826DBE7ABFD710FBA8A13D9 /* Async+Then.swift in Sources */,
-				DF8E7F6C27102F9435A7FC6ECF9E6E9D /* Async.swift in Sources */,
+				DF8E7F6C27102F9435A7FC6ECF9E6E9D /* FailableAsync.swift in Sources */,
 				A317715A1FBAD33D00C504C6 /* AsyncError.swift in Sources */,
 				AA483B6FB7F5D6EFB8DD83B595E738ED /* Asynchronous-dummy.m in Sources */,
 				057347412AF85704F3DF840715169298 /* LightweightFuture.swift in Sources */,
