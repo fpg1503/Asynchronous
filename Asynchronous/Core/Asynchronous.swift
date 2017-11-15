@@ -224,32 +224,40 @@ public struct Asynchronous {
 
     //1,0
     public static func asyncify<I, R>(function: @escaping (I, _ completionHandler: (Swift.Error?) -> Void) -> R) -> (I) -> Async<Void> {
-        let asyncified = asyncify(function: { (i: I,  o: (Swift.Error?) -> Void) -> R in
-            function(i, o)
+        let asyncified = asyncify(function: { (i: I,  o: ((), Swift.Error?) -> Void) -> R in
+            function(i) { e in
+                o((), e)
+            }
         })
         return asyncified
     }
 
     //1,2
     public static func asyncify<I, O0, O1, R>(function: @escaping (I, _ completionHandler: (O0, O1, Swift.Error?) -> Void) -> R) -> (I) -> Async<(O0, O1)> {
-        let asyncified = asyncify(function: { (i: I,  o: (O0, O1, Swift.Error?) -> Void) -> R in
-            function(i, o)
+        let asyncified = asyncify(function: { (i: I,  o: ((O0, O1), Swift.Error?) -> Void) -> R in
+            function(i) { o0, o1, e in
+                o((o0, o1), e)
+            }
         })
         return asyncified
     }
 
     //1,3
     public static func asyncify<I, O0, O1, O2, R>(function: @escaping (I, _ completionHandler: (O0, O1, O2, Swift.Error?) -> Void) -> R) -> (I) -> Async<(O0, O1, O2)> {
-        let asyncified = asyncify(function: { (i: I,  o: (O0, O1, O2, Swift.Error?) -> Void) -> R in
-            function(i, o)
+        let asyncified = asyncify(function: { (i: I,  o: ((O0, O1, O2), Swift.Error?) -> Void) -> R in
+            function(i) { o0, o1, o2, e in
+                o((o0, o1, o2), e)
+            }
         })
         return asyncified
     }
 
     //1,4
     public static func asyncify<I, O0, O1, O2, O3, R>(function: @escaping (I, _ completionHandler: (O0, O1, O2, O3, Swift.Error?) -> Void) -> R) -> (I) -> Async<(O0, O1, O2, O3)> {
-        let asyncified = asyncify(function: { (i: I,  o: (O0, O1, O2, O3, Swift.Error?) -> Void) -> R in
-            function(i, o)
+        let asyncified = asyncify(function: { (i: I,  o: ((O0, O1, O2, O3), Swift.Error?) -> Void) -> R in
+            function(i) { o0, o1, o2, o3, e in
+                o((o0, o1, o2, o3), e)
+            }
         })
         return asyncified
     }
