@@ -1,16 +1,16 @@
 import Asynchronous
 import XCTest
 
-final class AsynchronousFailableSharedHandlerGenericErrorTests: XCTestCase {
+final class AsynchronousFailableSharedHandlerSpecificErrorTests: XCTestCase {
 
     //MARK: - Succeedss
     func testZeroArgumentsZeroExtraClosureParametersSucceeds() {
-        func theAnswer(completion: (Error?) -> Void) {
+        func theAnswer(completion: (TestError?) -> Void) {
             //Because, in some way, not failing is succeeding
             completion(nil)
         }
 
-        let asyncified = Asynchronous.asyncify(function: theAnswer)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: theAnswer)
 
         wait { expectation in
             asyncified().async { (actual, error) in
@@ -21,11 +21,11 @@ final class AsynchronousFailableSharedHandlerGenericErrorTests: XCTestCase {
     }
 
     func testZeroArgumentsOneExtraClosureParameterSucceeds() {
-        func theAnswer(completion: (Int, Error?) -> Void) {
+        func theAnswer(completion: (Int, TestError?) -> Void) {
             completion(42, nil)
         }
 
-        let asyncified = Asynchronous.asyncify(function: theAnswer)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: theAnswer)
 
         wait { expectation in
             asyncified().async { (actual, error) in
@@ -37,11 +37,11 @@ final class AsynchronousFailableSharedHandlerGenericErrorTests: XCTestCase {
     }
 
     func testZeroArgumentsTwoExtraClosureParametersSucceeds() {
-        func theAnswer(completion: (Int, Int, Error?) -> Void) {
+        func theAnswer(completion: (Int, Int, TestError?) -> Void) {
             completion(42, 41, nil)
         }
 
-        let asyncified = Asynchronous.asyncify(function: theAnswer)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: theAnswer)
 
         wait { expectation in
             asyncified().async { (actual, error) in
@@ -54,11 +54,11 @@ final class AsynchronousFailableSharedHandlerGenericErrorTests: XCTestCase {
     }
 
     func testZeroArgumentsThreeExtraClosureParametersSucceeds() {
-        func theAnswer(completion: (Int, Int, Int, Error?) -> Void) {
+        func theAnswer(completion: (Int, Int, Int, TestError?) -> Void) {
             completion(42, 41, 40, nil)
         }
 
-        let asyncified = Asynchronous.asyncify(function: theAnswer)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: theAnswer)
 
         wait { expectation in
             asyncified().async { (actual, error) in
@@ -72,11 +72,11 @@ final class AsynchronousFailableSharedHandlerGenericErrorTests: XCTestCase {
     }
 
     func testZeroArgumentsFourExtraClosureParametersSucceeds() {
-        func theAnswer(completion: (Int, Int, Int, Int, Error?) -> Void) {
+        func theAnswer(completion: (Int, Int, Int, Int, TestError?) -> Void) {
             completion(42, 41, 40, 39, nil)
         }
 
-        let asyncified = Asynchronous.asyncify(function: theAnswer)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: theAnswer)
 
         wait { expectation in
             asyncified().async { (actual, error) in
@@ -95,13 +95,13 @@ final class AsynchronousFailableSharedHandlerGenericErrorTests: XCTestCase {
     func testTwoArgumentsZeroExtraClosureParametersSucceeds() {
         func sinkhole(a0: Int,
                       a1: Int,
-                      completion: (Error?) -> Void) {
+                      completion: (TestError?) -> Void) {
             completion(nil)
         }
 
         let expected = [1, 2]
 
-        let asyncified = Asynchronous.asyncify(function: sinkhole)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: sinkhole)
 
         wait { expectation in
             asyncified(expected[0], expected[1]).async { (_, error) in
@@ -114,14 +114,14 @@ final class AsynchronousFailableSharedHandlerGenericErrorTests: XCTestCase {
     func testTwoArgumentsOneExtraClosureParameterSucceeds() {
         func echo(a0: Int,
                   a1: Int,
-                  completion: ([Int], Error?) -> Void) {
+                  completion: ([Int], TestError?) -> Void) {
             let array = [a0, a1]
             completion(array, nil)
         }
 
         let expected = [1, 2]
 
-        let asyncified = Asynchronous.asyncify(function: echo)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: echo)
 
         wait { expectation in
             asyncified(expected[0], expected[1]).async { (value, error) in
@@ -139,14 +139,14 @@ final class AsynchronousFailableSharedHandlerGenericErrorTests: XCTestCase {
     func testTwoArgumentsTwoExtraClosureParametersSucceeds() {
         func echo(a0: Int,
                   a1: Int,
-                  completion: ([Int], [Int], Error?) -> Void) {
+                  completion: ([Int], [Int], TestError?) -> Void) {
             let array = [a0, a1]
             completion(array, array.map { $0 * 2 }, nil)
         }
 
         let expected = [1, 2]
 
-        let asyncified = Asynchronous.asyncify(function: echo)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: echo)
 
         wait { expectation in
             asyncified(expected[0], expected[1]).async { (value, error) in
@@ -165,14 +165,14 @@ final class AsynchronousFailableSharedHandlerGenericErrorTests: XCTestCase {
     func testTwoArgumentsThreeExtraClosureParametersSucceeds() {
         func echo(a0: Int,
                   a1: Int,
-                  completion: ([Int], [Int], [Int], Error?) -> Void) {
+                  completion: ([Int], [Int], [Int], TestError?) -> Void) {
             let array = [a0, a1]
             completion(array, array.map { $0 * 2 }, array.map { $0 * 3 }, nil)
         }
 
         let expected = [1, 2]
 
-        let asyncified = Asynchronous.asyncify(function: echo)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: echo)
 
         wait { expectation in
             asyncified(expected[0], expected[1]).async { (value, error) in
@@ -192,14 +192,14 @@ final class AsynchronousFailableSharedHandlerGenericErrorTests: XCTestCase {
     func testTwoArgumentsFourExtraClosureParametersSucceeds() {
         func echo(a0: Int,
                   a1: Int,
-                  completion: ([Int], [Int], [Int], [Int], Error?) -> Void) {
+                  completion: ([Int], [Int], [Int], [Int], TestError?) -> Void) {
             let array = [a0, a1]
             completion(array, array.map { $0 * 2 }, array.map { $0 * 3 }, array.map { $0 * 4 }, nil)
         }
 
         let expected = [1, 2]
 
-        let asyncified = Asynchronous.asyncify(function: echo)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: echo)
 
         wait { expectation in
             asyncified(1, 2).async { (value, error) in
@@ -221,11 +221,11 @@ final class AsynchronousFailableSharedHandlerGenericErrorTests: XCTestCase {
         func sinkhole(a0: Int,
                       a1: Int,
                       a2: Int,
-                      completion: (Error?) -> Void) {
+                      completion: (TestError?) -> Void) {
             completion(nil)
         }
 
-        let asyncified = Asynchronous.asyncify(function: sinkhole)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: sinkhole)
 
         wait { expectation in
             asyncified(1, 2, 3).async { (_, error) in
@@ -239,14 +239,14 @@ final class AsynchronousFailableSharedHandlerGenericErrorTests: XCTestCase {
         func echo(a0: Int,
                   a1: Int,
                   a2: Int,
-                  completion: ([Int], Error?) -> Void) {
+                  completion: ([Int], TestError?) -> Void) {
             let array = [a0, a1, a2]
             completion(array, nil)
         }
 
         let expected = [1, 2, 3]
 
-        let asyncified = Asynchronous.asyncify(function: echo)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: echo)
 
         wait { expectation in
             asyncified(expected[0], expected[1], expected[2]).async { (value, error) in
@@ -266,14 +266,14 @@ final class AsynchronousFailableSharedHandlerGenericErrorTests: XCTestCase {
         func echo(a0: Int,
                   a1: Int,
                   a2: Int,
-                  completion: ([Int], [Int], Error?) -> Void) {
+                  completion: ([Int], [Int], TestError?) -> Void) {
             let array = [a0, a1, a2]
             completion(array, array.map { $0 * 2 }, nil)
         }
 
         let expected = [1, 2, 3]
 
-        let asyncified = Asynchronous.asyncify(function: echo)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: echo)
 
         wait { expectation in
             asyncified(expected[0], expected[1], expected[2]).async { (value, error) in
@@ -293,14 +293,14 @@ final class AsynchronousFailableSharedHandlerGenericErrorTests: XCTestCase {
         func echo(a0: Int,
                   a1: Int,
                   a2: Int,
-                  completion: ([Int], [Int], [Int], Error?) -> Void) {
+                  completion: ([Int], [Int], [Int], TestError?) -> Void) {
             let array = [a0, a1, a2]
             completion(array, array.map { $0 * 2 }, array.map { $0 * 3 }, nil)
         }
 
         let expected = [1, 2, 3]
 
-        let asyncified = Asynchronous.asyncify(function: echo)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: echo)
 
         wait { expectation in
             asyncified(expected[0], expected[1], expected[2]).async { (value, error) in
@@ -321,14 +321,14 @@ final class AsynchronousFailableSharedHandlerGenericErrorTests: XCTestCase {
         func echo(a0: Int,
                   a1: Int,
                   a2: Int,
-                  completion: ([Int], [Int], [Int], [Int], Error?) -> Void) {
+                  completion: ([Int], [Int], [Int], [Int], TestError?) -> Void) {
             let array = [a0, a1, a2]
             completion(array, array.map { $0 * 2 }, array.map { $0 * 3 }, array.map { $0 * 4 }, nil)
         }
 
         let expected = [1, 2, 3]
 
-        let asyncified = Asynchronous.asyncify(function: echo)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: echo)
 
         wait { expectation in
             asyncified(expected[0], expected[1], expected[2]).async { (value, error) in
@@ -351,11 +351,11 @@ final class AsynchronousFailableSharedHandlerGenericErrorTests: XCTestCase {
                       a1: Int,
                       a2: Int,
                       a3: Int,
-                      completion: (Error?) -> Void) {
+                      completion: (TestError?) -> Void) {
             completion(nil)
         }
 
-        let asyncified = Asynchronous.asyncify(function: sinkhole)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: sinkhole)
 
         wait { expectation in
             asyncified(1, 2, 3, 4).async { (_, error) in
@@ -370,14 +370,14 @@ final class AsynchronousFailableSharedHandlerGenericErrorTests: XCTestCase {
                   a1: Int,
                   a2: Int,
                   a3: Int,
-                  completion: ([Int], Error?) -> Void) {
+                  completion: ([Int], TestError?) -> Void) {
             let array = [a0, a1, a2, a3]
             completion(array, nil)
         }
 
         let expected = [1, 2, 3, 4]
 
-        let asyncified = Asynchronous.asyncify(function: echo)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: echo)
 
         wait { expectation in
             asyncified(expected[0], expected[1], expected[2], expected[3]).async { (value, error) in
@@ -397,14 +397,14 @@ final class AsynchronousFailableSharedHandlerGenericErrorTests: XCTestCase {
                   a1: Int,
                   a2: Int,
                   a3: Int,
-                  completion: ([Int], [Int], Error?) -> Void) {
+                  completion: ([Int], [Int], TestError?) -> Void) {
             let array = [a0, a1, a2, a3]
             completion(array, array.map { $0 * 2 }, nil)
         }
 
         let expected = [1, 2, 3, 4]
 
-        let asyncified = Asynchronous.asyncify(function: echo)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: echo)
 
         wait { expectation in
             asyncified(expected[0], expected[1], expected[2], expected[3]).async { (value, error) in
@@ -425,14 +425,14 @@ final class AsynchronousFailableSharedHandlerGenericErrorTests: XCTestCase {
                   a1: Int,
                   a2: Int,
                   a3: Int,
-                  completion: ([Int], [Int], [Int], Error?) -> Void) {
+                  completion: ([Int], [Int], [Int], TestError?) -> Void) {
             let array = [a0, a1, a2, a3]
             completion(array, array.map { $0 * 2 }, array.map { $0 * 3 }, nil)
         }
 
         let expected = [1, 2, 3, 4]
 
-        let asyncified = Asynchronous.asyncify(function: echo)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: echo)
 
         wait { expectation in
             asyncified(expected[0], expected[1], expected[2], expected[3]).async { (value, error) in
@@ -454,14 +454,14 @@ final class AsynchronousFailableSharedHandlerGenericErrorTests: XCTestCase {
                   a1: Int,
                   a2: Int,
                   a3: Int,
-                  completion: ([Int], [Int], [Int], [Int], Error?) -> Void) {
+                  completion: ([Int], [Int], [Int], [Int], TestError?) -> Void) {
             let array = [a0, a1, a2, a3]
             completion(array, array.map { $0 * 2 }, array.map { $0 * 3 }, array.map { $0 * 4 }, nil)
         }
 
         let expected = [1, 2, 3, 4]
 
-        let asyncified = Asynchronous.asyncify(function: echo)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: echo)
 
         wait { expectation in
             asyncified(expected[0], expected[1], expected[2], expected[3]).async { (value, error) in
@@ -485,11 +485,11 @@ final class AsynchronousFailableSharedHandlerGenericErrorTests: XCTestCase {
                       a2: Int,
                       a3: Int,
                       a4: Int,
-                      completion: (Error?) -> Void) {
+                      completion: (TestError?) -> Void) {
             completion(nil)
         }
 
-        let asyncified = Asynchronous.asyncify(function: sinkhole)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: sinkhole)
 
         wait { expectation in
             asyncified(1, 2, 3, 4, 5).async { (_, error) in
@@ -505,25 +505,25 @@ final class AsynchronousFailableSharedHandlerGenericErrorTests: XCTestCase {
                   a2: Int,
                   a3: Int,
                   a4: Int,
-                  completion: ([Int], Error?) -> Void) {
+                  completion: ([Int], TestError?) -> Void) {
             let array = [a0, a1, a2, a3, a4]
             completion(array, nil)
         }
 
         let expected = [1, 2, 3, 4, 5]
 
-        let asyncified = Asynchronous.asyncify(function: echo)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: echo)
 
         wait { expectation in
             asyncified(expected[0], expected[1], expected[2], expected[3],
                        expected[4]).async { (value, error) in
-                guard let actual = value else {
-                    XCTAssertNotNil(value)
-                    return
-                }
-                XCTAssertEqual(expected, actual)
-                XCTAssertNil(error)
-                expectation.fulfill()
+                        guard let actual = value else {
+                            XCTAssertNotNil(value)
+                            return
+                        }
+                        XCTAssertEqual(expected, actual)
+                        XCTAssertNil(error)
+                        expectation.fulfill()
             }
         }
     }
@@ -534,14 +534,14 @@ final class AsynchronousFailableSharedHandlerGenericErrorTests: XCTestCase {
                   a2: Int,
                   a3: Int,
                   a4: Int,
-                  completion: ([Int], [Int], Error?) -> Void) {
+                  completion: ([Int], [Int], TestError?) -> Void) {
             let array = [a0, a1, a2, a3, a4]
             completion(array, array.map { $0 * 2 }, nil)
         }
 
         let expected = [1, 2, 3, 4, 5]
 
-        let asyncified = Asynchronous.asyncify(function: echo)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: echo)
 
         wait { expectation in
             asyncified(expected[0], expected[1], expected[2], expected[3],
@@ -564,27 +564,27 @@ final class AsynchronousFailableSharedHandlerGenericErrorTests: XCTestCase {
                   a2: Int,
                   a3: Int,
                   a4: Int,
-                  completion: ([Int], [Int], [Int], Error?) -> Void) {
+                  completion: ([Int], [Int], [Int], TestError?) -> Void) {
             let array = [a0, a1, a2, a3, a4]
             completion(array, array.map { $0 * 2 }, array.map { $0 * 3 }, nil)
         }
 
         let expected = [1, 2, 3, 4, 5]
 
-        let asyncified = Asynchronous.asyncify(function: echo)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: echo)
 
         wait { expectation in
             asyncified(expected[0], expected[1], expected[2], expected[3],
                        expected[4]).async { (value, error) in
-                guard let actual = value else {
-                    XCTAssertNotNil(value)
-                    return
-                }
-                XCTAssertEqual(expected, actual.0)
-                XCTAssertEqual(expected.map { $0 * 2 }, actual.1)
-                XCTAssertEqual(expected.map { $0 * 3 }, actual.2)
-                XCTAssertNil(error)
-                expectation.fulfill()
+                        guard let actual = value else {
+                            XCTAssertNotNil(value)
+                            return
+                        }
+                        XCTAssertEqual(expected, actual.0)
+                        XCTAssertEqual(expected.map { $0 * 2 }, actual.1)
+                        XCTAssertEqual(expected.map { $0 * 3 }, actual.2)
+                        XCTAssertNil(error)
+                        expectation.fulfill()
             }
         }
     }
@@ -595,28 +595,28 @@ final class AsynchronousFailableSharedHandlerGenericErrorTests: XCTestCase {
                   a2: Int,
                   a3: Int,
                   a4: Int,
-                  completion: ([Int], [Int], [Int], [Int], Error?) -> Void) {
+                  completion: ([Int], [Int], [Int], [Int], TestError?) -> Void) {
             let array = [a0, a1, a2, a3, a4]
             completion(array, array.map { $0 * 2 }, array.map { $0 * 3 }, array.map { $0 * 4 }, nil)
         }
 
         let expected = [1, 2, 3, 4, 5]
 
-        let asyncified = Asynchronous.asyncify(function: echo)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: echo)
 
         wait { expectation in
             asyncified(expected[0], expected[1], expected[2], expected[3],
                        expected[4]).async { (value, error) in
-                guard let actual = value else {
-                    XCTAssertNotNil(value)
-                    return
-                }
-                XCTAssertEqual(expected, actual.0)
-                XCTAssertEqual(expected.map { $0 * 2 }, actual.1)
-                XCTAssertEqual(expected.map { $0 * 3 }, actual.2)
-                XCTAssertEqual(expected.map { $0 * 4 }, actual.3)
-                XCTAssertNil(error)
-                expectation.fulfill()
+                        guard let actual = value else {
+                            XCTAssertNotNil(value)
+                            return
+                        }
+                        XCTAssertEqual(expected, actual.0)
+                        XCTAssertEqual(expected.map { $0 * 2 }, actual.1)
+                        XCTAssertEqual(expected.map { $0 * 3 }, actual.2)
+                        XCTAssertEqual(expected.map { $0 * 4 }, actual.3)
+                        XCTAssertNil(error)
+                        expectation.fulfill()
             }
         }
     }
@@ -628,11 +628,11 @@ final class AsynchronousFailableSharedHandlerGenericErrorTests: XCTestCase {
                       a3: Int,
                       a4: Int,
                       a5: Int,
-                      completion: (Error?) -> Void) {
+                      completion: (TestError?) -> Void) {
             completion(nil)
         }
 
-        let asyncified = Asynchronous.asyncify(function: sinkhole)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: sinkhole)
 
         wait { expectation in
             asyncified(1, 2, 3, 4, 5, 6).async { (_, error) in
@@ -649,14 +649,14 @@ final class AsynchronousFailableSharedHandlerGenericErrorTests: XCTestCase {
                   a3: Int,
                   a4: Int,
                   a5: Int,
-            completion: ([Int], Error?) -> Void) {
+                  completion: ([Int], TestError?) -> Void) {
             let array = [a0, a1, a2, a3, a4, a5]
             completion(array, nil)
         }
 
         let expected = [1, 2, 3, 4, 5, 6]
 
-        let asyncified = Asynchronous.asyncify(function: echo)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: echo)
 
         wait { expectation in
             asyncified(expected[0], expected[1], expected[2], expected[3],
@@ -679,14 +679,14 @@ final class AsynchronousFailableSharedHandlerGenericErrorTests: XCTestCase {
                   a3: Int,
                   a4: Int,
                   a5: Int,
-                  completion: ([Int], [Int], Error?) -> Void) {
+                  completion: ([Int], [Int], TestError?) -> Void) {
             let array = [a0, a1, a2, a3, a4, a5]
             completion(array, array.map { $0 * 2 }, nil)
         }
 
         let expected = [1, 2, 3, 4, 5, 6]
 
-        let asyncified = Asynchronous.asyncify(function: echo)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: echo)
 
         wait { expectation in
             asyncified(expected[0], expected[1], expected[2], expected[3],
@@ -710,14 +710,14 @@ final class AsynchronousFailableSharedHandlerGenericErrorTests: XCTestCase {
                   a3: Int,
                   a4: Int,
                   a5: Int,
-            completion: ([Int], [Int], [Int], Error?) -> Void) {
+                  completion: ([Int], [Int], [Int], TestError?) -> Void) {
             let array = [a0, a1, a2, a3, a4, a5]
             completion(array, array.map { $0 * 2 }, array.map { $0 * 3 }, nil)
         }
 
         let expected = [1, 2, 3, 4, 5, 6]
 
-        let asyncified = Asynchronous.asyncify(function: echo)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: echo)
 
         wait { expectation in
             asyncified(expected[0], expected[1], expected[2], expected[3],
@@ -742,14 +742,14 @@ final class AsynchronousFailableSharedHandlerGenericErrorTests: XCTestCase {
                   a3: Int,
                   a4: Int,
                   a5: Int,
-            completion: ([Int], [Int], [Int], [Int], Error?) -> Void) {
+                  completion: ([Int], [Int], [Int], [Int], TestError?) -> Void) {
             let array = [a0, a1, a2, a3, a4, a5]
             completion(array, array.map { $0 * 2 }, array.map { $0 * 3 }, array.map { $0 * 4 }, nil)
         }
 
         let expected = [1, 2, 3, 4, 5, 6]
 
-        let asyncified = Asynchronous.asyncify(function: echo)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: echo)
 
         wait { expectation in
             asyncified(expected[0], expected[1], expected[2], expected[3],
@@ -776,11 +776,11 @@ final class AsynchronousFailableSharedHandlerGenericErrorTests: XCTestCase {
                       a4: Int,
                       a5: Int,
                       a6: Int,
-                      completion: (Error?) -> Void) {
+                      completion: (TestError?) -> Void) {
             completion(nil)
         }
 
-        let asyncified = Asynchronous.asyncify(function: sinkhole)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: sinkhole)
 
         wait { expectation in
             asyncified(1, 2, 3, 4, 5, 6, 7).async { (_, error) in
@@ -798,14 +798,14 @@ final class AsynchronousFailableSharedHandlerGenericErrorTests: XCTestCase {
                   a4: Int,
                   a5: Int,
                   a6: Int,
-                  completion: ([Int], Error?) -> Void) {
+                  completion: ([Int], TestError?) -> Void) {
             let array = [a0, a1, a2, a3, a4, a5, a6]
             completion(array, nil)
         }
 
         let expected = [1, 2, 3, 4, 5, 6, 7]
 
-        let asyncified = Asynchronous.asyncify(function: echo)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: echo)
 
         wait { expectation in
             asyncified(expected[0], expected[1], expected[2], expected[3],
@@ -829,14 +829,14 @@ final class AsynchronousFailableSharedHandlerGenericErrorTests: XCTestCase {
                   a4: Int,
                   a5: Int,
                   a6: Int,
-                  completion: ([Int], [Int], Error?) -> Void) {
+                  completion: ([Int], [Int], TestError?) -> Void) {
             let array = [a0, a1, a2, a3, a4, a5, a6]
             completion(array, array.map { $0 * 2 }, nil)
         }
 
         let expected = [1, 2, 3, 4, 5, 6, 7]
 
-        let asyncified = Asynchronous.asyncify(function: echo)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: echo)
 
         wait { expectation in
             asyncified(expected[0], expected[1], expected[2], expected[3],
@@ -861,14 +861,14 @@ final class AsynchronousFailableSharedHandlerGenericErrorTests: XCTestCase {
                   a4: Int,
                   a5: Int,
                   a6: Int,
-                  completion: ([Int], [Int], [Int], Error?) -> Void) {
+                  completion: ([Int], [Int], [Int], TestError?) -> Void) {
             let array = [a0, a1, a2, a3, a4, a5, a6]
             completion(array, array.map { $0 * 2 }, array.map { $0 * 3 }, nil)
         }
 
         let expected = [1, 2, 3, 4, 5, 6, 7]
 
-        let asyncified = Asynchronous.asyncify(function: echo)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: echo)
 
         wait { expectation in
             asyncified(expected[0], expected[1], expected[2], expected[3],
@@ -894,14 +894,14 @@ final class AsynchronousFailableSharedHandlerGenericErrorTests: XCTestCase {
                   a4: Int,
                   a5: Int,
                   a6: Int,
-                  completion: ([Int], [Int], [Int], [Int], Error?) -> Void) {
+                  completion: ([Int], [Int], [Int], [Int], TestError?) -> Void) {
             let array = [a0, a1, a2, a3, a4, a5, a6]
             completion(array, array.map { $0 * 2 }, array.map { $0 * 3 }, array.map { $0 * 4 }, nil)
         }
 
         let expected = [1, 2, 3, 4, 5, 6, 7]
 
-        let asyncified = Asynchronous.asyncify(function: echo)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: echo)
 
         wait { expectation in
             asyncified(expected[0], expected[1], expected[2], expected[3],
@@ -929,11 +929,11 @@ final class AsynchronousFailableSharedHandlerGenericErrorTests: XCTestCase {
                       a5: Int,
                       a6: Int,
                       a7: Int,
-                      completion: (Error?) -> Void) {
+                      completion: (TestError?) -> Void) {
             completion(nil)
         }
 
-        let asyncified = Asynchronous.asyncify(function: sinkhole)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: sinkhole)
 
         wait { expectation in
             asyncified(1, 2, 3, 4, 5, 6, 7, 8).async { (_, error) in
@@ -952,14 +952,14 @@ final class AsynchronousFailableSharedHandlerGenericErrorTests: XCTestCase {
                   a5: Int,
                   a6: Int,
                   a7: Int,
-                  completion: ([Int], Error?) -> Void) {
+                  completion: ([Int], TestError?) -> Void) {
             let array = [a0, a1, a2, a3, a4, a5, a6, a7]
             completion(array, nil)
         }
 
         let expected = [1, 2, 3, 4, 5, 6, 7, 8]
 
-        let asyncified = Asynchronous.asyncify(function: echo)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: echo)
 
         wait { expectation in
             asyncified(expected[0], expected[1], expected[2], expected[3],
@@ -984,14 +984,14 @@ final class AsynchronousFailableSharedHandlerGenericErrorTests: XCTestCase {
                   a5: Int,
                   a6: Int,
                   a7: Int,
-                  completion: ([Int], [Int], Error?) -> Void) {
+                  completion: ([Int], [Int], TestError?) -> Void) {
             let array = [a0, a1, a2, a3, a4, a5, a6, a7]
             completion(array, array.map { $0 * 2 }, nil)
         }
 
         let expected = [1, 2, 3, 4, 5, 6, 7, 8]
 
-        let asyncified = Asynchronous.asyncify(function: echo)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: echo)
 
         wait { expectation in
             asyncified(expected[0], expected[1], expected[2], expected[3],
@@ -1017,14 +1017,14 @@ final class AsynchronousFailableSharedHandlerGenericErrorTests: XCTestCase {
                   a5: Int,
                   a6: Int,
                   a7: Int,
-                  completion: ([Int], [Int], [Int], Error?) -> Void) {
+                  completion: ([Int], [Int], [Int], TestError?) -> Void) {
             let array = [a0, a1, a2, a3, a4, a5, a6, a7]
             completion(array, array.map { $0 * 2 }, array.map { $0 * 3 }, nil)
         }
 
         let expected = [1, 2, 3, 4, 5, 6, 7, 8]
 
-        let asyncified = Asynchronous.asyncify(function: echo)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: echo)
 
         wait { expectation in
             asyncified(expected[0], expected[1], expected[2], expected[3],
@@ -1051,14 +1051,14 @@ final class AsynchronousFailableSharedHandlerGenericErrorTests: XCTestCase {
                   a5: Int,
                   a6: Int,
                   a7: Int,
-                  completion: ([Int], [Int], [Int], [Int], Error?) -> Void) {
+                  completion: ([Int], [Int], [Int], [Int], TestError?) -> Void) {
             let array = [a0, a1, a2, a3, a4, a5, a6, a7]
             completion(array, array.map { $0 * 2 }, array.map { $0 * 3 }, array.map { $0 * 4 }, nil)
         }
 
         let expected = [1, 2, 3, 4, 5, 6, 7, 8]
 
-        let asyncified = Asynchronous.asyncify(function: echo)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: echo)
 
         wait { expectation in
             asyncified(expected[0], expected[1], expected[2], expected[3],
@@ -1079,728 +1079,728 @@ final class AsynchronousFailableSharedHandlerGenericErrorTests: XCTestCase {
 
     //MARK: - Fails
     func testZeroArgumentsZeroExtraParametersFails() {
-        let expected = TestError.somethingReallyHorribleHappened as NSError
-        func fail(completion: (Error?) -> Void) {
+        let expected = TestError.somethingReallyHorribleHappened
+        func fail(completion: (TestError?) -> Void) {
             completion(expected)
         }
 
-        let asyncified = Asynchronous.asyncify(function: fail)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: fail)
 
         wait { expectation in
             asyncified().async { (value, actual) in
                 XCTAssertNil(value)
-                XCTAssertEqual(expected, actual?.error as NSError?)
+                XCTAssertEqual(expected, actual)
                 expectation.fulfill()
             }
         }
     }
 
     func testZeroArgumentsOneExtraParameterFails() {
-        let expected = TestError.somethingReallyHorribleHappened as NSError
+        let expected = TestError.somethingReallyHorribleHappened
         func fail(
-            completion: (Int?, Error?) -> Void) {
+            completion: (Int?, TestError?) -> Void) {
             completion(nil, expected)
         }
 
-        let asyncified = Asynchronous.asyncify(function: fail)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: fail)
 
         wait { expectation in
             asyncified().async { (value, actual) in
                 XCTAssertNil(value)
-                XCTAssertEqual(expected, actual?.error as NSError?)
+                XCTAssertEqual(expected, actual)
                 expectation.fulfill()
             }
         }
     }
 
     func testZeroArgumentsTwoExtraParametersFails() {
-        let expected = TestError.somethingReallyHorribleHappened as NSError
+        let expected = TestError.somethingReallyHorribleHappened
         func fail(
-            completion: (Int?, Int?, Error?) -> Void) {
+            completion: (Int?, Int?, TestError?) -> Void) {
             completion(nil, nil, expected)
         }
 
-        let asyncified = Asynchronous.asyncify(function: fail)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: fail)
 
         wait { expectation in
             asyncified().async { (value, actual) in
                 XCTAssertNil(value)
-                XCTAssertEqual(expected, actual?.error as NSError?)
+                XCTAssertEqual(expected, actual)
                 expectation.fulfill()
             }
         }
     }
 
     func testZeroArgumentsThreeExtraParametersFails() {
-        let expected = TestError.somethingReallyHorribleHappened as NSError
+        let expected = TestError.somethingReallyHorribleHappened
         func fail(
-            completion: (Int?, Int?, Int?, Error?) -> Void) {
+            completion: (Int?, Int?, Int?, TestError?) -> Void) {
             completion(nil, nil, nil, expected)
         }
 
-        let asyncified = Asynchronous.asyncify(function: fail)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: fail)
 
         wait { expectation in
             asyncified().async { (value, actual) in
                 XCTAssertNil(value)
-                XCTAssertEqual(expected, actual?.error as NSError?)
+                XCTAssertEqual(expected, actual)
                 expectation.fulfill()
             }
         }
     }
 
     func testZeroArgumentsFourExtraParametersFails() {
-        let expected = TestError.somethingReallyHorribleHappened as NSError
+        let expected = TestError.somethingReallyHorribleHappened
         func fail(
-            completion: (Int?, Int?, Int?, Int?, Error?) -> Void) {
+            completion: (Int?, Int?, Int?, Int?, TestError?) -> Void) {
             completion(nil, nil, nil, nil, expected)
         }
 
-        let asyncified = Asynchronous.asyncify(function: fail)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: fail)
 
         wait { expectation in
             asyncified().async { (value, actual) in
                 XCTAssertNil(value)
-                XCTAssertEqual(expected, actual?.error as NSError?)
+                XCTAssertEqual(expected, actual)
                 expectation.fulfill()
             }
         }
     }
 
     func testOneArgumentZeroExtraParametersFails() {
-        let expected = TestError.somethingReallyHorribleHappened as NSError
-        func fail(a0: Int,completion: (Error?) -> Void) {
+        let expected = TestError.somethingReallyHorribleHappened
+        func fail(a0: Int,completion: (TestError?) -> Void) {
             completion(expected)
         }
 
-        let asyncified = Asynchronous.asyncify(function: fail)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: fail)
 
         wait { expectation in
             asyncified(0).async { (value, actual) in
                 XCTAssertNil(value)
-                XCTAssertEqual(expected, actual?.error as NSError?)
+                XCTAssertEqual(expected, actual)
                 expectation.fulfill()
             }
         }
     }
 
     func testOneArgumentOneExtraParameterFails() {
-        let expected = TestError.somethingReallyHorribleHappened as NSError
+        let expected = TestError.somethingReallyHorribleHappened
         func fail(a0: Int,
-                  completion: (Int?, Error?) -> Void) {
+                  completion: (Int?, TestError?) -> Void) {
             completion(nil, expected)
         }
 
-        let asyncified = Asynchronous.asyncify(function: fail)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: fail)
 
         wait { expectation in
             asyncified(0).async { (value, actual) in
                 XCTAssertNil(value)
-                XCTAssertEqual(expected, actual?.error as NSError?)
+                XCTAssertEqual(expected, actual)
                 expectation.fulfill()
             }
         }
     }
 
     func testOneArgumentTwoExtraParametersFails() {
-        let expected = TestError.somethingReallyHorribleHappened as NSError
+        let expected = TestError.somethingReallyHorribleHappened
         func fail(a0: Int,
-                  completion: (Int?, Int?, Error?) -> Void) {
+                  completion: (Int?, Int?, TestError?) -> Void) {
             completion(nil, nil, expected)
         }
 
-        let asyncified = Asynchronous.asyncify(function: fail)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: fail)
 
         wait { expectation in
             asyncified(0).async { (value, actual) in
                 XCTAssertNil(value)
-                XCTAssertEqual(expected, actual?.error as NSError?)
+                XCTAssertEqual(expected, actual)
                 expectation.fulfill()
             }
         }
     }
 
     func testOneArgumentThreeExtraParametersFails() {
-        let expected = TestError.somethingReallyHorribleHappened as NSError
+        let expected = TestError.somethingReallyHorribleHappened
         func fail(a0: Int,
-                  completion: (Int?, Int?, Int?, Error?) -> Void) {
+                  completion: (Int?, Int?, Int?, TestError?) -> Void) {
             completion(nil, nil, nil, expected)
         }
 
-        let asyncified = Asynchronous.asyncify(function: fail)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: fail)
 
         wait { expectation in
             asyncified(0).async { (value, actual) in
                 XCTAssertNil(value)
-                XCTAssertEqual(expected, actual?.error as NSError?)
+                XCTAssertEqual(expected, actual)
                 expectation.fulfill()
             }
         }
     }
 
     func testOneArgumentFourExtraParametersFails() {
-        let expected = TestError.somethingReallyHorribleHappened as NSError
+        let expected = TestError.somethingReallyHorribleHappened
         func fail(a0: Int,
-                  completion: (Int?, Int?, Int?, Int?, Error?) -> Void) {
+                  completion: (Int?, Int?, Int?, Int?, TestError?) -> Void) {
             completion(nil, nil, nil, nil, expected)
         }
 
-        let asyncified = Asynchronous.asyncify(function: fail)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: fail)
 
         wait { expectation in
             asyncified(0).async { (value, actual) in
                 XCTAssertNil(value)
-                XCTAssertEqual(expected, actual?.error as NSError?)
+                XCTAssertEqual(expected, actual)
                 expectation.fulfill()
             }
         }
     }
 
     func testTwoArgumentsZeroExtraParametersFails() {
-        let expected = TestError.somethingReallyHorribleHappened as NSError
+        let expected = TestError.somethingReallyHorribleHappened
         func fail(a0: Int,
-                  a1: Int,completion: (Error?) -> Void) {
+                  a1: Int,completion: (TestError?) -> Void) {
             completion(expected)
         }
 
-        let asyncified = Asynchronous.asyncify(function: fail)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: fail)
 
         wait { expectation in
             asyncified(0, 0).async { (value, actual) in
                 XCTAssertNil(value)
-                XCTAssertEqual(expected, actual?.error as NSError?)
+                XCTAssertEqual(expected, actual)
                 expectation.fulfill()
             }
         }
     }
 
     func testTwoArgumentsOneExtraParameterFails() {
-        let expected = TestError.somethingReallyHorribleHappened as NSError
+        let expected = TestError.somethingReallyHorribleHappened
         func fail(a0: Int,
                   a1: Int,
-                  completion: (Int?, Error?) -> Void) {
+                  completion: (Int?, TestError?) -> Void) {
             completion(nil, expected)
         }
 
-        let asyncified = Asynchronous.asyncify(function: fail)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: fail)
 
         wait { expectation in
             asyncified(0, 0).async { (value, actual) in
                 XCTAssertNil(value)
-                XCTAssertEqual(expected, actual?.error as NSError?)
+                XCTAssertEqual(expected, actual)
                 expectation.fulfill()
             }
         }
     }
 
     func testTwoArgumentsTwoExtraParametersFails() {
-        let expected = TestError.somethingReallyHorribleHappened as NSError
+        let expected = TestError.somethingReallyHorribleHappened
         func fail(a0: Int,
                   a1: Int,
-                  completion: (Int?, Int?, Error?) -> Void) {
+                  completion: (Int?, Int?, TestError?) -> Void) {
             completion(nil, nil, expected)
         }
 
-        let asyncified = Asynchronous.asyncify(function: fail)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: fail)
 
         wait { expectation in
             asyncified(0, 0).async { (value, actual) in
                 XCTAssertNil(value)
-                XCTAssertEqual(expected, actual?.error as NSError?)
+                XCTAssertEqual(expected, actual)
                 expectation.fulfill()
             }
         }
     }
 
     func testTwoArgumentsThreeExtraParametersFails() {
-        let expected = TestError.somethingReallyHorribleHappened as NSError
+        let expected = TestError.somethingReallyHorribleHappened
         func fail(a0: Int,
                   a1: Int,
-                  completion: (Int?, Int?, Int?, Error?) -> Void) {
+                  completion: (Int?, Int?, Int?, TestError?) -> Void) {
             completion(nil, nil, nil, expected)
         }
 
-        let asyncified = Asynchronous.asyncify(function: fail)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: fail)
 
         wait { expectation in
             asyncified(0, 0).async { (value, actual) in
                 XCTAssertNil(value)
-                XCTAssertEqual(expected, actual?.error as NSError?)
+                XCTAssertEqual(expected, actual)
                 expectation.fulfill()
             }
         }
     }
 
     func testTwoArgumentsFourExtraParametersFails() {
-        let expected = TestError.somethingReallyHorribleHappened as NSError
+        let expected = TestError.somethingReallyHorribleHappened
         func fail(a0: Int,
                   a1: Int,
-                  completion: (Int?, Int?, Int?, Int?, Error?) -> Void) {
+                  completion: (Int?, Int?, Int?, Int?, TestError?) -> Void) {
             completion(nil, nil, nil, nil, expected)
         }
 
-        let asyncified = Asynchronous.asyncify(function: fail)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: fail)
 
         wait { expectation in
             asyncified(0, 0).async { (value, actual) in
                 XCTAssertNil(value)
-                XCTAssertEqual(expected, actual?.error as NSError?)
+                XCTAssertEqual(expected, actual)
                 expectation.fulfill()
             }
         }
     }
 
     func testThreeArgumentsZeroExtraParametersFails() {
-        let expected = TestError.somethingReallyHorribleHappened as NSError
+        let expected = TestError.somethingReallyHorribleHappened
         func fail(a0: Int,
                   a1: Int,
-                  a2: Int,completion: (Error?) -> Void) {
+                  a2: Int,completion: (TestError?) -> Void) {
             completion(expected)
         }
 
-        let asyncified = Asynchronous.asyncify(function: fail)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: fail)
 
         wait { expectation in
             asyncified(0, 0, 0).async { (value, actual) in
                 XCTAssertNil(value)
-                XCTAssertEqual(expected, actual?.error as NSError?)
+                XCTAssertEqual(expected, actual)
                 expectation.fulfill()
             }
         }
     }
 
     func testThreeArgumentsOneExtraParameterFails() {
-        let expected = TestError.somethingReallyHorribleHappened as NSError
+        let expected = TestError.somethingReallyHorribleHappened
         func fail(a0: Int,
                   a1: Int,
                   a2: Int,
-                  completion: (Int?, Error?) -> Void) {
+                  completion: (Int?, TestError?) -> Void) {
             completion(nil, expected)
         }
 
-        let asyncified = Asynchronous.asyncify(function: fail)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: fail)
 
         wait { expectation in
             asyncified(0, 0, 0).async { (value, actual) in
                 XCTAssertNil(value)
-                XCTAssertEqual(expected, actual?.error as NSError?)
+                XCTAssertEqual(expected, actual)
                 expectation.fulfill()
             }
         }
     }
 
     func testThreeArgumentsTwoExtraParametersFails() {
-        let expected = TestError.somethingReallyHorribleHappened as NSError
+        let expected = TestError.somethingReallyHorribleHappened
         func fail(a0: Int,
                   a1: Int,
                   a2: Int,
-                  completion: (Int?, Int?, Error?) -> Void) {
+                  completion: (Int?, Int?, TestError?) -> Void) {
             completion(nil, nil, expected)
         }
 
-        let asyncified = Asynchronous.asyncify(function: fail)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: fail)
 
         wait { expectation in
             asyncified(0, 0, 0).async { (value, actual) in
                 XCTAssertNil(value)
-                XCTAssertEqual(expected, actual?.error as NSError?)
+                XCTAssertEqual(expected, actual)
                 expectation.fulfill()
             }
         }
     }
 
     func testThreeArgumentsThreeExtraParametersFails() {
-        let expected = TestError.somethingReallyHorribleHappened as NSError
+        let expected = TestError.somethingReallyHorribleHappened
         func fail(a0: Int,
                   a1: Int,
                   a2: Int,
-                  completion: (Int?, Int?, Int?, Error?) -> Void) {
+                  completion: (Int?, Int?, Int?, TestError?) -> Void) {
             completion(nil, nil, nil, expected)
         }
 
-        let asyncified = Asynchronous.asyncify(function: fail)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: fail)
 
         wait { expectation in
             asyncified(0, 0, 0).async { (value, actual) in
                 XCTAssertNil(value)
-                XCTAssertEqual(expected, actual?.error as NSError?)
+                XCTAssertEqual(expected, actual)
                 expectation.fulfill()
             }
         }
     }
 
     func testThreeArgumentsFourExtraParametersFails() {
-        let expected = TestError.somethingReallyHorribleHappened as NSError
+        let expected = TestError.somethingReallyHorribleHappened
         func fail(a0: Int,
                   a1: Int,
                   a2: Int,
-                  completion: (Int?, Int?, Int?, Int?, Error?) -> Void) {
+                  completion: (Int?, Int?, Int?, Int?, TestError?) -> Void) {
             completion(nil, nil, nil, nil, expected)
         }
 
-        let asyncified = Asynchronous.asyncify(function: fail)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: fail)
 
         wait { expectation in
             asyncified(0, 0, 0).async { (value, actual) in
                 XCTAssertNil(value)
-                XCTAssertEqual(expected, actual?.error as NSError?)
+                XCTAssertEqual(expected, actual)
                 expectation.fulfill()
             }
         }
     }
 
     func testFourArgumentsZeroExtraParametersFails() {
-        let expected = TestError.somethingReallyHorribleHappened as NSError
+        let expected = TestError.somethingReallyHorribleHappened
         func fail(a0: Int,
                   a1: Int,
                   a2: Int,
-                  a3: Int,completion: (Error?) -> Void) {
+                  a3: Int,completion: (TestError?) -> Void) {
             completion(expected)
         }
 
-        let asyncified = Asynchronous.asyncify(function: fail)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: fail)
 
         wait { expectation in
             asyncified(0, 0, 0, 0).async { (value, actual) in
                 XCTAssertNil(value)
-                XCTAssertEqual(expected, actual?.error as NSError?)
+                XCTAssertEqual(expected, actual)
                 expectation.fulfill()
             }
         }
     }
 
     func testFourArgumentsOneExtraParameterFails() {
-        let expected = TestError.somethingReallyHorribleHappened as NSError
+        let expected = TestError.somethingReallyHorribleHappened
         func fail(a0: Int,
                   a1: Int,
                   a2: Int,
                   a3: Int,
-                  completion: (Int?, Error?) -> Void) {
+                  completion: (Int?, TestError?) -> Void) {
             completion(nil, expected)
         }
 
-        let asyncified = Asynchronous.asyncify(function: fail)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: fail)
 
         wait { expectation in
             asyncified(0, 0, 0, 0).async { (value, actual) in
                 XCTAssertNil(value)
-                XCTAssertEqual(expected, actual?.error as NSError?)
+                XCTAssertEqual(expected, actual)
                 expectation.fulfill()
             }
         }
     }
 
     func testFourArgumentsTwoExtraParametersFails() {
-        let expected = TestError.somethingReallyHorribleHappened as NSError
+        let expected = TestError.somethingReallyHorribleHappened
         func fail(a0: Int,
                   a1: Int,
                   a2: Int,
                   a3: Int,
-                  completion: (Int?, Int?, Error?) -> Void) {
+                  completion: (Int?, Int?, TestError?) -> Void) {
             completion(nil, nil, expected)
         }
 
-        let asyncified = Asynchronous.asyncify(function: fail)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: fail)
 
         wait { expectation in
             asyncified(0, 0, 0, 0).async { (value, actual) in
                 XCTAssertNil(value)
-                XCTAssertEqual(expected, actual?.error as NSError?)
+                XCTAssertEqual(expected, actual)
                 expectation.fulfill()
             }
         }
     }
 
     func testFourArgumentsThreeExtraParametersFails() {
-        let expected = TestError.somethingReallyHorribleHappened as NSError
+        let expected = TestError.somethingReallyHorribleHappened
         func fail(a0: Int,
                   a1: Int,
                   a2: Int,
                   a3: Int,
-                  completion: (Int?, Int?, Int?, Error?) -> Void) {
+                  completion: (Int?, Int?, Int?, TestError?) -> Void) {
             completion(nil, nil, nil, expected)
         }
 
-        let asyncified = Asynchronous.asyncify(function: fail)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: fail)
 
         wait { expectation in
             asyncified(0, 0, 0, 0).async { (value, actual) in
                 XCTAssertNil(value)
-                XCTAssertEqual(expected, actual?.error as NSError?)
+                XCTAssertEqual(expected, actual)
                 expectation.fulfill()
             }
         }
     }
 
     func testFourArgumentsFourExtraParametersFails() {
-        let expected = TestError.somethingReallyHorribleHappened as NSError
+        let expected = TestError.somethingReallyHorribleHappened
         func fail(a0: Int,
                   a1: Int,
                   a2: Int,
                   a3: Int,
-                  completion: (Int?, Int?, Int?, Int?, Error?) -> Void) {
+                  completion: (Int?, Int?, Int?, Int?, TestError?) -> Void) {
             completion(nil, nil, nil, nil, expected)
         }
 
-        let asyncified = Asynchronous.asyncify(function: fail)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: fail)
 
         wait { expectation in
             asyncified(0, 0, 0, 0).async { (value, actual) in
                 XCTAssertNil(value)
-                XCTAssertEqual(expected, actual?.error as NSError?)
+                XCTAssertEqual(expected, actual)
                 expectation.fulfill()
             }
         }
     }
 
     func testFiveArgumentsZeroExtraParametersFails() {
-        let expected = TestError.somethingReallyHorribleHappened as NSError
+        let expected = TestError.somethingReallyHorribleHappened
         func fail(a0: Int,
                   a1: Int,
                   a2: Int,
                   a3: Int,
-                  a4: Int,completion: (Error?) -> Void) {
+                  a4: Int,completion: (TestError?) -> Void) {
             completion(expected)
         }
 
-        let asyncified = Asynchronous.asyncify(function: fail)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: fail)
 
         wait { expectation in
             asyncified(0, 0, 0, 0, 0).async { (value, actual) in
                 XCTAssertNil(value)
-                XCTAssertEqual(expected, actual?.error as NSError?)
+                XCTAssertEqual(expected, actual)
                 expectation.fulfill()
             }
         }
     }
 
     func testFiveArgumentsOneExtraParameterFails() {
-        let expected = TestError.somethingReallyHorribleHappened as NSError
+        let expected = TestError.somethingReallyHorribleHappened
         func fail(a0: Int,
                   a1: Int,
                   a2: Int,
                   a3: Int,
                   a4: Int,
-                  completion: (Int?, Error?) -> Void) {
+                  completion: (Int?, TestError?) -> Void) {
             completion(nil, expected)
         }
 
-        let asyncified = Asynchronous.asyncify(function: fail)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: fail)
 
         wait { expectation in
             asyncified(0, 0, 0, 0, 0).async { (value, actual) in
                 XCTAssertNil(value)
-                XCTAssertEqual(expected, actual?.error as NSError?)
+                XCTAssertEqual(expected, actual)
                 expectation.fulfill()
             }
         }
     }
 
     func testFiveArgumentsTwoExtraParametersFails() {
-        let expected = TestError.somethingReallyHorribleHappened as NSError
+        let expected = TestError.somethingReallyHorribleHappened
         func fail(a0: Int,
                   a1: Int,
                   a2: Int,
                   a3: Int,
                   a4: Int,
-                  completion: (Int?, Int?, Error?) -> Void) {
+                  completion: (Int?, Int?, TestError?) -> Void) {
             completion(nil, nil, expected)
         }
 
-        let asyncified = Asynchronous.asyncify(function: fail)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: fail)
 
         wait { expectation in
             asyncified(0, 0, 0, 0, 0).async { (value, actual) in
                 XCTAssertNil(value)
-                XCTAssertEqual(expected, actual?.error as NSError?)
+                XCTAssertEqual(expected, actual)
                 expectation.fulfill()
             }
         }
     }
 
     func testFiveArgumentsThreeExtraParametersFails() {
-        let expected = TestError.somethingReallyHorribleHappened as NSError
+        let expected = TestError.somethingReallyHorribleHappened
         func fail(a0: Int,
                   a1: Int,
                   a2: Int,
                   a3: Int,
                   a4: Int,
-                  completion: (Int?, Int?, Int?, Error?) -> Void) {
+                  completion: (Int?, Int?, Int?, TestError?) -> Void) {
             completion(nil, nil, nil, expected)
         }
 
-        let asyncified = Asynchronous.asyncify(function: fail)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: fail)
 
         wait { expectation in
             asyncified(0, 0, 0, 0, 0).async { (value, actual) in
                 XCTAssertNil(value)
-                XCTAssertEqual(expected, actual?.error as NSError?)
+                XCTAssertEqual(expected, actual)
                 expectation.fulfill()
             }
         }
     }
 
     func testFiveArgumentsFourExtraParametersFails() {
-        let expected = TestError.somethingReallyHorribleHappened as NSError
+        let expected = TestError.somethingReallyHorribleHappened
         func fail(a0: Int,
                   a1: Int,
                   a2: Int,
                   a3: Int,
                   a4: Int,
-                  completion: (Int?, Int?, Int?, Int?, Error?) -> Void) {
+                  completion: (Int?, Int?, Int?, Int?, TestError?) -> Void) {
             completion(nil, nil, nil, nil, expected)
         }
 
-        let asyncified = Asynchronous.asyncify(function: fail)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: fail)
 
         wait { expectation in
             asyncified(0, 0, 0, 0, 0).async { (value, actual) in
                 XCTAssertNil(value)
-                XCTAssertEqual(expected, actual?.error as NSError?)
+                XCTAssertEqual(expected, actual)
                 expectation.fulfill()
             }
         }
     }
 
     func testSixArgumentsZeroExtraParametersFails() {
-        let expected = TestError.somethingReallyHorribleHappened as NSError
+        let expected = TestError.somethingReallyHorribleHappened
         func fail(a0: Int,
                   a1: Int,
                   a2: Int,
                   a3: Int,
                   a4: Int,
-                  a5: Int,completion: (Error?) -> Void) {
+                  a5: Int,completion: (TestError?) -> Void) {
             completion(expected)
         }
 
-        let asyncified = Asynchronous.asyncify(function: fail)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: fail)
 
         wait { expectation in
             asyncified(0, 0, 0, 0, 0, 0).async { (value, actual) in
                 XCTAssertNil(value)
-                XCTAssertEqual(expected, actual?.error as NSError?)
+                XCTAssertEqual(expected, actual)
                 expectation.fulfill()
             }
         }
     }
 
     func testSixArgumentsOneExtraParameterFails() {
-        let expected = TestError.somethingReallyHorribleHappened as NSError
+        let expected = TestError.somethingReallyHorribleHappened
         func fail(a0: Int,
                   a1: Int,
                   a2: Int,
                   a3: Int,
                   a4: Int,
                   a5: Int,
-                  completion: (Int?, Error?) -> Void) {
+                  completion: (Int?, TestError?) -> Void) {
             completion(nil, expected)
         }
 
-        let asyncified = Asynchronous.asyncify(function: fail)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: fail)
 
         wait { expectation in
             asyncified(0, 0, 0, 0, 0, 0).async { (value, actual) in
                 XCTAssertNil(value)
-                XCTAssertEqual(expected, actual?.error as NSError?)
+                XCTAssertEqual(expected, actual)
                 expectation.fulfill()
             }
         }
     }
 
     func testSixArgumentsTwoExtraParametersFails() {
-        let expected = TestError.somethingReallyHorribleHappened as NSError
+        let expected = TestError.somethingReallyHorribleHappened
         func fail(a0: Int,
                   a1: Int,
                   a2: Int,
                   a3: Int,
                   a4: Int,
                   a5: Int,
-                  completion: (Int?, Int?, Error?) -> Void) {
+                  completion: (Int?, Int?, TestError?) -> Void) {
             completion(nil, nil, expected)
         }
 
-        let asyncified = Asynchronous.asyncify(function: fail)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: fail)
 
         wait { expectation in
             asyncified(0, 0, 0, 0, 0, 0).async { (value, actual) in
                 XCTAssertNil(value)
-                XCTAssertEqual(expected, actual?.error as NSError?)
+                XCTAssertEqual(expected, actual)
                 expectation.fulfill()
             }
         }
     }
 
     func testSixArgumentsThreeExtraParametersFails() {
-        let expected = TestError.somethingReallyHorribleHappened as NSError
+        let expected = TestError.somethingReallyHorribleHappened
         func fail(a0: Int,
                   a1: Int,
                   a2: Int,
                   a3: Int,
                   a4: Int,
                   a5: Int,
-                  completion: (Int?, Int?, Int?, Error?) -> Void) {
+                  completion: (Int?, Int?, Int?, TestError?) -> Void) {
             completion(nil, nil, nil, expected)
         }
 
-        let asyncified = Asynchronous.asyncify(function: fail)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: fail)
 
         wait { expectation in
             asyncified(0, 0, 0, 0, 0, 0).async { (value, actual) in
                 XCTAssertNil(value)
-                XCTAssertEqual(expected, actual?.error as NSError?)
+                XCTAssertEqual(expected, actual)
                 expectation.fulfill()
             }
         }
     }
 
     func testSixArgumentsFourExtraParametersFails() {
-        let expected = TestError.somethingReallyHorribleHappened as NSError
+        let expected = TestError.somethingReallyHorribleHappened
         func fail(a0: Int,
                   a1: Int,
                   a2: Int,
                   a3: Int,
                   a4: Int,
                   a5: Int,
-                  completion: (Int?, Int?, Int?, Int?, Error?) -> Void) {
+                  completion: (Int?, Int?, Int?, Int?, TestError?) -> Void) {
             completion(nil, nil, nil, nil, expected)
         }
 
-        let asyncified = Asynchronous.asyncify(function: fail)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: fail)
 
         wait { expectation in
             asyncified(0, 0, 0, 0, 0, 0).async { (value, actual) in
                 XCTAssertNil(value)
-                XCTAssertEqual(expected, actual?.error as NSError?)
+                XCTAssertEqual(expected, actual)
                 expectation.fulfill()
             }
         }
     }
 
     func testSevenArgumentsZeroExtraParametersFails() {
-        let expected = TestError.somethingReallyHorribleHappened as NSError
+        let expected = TestError.somethingReallyHorribleHappened
         func fail(a0: Int,
                   a1: Int,
                   a2: Int,
                   a3: Int,
                   a4: Int,
                   a5: Int,
-                  a6: Int,completion: (Error?) -> Void) {
+                  a6: Int,completion: (TestError?) -> Void) {
             completion(expected)
         }
 
-        let asyncified = Asynchronous.asyncify(function: fail)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: fail)
 
         wait { expectation in
             asyncified(0, 0, 0, 0, 0, 0, 0).async { (value, actual) in
                 XCTAssertNil(value)
-                XCTAssertEqual(expected, actual?.error as NSError?)
+                XCTAssertEqual(expected, actual)
                 expectation.fulfill()
             }
         }
     }
 
     func testSevenArgumentsOneExtraParameterFails() {
-        let expected = TestError.somethingReallyHorribleHappened as NSError
+        let expected = TestError.somethingReallyHorribleHappened
         func fail(a0: Int,
                   a1: Int,
                   a2: Int,
@@ -1808,23 +1808,23 @@ final class AsynchronousFailableSharedHandlerGenericErrorTests: XCTestCase {
                   a4: Int,
                   a5: Int,
                   a6: Int,
-                  completion: (Int?, Error?) -> Void) {
+                  completion: (Int?, TestError?) -> Void) {
             completion(nil, expected)
         }
 
-        let asyncified = Asynchronous.asyncify(function: fail)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: fail)
 
         wait { expectation in
             asyncified(0, 0, 0, 0, 0, 0, 0).async { (value, actual) in
                 XCTAssertNil(value)
-                XCTAssertEqual(expected, actual?.error as NSError?)
+                XCTAssertEqual(expected, actual)
                 expectation.fulfill()
             }
         }
     }
 
     func testSevenArgumentsTwoExtraParametersFails() {
-        let expected = TestError.somethingReallyHorribleHappened as NSError
+        let expected = TestError.somethingReallyHorribleHappened
         func fail(a0: Int,
                   a1: Int,
                   a2: Int,
@@ -1832,23 +1832,23 @@ final class AsynchronousFailableSharedHandlerGenericErrorTests: XCTestCase {
                   a4: Int,
                   a5: Int,
                   a6: Int,
-                  completion: (Int?, Int?, Error?) -> Void) {
+                  completion: (Int?, Int?, TestError?) -> Void) {
             completion(nil, nil, expected)
         }
 
-        let asyncified = Asynchronous.asyncify(function: fail)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: fail)
 
         wait { expectation in
             asyncified(0, 0, 0, 0, 0, 0, 0).async { (value, actual) in
                 XCTAssertNil(value)
-                XCTAssertEqual(expected, actual?.error as NSError?)
+                XCTAssertEqual(expected, actual)
                 expectation.fulfill()
             }
         }
     }
 
     func testSevenArgumentsThreeExtraParametersFails() {
-        let expected = TestError.somethingReallyHorribleHappened as NSError
+        let expected = TestError.somethingReallyHorribleHappened
         func fail(a0: Int,
                   a1: Int,
                   a2: Int,
@@ -1856,23 +1856,23 @@ final class AsynchronousFailableSharedHandlerGenericErrorTests: XCTestCase {
                   a4: Int,
                   a5: Int,
                   a6: Int,
-                  completion: (Int?, Int?, Int?, Error?) -> Void) {
+                  completion: (Int?, Int?, Int?, TestError?) -> Void) {
             completion(nil, nil, nil, expected)
         }
 
-        let asyncified = Asynchronous.asyncify(function: fail)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: fail)
 
         wait { expectation in
             asyncified(0, 0, 0, 0, 0, 0, 0).async { (value, actual) in
                 XCTAssertNil(value)
-                XCTAssertEqual(expected, actual?.error as NSError?)
+                XCTAssertEqual(expected, actual)
                 expectation.fulfill()
             }
         }
     }
 
     func testSevenArgumentsFourExtraParametersFails() {
-        let expected = TestError.somethingReallyHorribleHappened as NSError
+        let expected = TestError.somethingReallyHorribleHappened
         func fail(a0: Int,
                   a1: Int,
                   a2: Int,
@@ -1880,23 +1880,23 @@ final class AsynchronousFailableSharedHandlerGenericErrorTests: XCTestCase {
                   a4: Int,
                   a5: Int,
                   a6: Int,
-                  completion: (Int?, Int?, Int?, Int?, Error?) -> Void) {
+                  completion: (Int?, Int?, Int?, Int?, TestError?) -> Void) {
             completion(nil, nil, nil, nil, expected)
         }
 
-        let asyncified = Asynchronous.asyncify(function: fail)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: fail)
 
         wait { expectation in
             asyncified(0, 0, 0, 0, 0, 0, 0).async { (value, actual) in
                 XCTAssertNil(value)
-                XCTAssertEqual(expected, actual?.error as NSError?)
+                XCTAssertEqual(expected, actual)
                 expectation.fulfill()
             }
         }
     }
 
     func testEightArgumentsZeroExtraParametersFails() {
-        let expected = TestError.somethingReallyHorribleHappened as NSError
+        let expected = TestError.somethingReallyHorribleHappened
         func fail(a0: Int,
                   a1: Int,
                   a2: Int,
@@ -1904,23 +1904,23 @@ final class AsynchronousFailableSharedHandlerGenericErrorTests: XCTestCase {
                   a4: Int,
                   a5: Int,
                   a6: Int,
-                  a7: Int,completion: (Error?) -> Void) {
+                  a7: Int,completion: (TestError?) -> Void) {
             completion(expected)
         }
 
-        let asyncified = Asynchronous.asyncify(function: fail)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: fail)
 
         wait { expectation in
             asyncified(0, 0, 0, 0, 0, 0, 0, 0).async { (value, actual) in
                 XCTAssertNil(value)
-                XCTAssertEqual(expected, actual?.error as NSError?)
+                XCTAssertEqual(expected, actual)
                 expectation.fulfill()
             }
         }
     }
 
     func testEightArgumentsOneExtraParameterFails() {
-        let expected = TestError.somethingReallyHorribleHappened as NSError
+        let expected = TestError.somethingReallyHorribleHappened
         func fail(a0: Int,
                   a1: Int,
                   a2: Int,
@@ -1929,23 +1929,23 @@ final class AsynchronousFailableSharedHandlerGenericErrorTests: XCTestCase {
                   a5: Int,
                   a6: Int,
                   a7: Int,
-                  completion: (Int?, Error?) -> Void) {
+                  completion: (Int?, TestError?) -> Void) {
             completion(nil, expected)
         }
 
-        let asyncified = Asynchronous.asyncify(function: fail)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: fail)
 
         wait { expectation in
             asyncified(0, 0, 0, 0, 0, 0, 0, 0).async { (value, actual) in
                 XCTAssertNil(value)
-                XCTAssertEqual(expected, actual?.error as NSError?)
+                XCTAssertEqual(expected, actual)
                 expectation.fulfill()
             }
         }
     }
 
     func testEightArgumentsTwoExtraParametersFails() {
-        let expected = TestError.somethingReallyHorribleHappened as NSError
+        let expected = TestError.somethingReallyHorribleHappened
         func fail(a0: Int,
                   a1: Int,
                   a2: Int,
@@ -1954,23 +1954,23 @@ final class AsynchronousFailableSharedHandlerGenericErrorTests: XCTestCase {
                   a5: Int,
                   a6: Int,
                   a7: Int,
-                  completion: (Int?, Int?, Error?) -> Void) {
+                  completion: (Int?, Int?, TestError?) -> Void) {
             completion(nil, nil, expected)
         }
 
-        let asyncified = Asynchronous.asyncify(function: fail)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: fail)
 
         wait { expectation in
             asyncified(0, 0, 0, 0, 0, 0, 0, 0).async { (value, actual) in
                 XCTAssertNil(value)
-                XCTAssertEqual(expected, actual?.error as NSError?)
+                XCTAssertEqual(expected, actual)
                 expectation.fulfill()
             }
         }
     }
 
     func testEightArgumentsThreeExtraParametersFails() {
-        let expected = TestError.somethingReallyHorribleHappened as NSError
+        let expected = TestError.somethingReallyHorribleHappened
         func fail(a0: Int,
                   a1: Int,
                   a2: Int,
@@ -1979,23 +1979,23 @@ final class AsynchronousFailableSharedHandlerGenericErrorTests: XCTestCase {
                   a5: Int,
                   a6: Int,
                   a7: Int,
-                  completion: (Int?, Int?, Int?, Error?) -> Void) {
+                  completion: (Int?, Int?, Int?, TestError?) -> Void) {
             completion(nil, nil, nil, expected)
         }
 
-        let asyncified = Asynchronous.asyncify(function: fail)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: fail)
 
         wait { expectation in
             asyncified(0, 0, 0, 0, 0, 0, 0, 0).async { (value, actual) in
                 XCTAssertNil(value)
-                XCTAssertEqual(expected, actual?.error as NSError?)
+                XCTAssertEqual(expected, actual)
                 expectation.fulfill()
             }
         }
     }
 
     func testEightArgumentsFourExtraParametersFails() {
-        let expected = TestError.somethingReallyHorribleHappened as NSError
+        let expected = TestError.somethingReallyHorribleHappened
         func fail(a0: Int,
                   a1: Int,
                   a2: Int,
@@ -2004,19 +2004,20 @@ final class AsynchronousFailableSharedHandlerGenericErrorTests: XCTestCase {
                   a5: Int,
                   a6: Int,
                   a7: Int,
-                  completion: (Int?, Int?, Int?, Int?, Error?) -> Void) {
+                  completion: (Int?, Int?, Int?, Int?, TestError?) -> Void) {
             completion(nil, nil, nil, nil, expected)
         }
 
-        let asyncified = Asynchronous.asyncify(function: fail)
+        let asyncified = Asynchronous.asyncify(errorType: TestError.self, function: fail)
 
         wait { expectation in
             asyncified(0, 0, 0, 0, 0, 0, 0, 0).async { (value, actual) in
                 XCTAssertNil(value)
-                XCTAssertEqual(expected, actual?.error as NSError?)
+                XCTAssertEqual(expected, actual)
                 expectation.fulfill()
             }
         }
     }
 
 }
+

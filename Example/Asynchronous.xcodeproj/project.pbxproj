@@ -19,6 +19,7 @@
 		A3551E711FBBCF0A006AEF19 /* AsynchronousFailableSeparateHandlerGenericErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3551E6F1FBBCEE8006AEF19 /* AsynchronousFailableSeparateHandlerGenericErrorTests.swift */; };
 		A3551E741FBBD771006AEF19 /* AsynchronousFailableSeparateHandlerSpecificErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3551E721FBBD761006AEF19 /* AsynchronousFailableSeparateHandlerSpecificErrorTests.swift */; };
 		A3551E771FBC280F006AEF19 /* AsynchronousFailableSharedHandlerGenericErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3551E751FBC27F1006AEF19 /* AsynchronousFailableSharedHandlerGenericErrorTests.swift */; };
+		A3551E7A1FBCF30E006AEF19 /* AsynchronousFailableSharedHandlerSpecificErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3551E781FBCF2F3006AEF19 /* AsynchronousFailableSharedHandlerSpecificErrorTests.swift */; };
 		A38C70CF1FBAF49500E70950 /* AsynchronousInfailableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38C70CE1FBAF49500E70950 /* AsynchronousInfailableTests.swift */; };
 		A3E2EE601FB8176C00ECC2B5 /* TestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E2EE5E1FB8175F00ECC2B5 /* TestError.swift */; };
 		A3E2EE631FB8191E00ECC2B5 /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E2EE611FB818FF00ECC2B5 /* TestHelper.swift */; };
@@ -61,6 +62,7 @@
 		A3551E6F1FBBCEE8006AEF19 /* AsynchronousFailableSeparateHandlerGenericErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsynchronousFailableSeparateHandlerGenericErrorTests.swift; sourceTree = "<group>"; };
 		A3551E721FBBD761006AEF19 /* AsynchronousFailableSeparateHandlerSpecificErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsynchronousFailableSeparateHandlerSpecificErrorTests.swift; sourceTree = "<group>"; };
 		A3551E751FBC27F1006AEF19 /* AsynchronousFailableSharedHandlerGenericErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsynchronousFailableSharedHandlerGenericErrorTests.swift; sourceTree = "<group>"; };
+		A3551E781FBCF2F3006AEF19 /* AsynchronousFailableSharedHandlerSpecificErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsynchronousFailableSharedHandlerSpecificErrorTests.swift; sourceTree = "<group>"; };
 		A38C70CE1FBAF49500E70950 /* AsynchronousInfailableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsynchronousInfailableTests.swift; sourceTree = "<group>"; };
 		A3E2EE5E1FB8175F00ECC2B5 /* TestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestError.swift; sourceTree = "<group>"; };
 		A3E2EE611FB818FF00ECC2B5 /* TestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelper.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				A3551E6F1FBBCEE8006AEF19 /* AsynchronousFailableSeparateHandlerGenericErrorTests.swift */,
 				A3551E721FBBD761006AEF19 /* AsynchronousFailableSeparateHandlerSpecificErrorTests.swift */,
 				A3551E751FBC27F1006AEF19 /* AsynchronousFailableSharedHandlerGenericErrorTests.swift */,
+				A3551E781FBCF2F3006AEF19 /* AsynchronousFailableSharedHandlerSpecificErrorTests.swift */,
 				A316DFFB1FB7D7E40047298D /* LightweightFutureTests.swift */,
 				A3E2EE5E1FB8175F00ECC2B5 /* TestError.swift */,
 				A3E2EE611FB818FF00ECC2B5 /* TestHelper.swift */,
@@ -454,6 +457,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3E2EE601FB8176C00ECC2B5 /* TestError.swift in Sources */,
+				A3551E7A1FBCF30E006AEF19 /* AsynchronousFailableSharedHandlerSpecificErrorTests.swift in Sources */,
 				A3EB36AC1FB8430C003791CF /* Alamofire+AsyncTests.swift in Sources */,
 				A38C70CF1FBAF49500E70950 /* AsynchronousInfailableTests.swift in Sources */,
 				A3EB36A91FB83D0D003791CF /* Async+ThenTests.swift in Sources */,

@@ -605,32 +605,40 @@ public struct Asynchronous {
 
     //1,0
     public static func asyncify<I, R, E: Swift.Error>(errorType: E.Type = E.self, function: @escaping (I, _ completionHandler: (E?) -> Void) -> R) -> (I) -> FailableAsync<Void, E> {
-        let asyncified = asyncify(errorType: errorType, function: { (i: I,  o: (E?) -> Void) -> R in
-            function(i, o)
+        let asyncified = asyncify(errorType: errorType, function: { (i: I,  o: ((), E?) -> Void) -> R in
+            function(i) { e in
+                o((), e)
+            }
         })
         return asyncified
     }
 
     //1,2
     public static func asyncify<I, O0, O1, R, E: Swift.Error>(errorType: E.Type = E.self, function: @escaping (I, _ completionHandler: (O0, O1, E?) -> Void) -> R) -> (I) -> FailableAsync<(O0, O1), E> {
-        let asyncified = asyncify(errorType: errorType, function: { (i: I,  o: (O0, O1, E?) -> Void) -> R in
-            function(i, o)
+        let asyncified = asyncify(errorType: errorType, function: { (i: I,  o: ((O0, O1), E?) -> Void) -> R in
+            function(i) { o0, o1, e in
+                o((o0, o1), e)
+            }
         })
         return asyncified
     }
 
     //1,3
     public static func asyncify<I, O0, O1, O2, R, E: Swift.Error>(errorType: E.Type = E.self, function: @escaping (I, _ completionHandler: (O0, O1, O2, E?) -> Void) -> R) -> (I) -> FailableAsync<(O0, O1, O2), E> {
-        let asyncified = asyncify(errorType: errorType, function: { (i: I,  o: (O0, O1, O2, E?) -> Void) -> R in
-            function(i, o)
+        let asyncified = asyncify(errorType: errorType, function: { (i: I,  o: ((O0, O1, O2), E?) -> Void) -> R in
+            function(i) { o0, o1, o2, e in
+                o((o0, o1, o2), e)
+            }
         })
         return asyncified
     }
 
     //1,4
     public static func asyncify<I, O0, O1, O2, O3, R, E: Swift.Error>(errorType: E.Type = E.self, function: @escaping (I, _ completionHandler: (O0, O1, O2, O3, E?) -> Void) -> R) -> (I) -> FailableAsync<(O0, O1, O2, O3), E> {
-        let asyncified = asyncify(errorType: errorType, function: { (i: I,  o: (O0, O1, O2, O3, E?) -> Void) -> R in
-            function(i, o)
+        let asyncified = asyncify(errorType: errorType, function: { (i: I,  o: ((O0, O1, O2, O3), E?) -> Void) -> R in
+            function(i) { o0, o1, o2, o3, e in
+                o((o0, o1, o2, o3), e)
+            }
         })
         return asyncified
     }
