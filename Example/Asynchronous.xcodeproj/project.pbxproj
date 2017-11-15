@@ -17,6 +17,7 @@
 		98A90D7BC892A49E34505CA8 /* Pods_Asynchronous_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF5B49D4BECB73AB99DFD170 /* Pods_Asynchronous_Example.framework */; };
 		A316DFFD1FB7D80E0047298D /* LightweightFutureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A316DFFB1FB7D7E40047298D /* LightweightFutureTests.swift */; };
 		A3551E711FBBCF0A006AEF19 /* AsynchronousFailableSeparateHandlerGenericErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3551E6F1FBBCEE8006AEF19 /* AsynchronousFailableSeparateHandlerGenericErrorTests.swift */; };
+		A3551E741FBBD771006AEF19 /* AsynchronousFailableSeparateHandlerSpecificErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3551E721FBBD761006AEF19 /* AsynchronousFailableSeparateHandlerSpecificErrorTests.swift */; };
 		A38C70CF1FBAF49500E70950 /* AsynchronousInfailableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38C70CE1FBAF49500E70950 /* AsynchronousInfailableTests.swift */; };
 		A3E2EE601FB8176C00ECC2B5 /* TestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E2EE5E1FB8175F00ECC2B5 /* TestError.swift */; };
 		A3E2EE631FB8191E00ECC2B5 /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E2EE611FB818FF00ECC2B5 /* TestHelper.swift */; };
@@ -57,6 +58,7 @@
 		902ADFC487A59C6E2104212A /* Pods-Asynchronous_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Asynchronous_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Asynchronous_Tests/Pods-Asynchronous_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		A316DFFB1FB7D7E40047298D /* LightweightFutureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightweightFutureTests.swift; sourceTree = "<group>"; };
 		A3551E6F1FBBCEE8006AEF19 /* AsynchronousFailableSeparateHandlerGenericErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsynchronousFailableSeparateHandlerGenericErrorTests.swift; sourceTree = "<group>"; };
+		A3551E721FBBD761006AEF19 /* AsynchronousFailableSeparateHandlerSpecificErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsynchronousFailableSeparateHandlerSpecificErrorTests.swift; sourceTree = "<group>"; };
 		A38C70CE1FBAF49500E70950 /* AsynchronousInfailableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsynchronousInfailableTests.swift; sourceTree = "<group>"; };
 		A3E2EE5E1FB8175F00ECC2B5 /* TestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestError.swift; sourceTree = "<group>"; };
 		A3E2EE611FB818FF00ECC2B5 /* TestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelper.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				A3EB36A71FB83CB1003791CF /* Async+ThenTests.swift */,
 				A38C70CE1FBAF49500E70950 /* AsynchronousInfailableTests.swift */,
 				A3551E6F1FBBCEE8006AEF19 /* AsynchronousFailableSeparateHandlerGenericErrorTests.swift */,
+				A3551E721FBBD761006AEF19 /* AsynchronousFailableSeparateHandlerSpecificErrorTests.swift */,
 				A316DFFB1FB7D7E40047298D /* LightweightFutureTests.swift */,
 				A3E2EE5E1FB8175F00ECC2B5 /* TestError.swift */,
 				A3E2EE611FB818FF00ECC2B5 /* TestHelper.swift */,
@@ -452,6 +455,7 @@
 				A38C70CF1FBAF49500E70950 /* AsynchronousInfailableTests.swift in Sources */,
 				A3EB36A91FB83D0D003791CF /* Async+ThenTests.swift in Sources */,
 				A3E2EE661FB82F2700ECC2B5 /* Async+BrightFuturesTests.swift in Sources */,
+				A3551E741FBBD771006AEF19 /* AsynchronousFailableSeparateHandlerSpecificErrorTests.swift in Sources */,
 				A3EB36A61FB839AF003791CF /* Async+PromisesTests.swift in Sources */,
 				A3551E711FBBCF0A006AEF19 /* AsynchronousFailableSeparateHandlerGenericErrorTests.swift in Sources */,
 				A3EB36A01FB8351F003791CF /* Async+HydraAsyncTests.swift in Sources */,
