@@ -20,7 +20,7 @@ PODS:
     - thenPromise
   - BrightFutures (6.0.1):
     - Result (~> 3.2.4)
-  - HydraAsync (1.1.0)
+  - HydraAsync (1.2.1)
   - Mockingjay (2.0.2):
     - Mockingjay/Core (= 2.0.2)
     - Mockingjay/XCTest (= 2.0.2)
@@ -72,7 +72,7 @@ SPEC CHECKSUMS:
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
   Asynchronous: 7e634d6a5034982c4aea736a14886779b18edd27
   BrightFutures: 9c03dab79e73ffe504b7bafc15c5bfdaeee54890
-  HydraAsync: b3d6495b55f845e98ec5b07714da2a6750f6c363
+  HydraAsync: 8f2ab62d57e140b4ca587ae0f66e1eb04e8e6965
   Mockingjay: e44b65b6b4b919ad228929db83cb6b1d69fff623
   PromiseKit: fbb52a0d154402c57eeb6eccd36dd7724fcf6117
   Promises: fd16528f8332744de33db7e1067cd32b3d550466
