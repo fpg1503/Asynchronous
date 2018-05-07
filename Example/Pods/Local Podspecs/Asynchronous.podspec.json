@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "summary": "Implementation agnostic asynchronous code",
   "default_subspecs": "Core",
-  "description": "Async is a one-stop shop for your async needs, the user can use the subspecs\nto automatically run the Async code using Promises, PromiseKit, Then, BrightFutures,\nHydraAsync and much more!",
+  "description": "Async is a one-stop shop for your async needs, the user can use the subspecs\nto automatically run the Async code using completion handlers, BrightFutures, \nHydraAsync, PromiseKit, Promises, then and much more!",
   "homepage": "https://github.com/fpg1503/Asynchronous",
   "license": {
     "type": "MIT",
@@ -83,6 +83,15 @@
         ]
       },
       "source_files": "Asynchronous/Extensions/Alamofire+Async.swift"
+    },
+    {
+      "name": "RxSwift",
+      "dependencies": {
+        "RxSwift": [
+
+        ]
+      },
+      "source_files": "Asynchronous/Extensions/Async+Rx.swift"
     }
   ]
 }

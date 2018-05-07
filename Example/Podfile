@@ -7,6 +7,7 @@ target 'Asynchronous_Example' do
   pod 'Asynchronous/HydraAsync', :path => '../'
   pod 'Asynchronous/PromiseKit', :path => '../'
   pod 'Asynchronous/Promises', :path => '../'
+  pod 'Asynchronous/RxSwift', :path => '../'
   pod 'Asynchronous/Then', :path => '../'
 
   target 'Asynchronous_Tests' do
@@ -17,6 +18,7 @@ target 'Asynchronous_Example' do
     pod 'Asynchronous/HydraAsync', :path => '../'
     pod 'Asynchronous/PromiseKit', :path => '../'
     pod 'Asynchronous/Promises', :path => '../'
+    pod 'Asynchronous/RxSwift', :path => '../'
     pod 'Asynchronous/Then', :path => '../'
     pod 'Mockingjay', :git => 'https://github.com/metaltoad/Mockingjay.git', :branch => 'mt-swift4'
   end

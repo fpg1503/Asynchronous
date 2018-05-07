@@ -14,7 +14,7 @@ public struct Asynchronous {
     }
 
     public static func asyncify<O, R>(function: @escaping (_ completionHandler: (O) -> Void) -> R) -> () -> InfailableAsync<O> {
-        let asyncified = asyncify(function: { (_: Void, o: (O) -> Void) -> R in
+        let asyncified = asyncify(function: { (_: (), o: (O) -> ()) -> R in
             function(o)
         })
         return asyncified

@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (4.5.1)
+  - Alamofire (4.7.0)
   - Asynchronous (0.1.0):
     - Asynchronous/Core (= 0.1.0)
   - Asynchronous/Alamofire (0.1.0):
@@ -14,9 +14,11 @@ PODS:
     - PromiseKit
   - Asynchronous/Promises (0.1.0):
     - Promises
+  - Asynchronous/RxSwift (0.1.0):
+    - RxSwift
   - Asynchronous/Then (0.1.0):
     - thenPromise
-  - BrightFutures (6.0.0):
+  - BrightFutures (6.0.1):
     - Result (~> 3.2.4)
   - HydraAsync (1.1.0)
   - Mockingjay (2.0.2):
@@ -39,17 +41,18 @@ PODS:
     - PromiseKit/CorePromise
   - Promises (2.0)
   - Result (3.2.4)
-  - thenPromise (3.0.0)
+  - RxSwift (4.1.2)
+  - thenPromise (4.0.0)
   - URITemplate (2.0.3)
 
 DEPENDENCIES:
-  - Alamofire
   - Asynchronous (from `../`)
   - Asynchronous/Alamofire (from `../`)
   - Asynchronous/BrightFutures (from `../`)
   - Asynchronous/HydraAsync (from `../`)
   - Asynchronous/PromiseKit (from `../`)
   - Asynchronous/Promises (from `../`)
+  - Asynchronous/RxSwift (from `../`)
   - Asynchronous/Then (from `../`)
   - Mockingjay (from `https://github.com/metaltoad/Mockingjay.git`, branch `mt-swift4`)
 
@@ -66,17 +69,18 @@ CHECKOUT OPTIONS:
     :git: https://github.com/metaltoad/Mockingjay.git
 
 SPEC CHECKSUMS:
-  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
-  Asynchronous: 932acd1d697cebdc18682b981f633599732bc9cb
-  BrightFutures: 9e7604f511aed9f0d6a49b04ac9b3fca6b117758
+  Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
+  Asynchronous: 7e634d6a5034982c4aea736a14886779b18edd27
+  BrightFutures: 9c03dab79e73ffe504b7bafc15c5bfdaeee54890
   HydraAsync: b3d6495b55f845e98ec5b07714da2a6750f6c363
   Mockingjay: e44b65b6b4b919ad228929db83cb6b1d69fff623
   PromiseKit: fbb52a0d154402c57eeb6eccd36dd7724fcf6117
   Promises: fd16528f8332744de33db7e1067cd32b3d550466
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
-  thenPromise: 7aab1d73fd53dbe4c413602bd9f335208e89d60c
+  RxSwift: e49536837d9901277638493ea537394d4b55f570
+  thenPromise: 7093eaa2d2da9fef15240ccc48a213dc2e7befb1
   URITemplate: ace0c4c46dcf8afe6e89b4060621852886b15c3b
 
-PODFILE CHECKSUM: ab3356e7a1e666b4e0fb090d03f30094914f4dca
+PODFILE CHECKSUM: af6ac3f8aacd45b5af5441fffd5c4b14db757680
 
 COCOAPODS: 1.3.1

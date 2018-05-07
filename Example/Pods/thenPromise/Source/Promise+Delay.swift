@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Dispatch
 
 extension Promise {
     
@@ -26,7 +27,7 @@ extension Promise {
 
 extension Promises {
     public static func delay(_ time: TimeInterval) -> Promise<Void> {
-        return Promise { resolve, _ in
+        return Promise { (resolve: @escaping (() -> Void), _: @escaping ((Error) -> Void)) in
             callBackOnCallingQueueIn(time: time, block: resolve)
         }
     }
@@ -40,6 +41,10 @@ extension Promises {
                 callingQueue.async {
                     block()
                 }
+            }
+        } else {
+            DispatchQueue.global(qos: .userInitiated).asyncAfter(deadline: .now() + time) {
+                block()
             }
         }
     }
