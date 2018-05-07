@@ -67,4 +67,9 @@ HydraAsync, PromiseKit, Promises, then and much more!
     alamofire.dependency 'Alamofire'
     alamofire.source_files = 'Asynchronous/Extensions/Alamofire+Async.swift'
   end
+
+  s.subspec 'RxSwift' do |rxSwift|
+    rxSwift.dependency 'RxSwift'
+    rxSwift.source_files = 'Asynchronous/Extensions/Async+Rx.swift'
+  end
 end
