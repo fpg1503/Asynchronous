@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Asynchronous'
-  s.version          = '0.1.0'
+  s.version          = '0.2.0'
   s.summary          = 'Implementation agnostic asynchronous code'
   s.default_subspecs = 'Core'
 
