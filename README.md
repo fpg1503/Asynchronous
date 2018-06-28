@@ -95,7 +95,7 @@ For more information take a look at [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ### Roadmap
 - [ ] ReactiveSwift support
-- [ ] RxSwift support
+- [x] RxSwift support
 - [x] Tests
 - [x] Better documentation
 - [ ] Improved README
@@ -103,6 +103,7 @@ For more information take a look at [CONTRIBUTING.md](CONTRIBUTING.md).
 - [ ] Carthage support
 - [ ] SwiftPM support
 - [x] Fix unnecessary error type erasures
+- [ ] Fix tuple gate in Asyncify
 - [ ] Improve Example project
 
 ## Author
